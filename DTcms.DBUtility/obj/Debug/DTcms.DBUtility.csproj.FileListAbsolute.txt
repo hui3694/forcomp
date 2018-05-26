@@ -129,3 +129,16 @@ H:\YWCMS\DTcms.DBUtility\bin\Debug\Newtonsoft.Json.xml
 H:\YWCMS\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
 H:\YWCMS\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+D:\forcomp\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+D:\forcomp\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+D:\forcomp\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+D:\forcomp\DTcms.DBUtility\bin\Debug\Newtonsoft.Json.dll
+D:\forcomp\DTcms.DBUtility\bin\Debug\NLog.dll
+D:\forcomp\DTcms.DBUtility\bin\Debug\NVelocity.dll
+D:\forcomp\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+D:\forcomp\DTcms.DBUtility\bin\Debug\Newtonsoft.Json.xml
+D:\forcomp\DTcms.DBUtility\bin\Debug\NLog.xml
+D:\forcomp\DTcms.DBUtility\bin\Debug\NVelocity.xml
+D:\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+D:\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+D:\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb

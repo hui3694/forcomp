@@ -32,3 +32,9 @@ H:\YWCMS\DTcms.Web\bin\NLog.config
 H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Forum.dll
 H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Forum.pdb
 H:\YWCMS\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb
+D:\forcomp\DTcms.Web\bin\NLog.config
+D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Forum.dll
+D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Forum.pdb
+D:\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.csprojResolveAssemblyReference.cache
+D:\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.dll
+D:\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb

@@ -130,3 +130,16 @@ H:\YWCMS\DTcms.Model\bin\Debug\Newtonsoft.Json.xml
 H:\YWCMS\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Model\obj\Debug\DTcms.Model.dll
 H:\YWCMS\DTcms.Model\obj\Debug\DTcms.Model.pdb
+D:\forcomp\DTcms.Model\bin\Debug\DTcms.Model.dll
+D:\forcomp\DTcms.Model\bin\Debug\DTcms.Model.pdb
+D:\forcomp\DTcms.Model\bin\Debug\DTcms.Common.dll
+D:\forcomp\DTcms.Model\bin\Debug\Newtonsoft.Json.dll
+D:\forcomp\DTcms.Model\bin\Debug\NLog.dll
+D:\forcomp\DTcms.Model\bin\Debug\NVelocity.dll
+D:\forcomp\DTcms.Model\bin\Debug\DTcms.Common.pdb
+D:\forcomp\DTcms.Model\bin\Debug\Newtonsoft.Json.xml
+D:\forcomp\DTcms.Model\bin\Debug\NLog.xml
+D:\forcomp\DTcms.Model\bin\Debug\NVelocity.xml
+D:\forcomp\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
+D:\forcomp\DTcms.Model\obj\Debug\DTcms.Model.dll
+D:\forcomp\DTcms.Model\obj\Debug\DTcms.Model.pdb
