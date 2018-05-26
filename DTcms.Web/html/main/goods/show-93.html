@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Apple iMac MF883CH/A 21.5英寸一体机电脑 - 电脑整机 - DTcms内容管理系统</title>
+<meta name="keywords" content="赏心悦目de感官享受 艺术品般de细致雕琢 效能与设计de完美结合" />
+<meta name="description" content="Apple iMac MF883CH/A 21.5英寸一体机电脑赏心悦目de感官享受 艺术品般de细致雕琢 效能与设计de完美结合" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.jqzoom.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/picture.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/cart.js"></script>
+<script type="text/javascript">
+$(function(){
+	//TAB切换
+	tabs('#goodsTabs','click');
+	//智能浮动层
+	$("#tabHead").smartFloat();
+	//初始化规格事件
+	initGoodsSpec('/tools/submit_ajax.ashx?action=get_article_goods_info');
+});
+</script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  <div class="main-wrap">
+    <!--页面左边-->
+    <div class="left941">
+      <!--商品图片-->
+      <div class="goods-pic">
+        <!--幻灯片-->
+        <div class="pic-box">
+          <div class="pic-preview">
+            <span class="jqzoom">
+              <img />
+            </span>
+          </div>
+          <!--缩略图-->
+          <div class="pic-scroll">
+            <a class="prev">&lt;</a>
+            <a class="next">&gt;</a>
+            <div class="items">
+              <ul>
+                
+                <li><img bimg="/upload/201504/20/201504200233019087.jpg" src="/upload/201504/20/thumb_201504200233019087.jpg" onmousemove="preview(this);" /></li>
+                
+                <li><img bimg="/upload/201504/20/201504200233024338.jpg" src="/upload/201504/20/thumb_201504200233024338.jpg" onmousemove="preview(this);" /></li>
+                
+              </ul>
+            </div>
+          </div>
+          <!--缩略图-->
+        </div>
+        <!--/幻灯片-->
+      </div>
+      <!--/商品图片-->
+      
+      <!--商品信息-->
+      <div class="goods-spec">
+        <script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_article_click&id=93&click=1&hide=1"></script>
+        <h1>Apple iMac MF883CH/A 21.5英寸一体机电脑</h1>
+        <p class="subtitle">赏心悦目de感官享受 艺术品般de细致雕琢 效能与设计de完美结合</p>
+        <div class="spec-box">
+          <dl>
+            <dt>货号</dt>
+            <dd id="commodityGoodsNo">SD9683710842</dd>
+          </dl>
+          <dl>
+            <dt>市场价</dt>
+            <dd><s id="commodityMarketPrice">¥7988.00</s></dd>
+          </dl>
+          <dl>
+            <dt>销售价</dt>
+            <dd><em id="commoditySellPrice" class="price">¥7200.00</em></dd>
+          </dl>
+        </div>
+        
+        <div id="goodsSpecBox" class="spec-box line">
+          <!--商品规格-->
+          
+          <dl>
+            <dt>颜色</dt>
+            <dd>
+              <ul class="items">
+                <!--规格选项-->
+                
+                <li>
+                  <a specid="9" title="白色" href="javascript:;">
+                    
+                    <img src="/upload/201503/25/201503251553231051.jpg" />
+                    
+                  </a>
+                </li>
+                
+                <!--/规格选项-->
+              </ul>
+            </dd>
+          </dl>
+          
+          <!--/商品规格-->
+        </div>
+        
+        <div class="spec-box">
+          <dl>
+            <dt>购买数量</dt>
+            <dd>
+              <div class="stock-box">
+                <input id="commodityArticleId" type="hidden" value="93" />
+                <input id="commodityGoodsId" type="hidden" value="0" />
+                <input id="commoditySelectNum" type="text" maxlength="9" value="1" maxValue="10" onkeydown="return checkNumber(event);">
+                <a class="add" onclick="addCartNum(1);">+</a>
+                <a class="remove" onclick="addCartNum(-1);">-</a>
+              </div>
+              <span class="stock-txt">
+                库存<em id="commodityStockNum">10</em>件
+              </span>
+            </dd>
+          </dl>
+          <dl>
+            <dd>
+              <div id="buyButton" class="btn-buy">
+                <button class="buy over" onclick="cartAdd(this,'/',1,'/shopping.html');" disabled="disabled">立即购买</button>
+                <button class="add over" onclick="cartAdd(this,'/',0,'/cart.html');" disabled="disabled">加入购物车</button>
+              </div>
+            </dd>
+          </dl>
+        </div>
+         
+        <div class="spec-box line">
+          <dl>
+            <dd>
+              <!--分享-->
+                <!-- JiaThis Button BEGIN --> 
+  <div id="ckepop">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tqq">腾讯</a>
+      <a class="jiathis_button_tsina">新浪</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_email">邮件</a>
+      <a class="jiathis_button_fav">收藏夹</a>
+      <a class="jiathis_button_copy">复制网址</a> 
+      <a href="http://www.jiathis.com/share/?uid=90225" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> 
+      <a class="jiathis_counter_style"></a> 
+  </div> 
+  <!-- JiaThis Button END -->
+  <script type="text/javascript">var jiathis_config={data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1336353133859589" charset="utf-8"></script>
+              <!--/分享-->
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <!--商品信息-->
+      <div class="line20"></div>
+      
+      <!--商品介绍-->
+      <div id="goodsTabs" class="goods-tab">
+        <!--选项卡-->
+        <div id="tabHead" class="tab-head">
+          <ul>
+            <li>
+              <a class="selected" href="javascript:;">商品介绍</a>
+            </li>
+            <li>
+              <a href="javascript:;">商品评论</a>
+            </li>
+          </ul>
+        </div>
+        <!--/选项卡-->
+        
+        <!--选项内容-->
+        <div class="tab-content entry" style="display:block">
+          —— iMac —— <br />
+锋锐设计，锋芒表现。<br />
+iMac 拥有亮丽的宽显示屏、强劲的 Intel 处理器、超快的图形处理器和其他先进功能，而一切精彩都集于超乎想象的锋锐外壳中，边缘处仅有 5 毫米。 <br />
+● 绚丽夺目的设计<br />
+● 绚美的宽显示屏<br />
+● 全线配备 Intel Core i5 处理器<br />
+● 强大的图形处理器<br />
+● 高速 I/O 传输技术，包括两个 Thunderbolt 端口、四个 USB 3 端口等<br />
+● FaceTime HD 高清摄像头<br />
+● Apple Wireless Keyboard<br />
+● Apple Magic Mouse<br />
+● 一系列激发创意和提升效率的强大 app<br />
+● OS X Mavericks，了不起的先进操作系统 <br />
+&nbsp; <br />
+—— Apple Wireless Keyboard —— <br />
+Apple Wireless Keyboard 拥有难以置信的超薄流线型设计，让你能在你的桌上、膝上或任意有效范围之内尽情输入。不管你把它放在哪里，它只需极小的空间即可容身。 <br />
+&nbsp; <br />
+—— Apple Magic Mouse —— <br />
+Magic Mouse 不同于你以往用过的其他鼠标。Multi-Touch 表面让你可以使用手势轻扫翻看照片，滚动浏览网页。整个鼠标就是一个按钮，任你随处点击。 <br />
+&nbsp; <br />
+—— Apple Magic Trackpad —— <br />
+和 Apple Wireless Keyboard 可以对齐摆放。你可以使用内置于 OS X Mavericks 的所有 Multi-Touch 手势，来轻松掌控，和屏幕进行互动。轻扫浏览照片，上下滚读网页，并可随处点击。 <br />
+&nbsp; <br />
+—— Apple USB SuperDrive 光驱 —— <br />
+紧凑轻便的 Apple USB SuperDrive 光驱仅需一条 USB 线缆就能接入你的 iMac、配备 Retina 显示屏的 MacBook Pro、MacBook Air 或 Mac mini 连接，并且可以轻松纳入你的旅行包。有了它，你可以安装软件，播放及刻录 CD 和 DVD（包括双层 DVD）。 <br />
+&nbsp; <br />
+—— AirPort Extreme —— <br />
+简单易用的 AirPort Extreme 基站拥有新一代 802.11ac Wi-Fi 技术，能为家庭、学校和公司提供理想的无线接入点1。它具备同步双频支持，为 Mac 电脑、PC，以及 iPhone、iPad 和 iPod touch 等设备带来高性能的无线网络连接2。<br />
+1、AirPort Extreme 基于 IEEE 802.11ac 规范草案。性能数据基于与 Apple 的 802.11n 产品所做的比较。<br />
+2、接入无线互联网要求使用互联网账号；可能需要付费。 <br />
+&nbsp; <br />
+—— AirPort Time Capsule —— <br />
+AirPort Time Capsule 这款无线硬盘能与 OS X 中的 Time Machine 无缝配合，为你备份生活中难忘的美好回忆。它还是一款全功能的 Wi-Fi 基站，具备新一代 802.11ac 技术与同步双频支持*。<br />
+* AirPort Time Capsule 基于 IEEE 802.11ac 规范草案。性能数据基于与 Apple 的 802.11n 产品所做的比较。接入无线互联网要求使用互联网账号；可能需要付费。<br />
+&nbsp;适用于 Mac 的AppleCare Protection Plan 全方位服务计划可提供长达 3 年的专家电话技术支持，以及来自Apple 的额外硬件服务选项1。 <br />
+&nbsp; <br />
+当你购买了AppleCare Protection Plan 全方位服务计划，只需一通电话即可帮你解答各式各样的问题2，包括 iLife 和 iWork 等产品的使用方法问题。你甚至还可以在访问世界其他国家或地区时，在当地获取维修服务。 <br />
+&nbsp; <br />
+中国的消费者权益保护法包括"三包"规定，赋予了消费者自购机之日起 2 年的主要部件质量问题保修服务。在浙江省，消费者权益保护法赋予了消费者自购买之日起 3 年的台式电脑质量问题保修服务。在此基础之上，大多数 Apple 产品也附带 90 天的免费电话技术支持，以及来自 Apple 的 1 年有限保修服务。 <br />
+        </div>
+        <div class="tab-content">
+          <!--用户评论-->
+          <!--取得评论总数-->
+    <link rel="stylesheet" type="text/css" href="/css/validate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.pagination.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        //初始化评论列表
+        pageInitComment();
+        //初始化发表评论表单
+        AjaxInitForm('#comment_form', '#btnSubmit', 1, '', pageInitComment);
+      });
+      //初始化评论列表
+      function pageInitComment(){
+	AjaxPageList('#comment_list', '#pagination', 10, 0, '/tools/submit_ajax.ashx?action=comment_list&article_id=93', '/templates/main/images/user-avatar.png');
+      }
+    </script>
+    <div class="comment-add">
+      <form id="comment_form" name="comment_form" url="/tools/submit_ajax.ashx?action=comment_add&article_id=93">
+        <div class="editor">
+          <textarea id="txtContent" name="txtContent" class="input" datatype="*" sucmsg=" "></textarea>
+        </div>
+        <div class="subcon">
+          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="提交评论（Ctrl+Enter）" />
+          <span>验证码：</span>
+          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="请填写4位验证码" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
+          <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="/tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> 看不清楚？</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="comment-box">
+      <ol id="comment_list" class="comment-list"></ol>
+    </div>
+    <!--放置页码-->
+    <div class="page-box" style="margin-left:-8px;">
+      <div id="pagination" class="digg"></div>
+    </div>
+    <div class="line10"></div>
+    <!--/放置页码-->
+          <!--用户评论-->
+        </div>
+        <!--选项内容-->
+      </div>
+      <!--/商品介绍-->
+    </div>
+    <!--页面左边-->
+    
+    <!--页面右边-->
+    <div class="left211">
+      <div class="sidebar-box">
+        <div class="line30"></div>
+        <h3>推荐商品</h3>
+        <div class="red-list">
+          <ul>
+            
+            <li>
+              <a title="三星（SAMSUNG）UA40HU5920JXXZ 40英寸4K超高清" href="/goods/show-97.html">
+                <div class="img-box">
+                  <img src="/upload/201504/20/thumb_201504200258403759.jpg" />
+                </div>
+                <span>三星（SAMSUNG）UA40HU5920JXXZ 40英寸4K超高清</span>
+              </a>
+            </li>
+            
+            <li>
+              <a title="联想（Lenovo） G510AM 15.6英寸笔记本电脑" href="/goods/show-92.html">
+                <div class="img-box">
+                  <img src="/upload/201504/20/thumb_201504200225107390.jpg" />
+                </div>
+                <span>联想（Lenovo） G510AM 15.6英寸笔记本电脑</span>
+              </a>
+            </li>
+            
+            <li>
+              <a title="佳能（Canon） EOS 700D 单反套机" href="/goods/show-90.html">
+                <div class="img-box">
+                  <img src="/upload/201504/20/thumb_201504200154277661.jpg" />
+                </div>
+                <span>佳能（Canon） EOS 700D 单反套机</span>
+              </a>
+            </li>
+            
+            <li>
+              <a title="小米（Mi）小米Note 16G双网通版" href="/goods/show-89.html">
+                <div class="img-box">
+                  <img src="/upload/201504/20/thumb_201504200119256512.jpg" />
+                </div>
+                <span>小米（Mi）小米Note 16G双网通版</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="line10"></div>
+        <h3>人气排行</h3>
+        <ul class="rank-list">
+          
+          <li class="active">
+          
+            <span>04-20</span>
+            <i class="num">1</i><a href="/goods/show-91.html">尼康(Nikon)D3300套机（18-55mm f/3.5-5.6G VRII）（黑色）</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">2</i><a href="/goods/show-90.html">佳能（Canon） EOS 700D 单反套机</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">3</i><a href="/goods/show-101.html">QQShinco/新科 S2300 无线麦克风 无线手持话筒 双手麦 KTV 舞台</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">4</i><a href="/goods/show-97.html">三星（SAMSUNG）UA40HU5920JXXZ 40英寸4K超高清</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">5</i><a href="/goods/show-100.html">霍尼韦尔（Honeywel）HM-F1020-A-B HDMI高清数据线</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">6</i><a href="/goods/show-99.html">飞利浦（PHILIPS）DVP3690 全高清DVD影碟机播放器</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">7</i><a href="/goods/show-98.html">奔腾（BNTN） 380功放+纽约至尊 套装家庭影院</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">8</i><a href="/goods/show-96.html">惠普(HP) Officejet Pro 8610商用彩色喷墨一体机</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">9</i><a href="/goods/show-95.html">惠普（HP）LaserJet 2035商用黑白激光打印机（黑色）</a>
+          </li>
+          
+          <li>
+          
+            <span>04-20</span>
+            <i class="num">10</i><a href="/goods/show-94.html">金士顿（Kingston） DataTraveler SE9 32GB 金属U盘</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!--/页面右边-->
+  
+  </div>
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

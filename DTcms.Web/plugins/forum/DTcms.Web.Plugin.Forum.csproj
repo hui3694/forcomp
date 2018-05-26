@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BDADB75-CF46-4687-97BB-851885EBA98E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DTcms.Web.Plugin.Forum</RootNamespace>
+    <AssemblyName>DTcms.Web.Plugin.Forum</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>说明\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\attachment_edit.aspx" />
+    <Content Include="admin\attachment_list.aspx" />
+    <Content Include="admin\board_action_point_list.aspx" />
+    <Content Include="admin\board_edit.aspx" />
+    <Content Include="admin\board_list.aspx" />
+    <Content Include="admin\board_permission.aspx" />
+    <Content Include="admin\group_edit.aspx" />
+    <Content Include="admin\group_extended_edit.aspx" />
+    <Content Include="admin\group_list.aspx" />
+    <Content Include="admin\medal_edit.aspx" />
+    <Content Include="admin\medal_list.aspx" />
+    <Content Include="admin\moderator_list.aspx" />
+    <Content Include="admin\post_edit.aspx" />
+    <Content Include="admin\post_list.aspx" />
+    <Content Include="admin\post_subtable_edit.aspx" />
+    <Content Include="admin\post_subtable_list.aspx" />
+    <Content Include="admin\settings_edit.aspx" />
+    <Content Include="admin\settings_list.aspx" />
+    <Content Include="admin\topic_edit.aspx" />
+    <Content Include="admin\topic_list.aspx" />
+    <Content Include="admin\user_extended_edit.aspx" />
+    <Content Include="admin\user_extended_list.aspx" />
+    <Content Include="admin\word_edit.aspx" />
+    <Content Include="admin\word_list.aspx" />
+    <Content Include="admin\user_medal_list.aspx" />
+    <Content Include="templet\Default\board.html" />
+    <Content Include="templet\Default\Images\attachment_file.gif" />
+    <Content Include="templet\Default\Images\attachment_image.gif" />
+    <Content Include="templet\Default\Images\avatar_ban_120.jpg" />
+    <Content Include="templet\Default\Images\avatar_ban_60.jpg" />
+    <Content Include="templet\Default\Images\avatar_none_120.jpg" />
+    <Content Include="templet\Default\Images\avatar_none_50.jpg" />
+    <Content Include="templet\Default\Images\board_state_new.gif" />
+    <Content Include="templet\Default\Images\board_state_private.gif" />
+    <Content Include="templet\Default\Images\board_state_redirect.gif" />
+    <Content Include="templet\Default\Images\board_state_standard.gif" />
+    <Content Include="templet\Default\Images\box_panel_title_bg.gif" />
+    <Content Include="templet\Default\Images\box_panel_title_bg_gray.gif" />
+    <Content Include="templet\Default\Images\clock.gif" />
+    <Content Include="templet\Default\Images\collapsed_no.gif" />
+    <Content Include="templet\Default\Images\collapsed_yes.gif" />
+    <Content Include="templet\Default\Images\content_blockquote.png" />
+    <Content Include="templet\Default\Images\context_ad.gif" />
+    <Content Include="templet\Default\Images\favicon.ico" />
+    <Content Include="templet\Default\Images\feed.gif" />
+    <Content Include="templet\Default\Images\group.gif" />
+    <Content Include="templet\Default\Images\icon_avatar.gif" />
+    <Content Include="templet\Default\Images\icon_board.gif" />
+    <Content Include="templet\Default\Images\icon_chart.gif" />
+    <Content Include="templet\Default\Images\icon_delete.gif" />
+    <Content Include="templet\Default\Images\icon_edit.gif" />
+    <Content Include="templet\Default\Images\icon_email.gif" />
+    <Content Include="templet\Default\Images\icon_email_open.gif" />
+    <Content Include="templet\Default\Images\icon_favorite.gif" />
+    <Content Include="templet\Default\Images\icon_file.gif" />
+    <Content Include="templet\Default\Images\icon_home.gif" />
+    <Content Include="templet\Default\Images\icon_link.gif" />
+    <Content Include="templet\Default\Images\icon_message.gif" />
+    <Content Include="templet\Default\Images\icon_no.gif" />
+    <Content Include="templet\Default\Images\icon_notice.gif" />
+    <Content Include="templet\Default\Images\icon_password.gif" />
+    <Content Include="templet\Default\Images\icon_permission.gif" />
+    <Content Include="templet\Default\Images\icon_quote.gif" />
+    <Content Include="templet\Default\Images\icon_rate.gif" />
+    <Content Include="templet\Default\Images\icon_reply.gif" />
+    <Content Include="templet\Default\Images\icon_setting.gif" />
+    <Content Include="templet\Default\Images\icon_topic_wait.gif" />
+    <Content Include="templet\Default\Images\icon_trash.gif" />
+    <Content Include="templet\Default\Images\icon_userinfo.gif" />
+    <Content Include="templet\Default\Images\icon_yes.gif" />
+    <Content Include="templet\Default\Images\jokul.gif" />
+    <Content Include="templet\Default\Images\loading.gif" />
+    <Content Include="templet\Default\Images\location_home.gif" />
+    <Content Include="templet\Default\Images\logo.png" />
+    <Content Include="templet\Default\Images\mail0f6c3e.png" />
+    <Content Include="templet\Default\Images\manage_button.png" />
+    <Content Include="templet\Default\Images\menso-free.png" />
+    <Content Include="templet\Default\Images\menu_button_bg.png" />
+    <Content Include="templet\Default\Images\nophototiny.png" />
+    <Content Include="templet\Default\Images\nv_bg.png" />
+    <Content Include="templet\Default\Images\nv_select_bg.png" />
+    <Content Include="templet\Default\Images\post_button.png" />
+    <Content Include="templet\Default\Images\reply_button.png" />
+    <Content Include="templet\Default\Images\rss.gif" />
+    <Content Include="templet\Default\Images\search.png" />
+    <Content Include="templet\Default\Images\sex_female.gif" />
+    <Content Include="templet\Default\Images\sex_male.gif" />
+    <Content Include="templet\Default\Images\sidebar_bg_left.gif" />
+    <Content Include="templet\Default\Images\sigline.gif" />
+    <Content Include="templet\Default\Images\sound.gif" />
+    <Content Include="templet\Default\Images\time.png" />
+    <Content Include="templet\Default\Images\topic_new.gif" />
+    <Content Include="templet\Default\Images\topic_state_digest.gif" />
+    <Content Include="templet\Default\Images\topic_state_hot.gif" />
+    <Content Include="templet\Default\Images\topic_state_lock.gif" />
+    <Content Include="templet\Default\Images\topic_state_new.gif" />
+    <Content Include="templet\Default\Images\topic_state_standard.gif" />
+    <Content Include="templet\Default\Images\topic_state_top_1.gif" />
+    <Content Include="templet\Default\Images\topic_state_top_2.gif" />
+    <Content Include="templet\Default\Images\topic_state_top_3.gif" />
+    <Content Include="templet\Default\Images\u7.gif" />
+    <Content Include="templet\Default\Images\upload_button.png" />
+    <Content Include="templet\Default\Images\user.gif" />
+    <Content Include="templet\Default\Images\user_online.gif" />
+    <Content Include="templet\Default\index.html" />
+    <Content Include="templet\Default\preview.jpg" />
+    <Content Include="templet\Default\Scripts\Common.js" />
+    <Content Include="templet\Default\Scripts\easydialog\easydialog.css" />
+    <Content Include="templet\Default\Scripts\easydialog\easydialog.js" />
+    <Content Include="templet\Default\Scripts\jquery-tmpl\jquery.tmpl.js" />
+    <Content Include="templet\Default\Scripts\jquery-tmpl\jquery.tmplPlus.js" />
+    <Content Include="templet\Default\Scripts\jquery.artTxtCount.js" />
+    <Content Include="templet\Default\Scripts\jquery.blockUI.js" />
+    <Content Include="templet\Default\Scripts\jquery.cookie.js" />
+    <Content Include="templet\Default\Scripts\jquery.ex\images\checkbox.gif" />
+    <Content Include="templet\Default\Scripts\jquery.ex\jquery.ex.css" />
+    <Content Include="templet\Default\Scripts\jquery.ex\jquery.ex.js" />
+    <Content Include="templet\Default\Scripts\jquery.form.js" />
+    <Content Include="templet\Default\Scripts\jquery.highlight\jquery.highlight.js" />
+    <Content Include="templet\Default\Scripts\jquery.hotkeys.js" />
+    <Content Include="templet\Default\Scripts\jquery.js" />
+    <Content Include="templet\Default\Scripts\jquery.lazyload.js" />
+    <Content Include="templet\Default\Scripts\jquery.qtip\jquery.qtip.css" />
+    <Content Include="templet\Default\Scripts\jquery.qtip\jquery.qtip.js" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\Flash\swfupload.swf" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\Image\swfupload_button.png" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\plugins\swfupload.cookies.js" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\plugins\swfupload.queue.js" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\plugins\swfupload.speed.js" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\plugins\swfupload.swfobject.js" />
+    <Content Include="templet\Default\Scripts\jquery.swfupload\swfupload.js" />
+    <Content Include="templet\Default\Scripts\jquery.twbsPagination\jquery.twbsPagination.js" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\dp.css" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\btn-arrow-light.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\btn-arrow.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\cal.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\glass-bg.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\gradient-bg.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\hd-sprite.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\left-btn.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\right-btn.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\css\images\dp\tool-sprites.gif" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\src\Plugins\datepicker_lang_AU.js" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\src\Plugins\datepicker_lang_HK.js" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\src\Plugins\datepicker_lang_US.js" />
+    <Content Include="templet\Default\Scripts\jquery.wdDatePicker\src\Plugins\jquery.datepicker.js" />
+    <Content Include="templet\Default\Scripts\json2.js" />
+    <Content Include="templet\Default\Scripts\Post.js" />
+    <Content Include="templet\Default\Scripts\scrollup\css\labs.css" />
+    <Content Include="templet\Default\Scripts\scrollup\css\themes\image.css" />
+    <Content Include="templet\Default\Scripts\scrollup\css\themes\link.css" />
+    <Content Include="templet\Default\Scripts\scrollup\css\themes\pill.css" />
+    <Content Include="templet\Default\Scripts\scrollup\css\themes\tab.css" />
+    <Content Include="templet\Default\Scripts\scrollup\img\top.png" />
+    <Content Include="templet\Default\Scripts\scrollup\js\jquery.scrollUp.js" />
+    <Content Include="templet\Default\Scripts\shadowbox\close.png" />
+    <Content Include="templet\Default\Scripts\shadowbox\expressInstall.swf" />
+    <Content Include="templet\Default\Scripts\shadowbox\loading.gif" />
+    <Content Include="templet\Default\Scripts\shadowbox\next.png" />
+    <Content Include="templet\Default\Scripts\shadowbox\pause.png" />
+    <Content Include="templet\Default\Scripts\shadowbox\play.png" />
+    <Content Include="templet\Default\Scripts\shadowbox\player.swf" />
+    <Content Include="templet\Default\Scripts\shadowbox\previous.png" />
+    <Content Include="templet\Default\Scripts\shadowbox\shadowbox.css" />
+    <Content Include="templet\Default\Scripts\shadowbox\shadowbox.js" />
+    <Content Include="templet\Default\Scripts\Board.js" />
+    <Content Include="templet\Default\Scripts\Manage.js" />
+    <Content Include="templet\Default\Sounds\msg.mp3" />
+    <Content Include="templet\Default\Sounds\msg.wav" />
+    <Content Include="templet\Default\Styles\Base.css" />
+    <Content Include="templet\Default\Styles\base.src.css" />
+    <Content Include="templet\Default\Styles\Common.css" />
+    <Content Include="templet\Default\Styles\common.src.css" />
+    <Content Include="templet\Default\Styles\Stylesheet.css" />
+    <Content Include="templet\Default\Styles\stylesheet.src.css" />
+    <Content Include="templet\Default\Styles\width_auto.css" />
+    <Content Include="templet\Default\Styles\width_auto.src.css" />
+    <Content Include="templet\Default\topic.html" />
+    <Content Include="templet\Default\post.html" />
+    <Content Include="templet\Default\manage.html" />
+    <Content Include="templet\Default\_header.html" />
+    <Content Include="templet\Default\_footer.html" />
+    <Content Include="templet\Default\search.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\attachment_edit.aspx.cs">
+      <DependentUpon>attachment_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\attachment_edit.aspx.designer.cs">
+      <DependentUpon>attachment_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\attachment_list.aspx.cs">
+      <DependentUpon>attachment_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\attachment_list.aspx.designer.cs">
+      <DependentUpon>attachment_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\board_action_point_list.aspx.cs">
+      <DependentUpon>board_action_point_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\board_action_point_list.aspx.designer.cs">
+      <DependentUpon>board_action_point_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\board_edit.aspx.cs">
+      <DependentUpon>board_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\board_edit.aspx.designer.cs">
+      <DependentUpon>board_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\board_list.aspx.cs">
+      <DependentUpon>board_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\board_list.aspx.designer.cs">
+      <DependentUpon>board_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\board_permission.aspx.cs">
+      <DependentUpon>board_permission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\board_permission.aspx.designer.cs">
+      <DependentUpon>board_permission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\group_edit.aspx.cs">
+      <DependentUpon>group_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\group_edit.aspx.designer.cs">
+      <DependentUpon>group_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\group_extended_edit.aspx.cs">
+      <DependentUpon>group_extended_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\group_extended_edit.aspx.designer.cs">
+      <DependentUpon>group_extended_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\group_list.aspx.cs">
+      <DependentUpon>group_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\group_list.aspx.designer.cs">
+      <DependentUpon>group_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\medal_edit.aspx.cs">
+      <DependentUpon>medal_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\medal_edit.aspx.designer.cs">
+      <DependentUpon>medal_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\medal_list.aspx.cs">
+      <DependentUpon>medal_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\medal_list.aspx.designer.cs">
+      <DependentUpon>medal_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\moderator_list.aspx.cs">
+      <DependentUpon>moderator_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\moderator_list.aspx.designer.cs">
+      <DependentUpon>moderator_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\post_edit.aspx.cs">
+      <DependentUpon>post_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\post_edit.aspx.designer.cs">
+      <DependentUpon>post_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\post_list.aspx.cs">
+      <DependentUpon>post_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\post_list.aspx.designer.cs">
+      <DependentUpon>post_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\post_subtable_edit.aspx.cs">
+      <DependentUpon>post_subtable_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\post_subtable_edit.aspx.designer.cs">
+      <DependentUpon>post_subtable_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\post_subtable_list.aspx.cs">
+      <DependentUpon>post_subtable_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\post_subtable_list.aspx.designer.cs">
+      <DependentUpon>post_subtable_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\settings_edit.aspx.cs">
+      <DependentUpon>settings_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\settings_edit.aspx.designer.cs">
+      <DependentUpon>settings_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\settings_list.aspx.cs">
+      <DependentUpon>settings_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\settings_list.aspx.designer.cs">
+      <DependentUpon>settings_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\topic_edit.aspx.cs">
+      <DependentUpon>topic_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\topic_edit.aspx.designer.cs">
+      <DependentUpon>topic_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\topic_list.aspx.cs">
+      <DependentUpon>topic_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\topic_list.aspx.designer.cs">
+      <DependentUpon>topic_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\user_extended_edit.aspx.cs">
+      <DependentUpon>user_extended_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\user_extended_edit.aspx.designer.cs">
+      <DependentUpon>user_extended_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\user_extended_list.aspx.cs">
+      <DependentUpon>user_extended_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\user_extended_list.aspx.designer.cs">
+      <DependentUpon>user_extended_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\word_edit.aspx.cs">
+      <DependentUpon>word_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\word_edit.aspx.designer.cs">
+      <DependentUpon>word_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\word_list.aspx.cs">
+      <DependentUpon>word_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\word_list.aspx.designer.cs">
+      <DependentUpon>word_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\user_medal_list.aspx.cs">
+      <DependentUpon>user_medal_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\user_medal_list.aspx.designer.cs">
+      <DependentUpon>user_medal_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Forum_BoardPermission.cs" />
+    <Compile Include="BLL\Forum_Attachment.cs" />
+    <Compile Include="BLL\Forum_BoardActionPoint.cs" />
+    <Compile Include="BLL\Forum_GroupExtended.cs" />
+    <Compile Include="BLL\Forum_Medal.cs" />
+    <Compile Include="BLL\Forum_Moderator.cs" />
+    <Compile Include="BLL\Forum_MyPost.cs" />
+    <Compile Include="BLL\Forum_MyTopic.cs" />
+    <Compile Include="BLL\Forum_PostId.cs" />
+    <Compile Include="BLL\Forum_PostSubTable.cs" />
+    <Compile Include="BLL\Forum_Board.cs" />
+    <Compile Include="BLL\Forum_Group.cs" />
+    <Compile Include="BLL\Forum_Post.cs" />
+    <Compile Include="BLL\Forum_Settings.cs" />
+    <Compile Include="BLL\Forum_Topic.cs" />
+    <Compile Include="BLL\Forum_UserExtended.cs" />
+    <Compile Include="BLL\Forum_Word.cs" />
+    <Compile Include="DAL\Forum_BoardPermission.cs" />
+    <Compile Include="DAL\Forum_Attachment.cs" />
+    <Compile Include="DAL\Forum_BoardActionPoint.cs" />
+    <Compile Include="DAL\Forum_GroupExtended.cs" />
+    <Compile Include="DAL\Forum_Medal.cs" />
+    <Compile Include="DAL\Forum_Moderator.cs" />
+    <Compile Include="DAL\Forum_MyPost.cs" />
+    <Compile Include="DAL\Forum_MyTopic.cs" />
+    <Compile Include="DAL\Forum_PostId.cs" />
+    <Compile Include="DAL\Forum_PostSubTable.cs" />
+    <Compile Include="DAL\Forum_Board.cs" />
+    <Compile Include="DAL\Forum_Group.cs" />
+    <Compile Include="DAL\Forum_Post.cs" />
+    <Compile Include="DAL\Forum_Settings.cs" />
+    <Compile Include="DAL\Forum_Topic.cs" />
+    <Compile Include="DAL\Forum_UserExtended.cs" />
+    <Compile Include="DAL\Forum_Word.cs" />
+    <Compile Include="DTEnums.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="handler\attachment.ashx.cs">
+      <DependentUpon>attachment.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\avatar.ashx.cs">
+      <DependentUpon>avatar.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\submit_ajax.ashx.cs">
+      <DependentUpon>submit_ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\upload_ajax.ashx.cs">
+      <DependentUpon>upload_ajax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\verify_code.ashx.cs">
+      <DependentUpon>verify_code.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="Label\topic.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Model\Forum_BoardPermission.cs" />
+    <Compile Include="Model\Forum_Attachment.cs" />
+    <Compile Include="Model\Forum_BoardActionPoint.cs" />
+    <Compile Include="Model\Forum_GroupExtended.cs" />
+    <Compile Include="Model\Forum_Medal.cs" />
+    <Compile Include="Model\Forum_Moderator.cs" />
+    <Compile Include="Model\Forum_MyPost.cs" />
+    <Compile Include="Model\Forum_MyTopic.cs" />
+    <Compile Include="Model\Forum_PostId.cs" />
+    <Compile Include="Model\Forum_PostSubTable.cs" />
+    <Compile Include="Model\Forum_Board.cs" />
+    <Compile Include="Model\Forum_Group.cs" />
+    <Compile Include="Model\Forum_Post.cs" />
+    <Compile Include="Model\Forum_Settings.cs" />
+    <Compile Include="Model\Forum_Topic.cs" />
+    <Compile Include="Model\Forum_UserExtended.cs" />
+    <Compile Include="Model\Forum_Word.cs" />
+    <Compile Include="Model\Statistic.cs" />
+    <Compile Include="Model\upLoad.cs" />
+    <Compile Include="Page\board.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\index.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ForumPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\post.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\topic.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\manage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\search.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\userforum.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\usercredit.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpLoad.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DTcms.BLL\DTcms.BLL.csproj">
+      <Project>{0484f2ed-8ef3-4c40-8b3a-fe52b5e71ac2}</Project>
+      <Name>DTcms.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DTcms.Common\DTcms.Common.csproj">
+      <Project>{6468cbf1-9d41-4231-8814-14491922fecc}</Project>
+      <Name>DTcms.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DTcms.DBUtility\DTcms.DBUtility.csproj">
+      <Project>{80541f63-161f-45cd-9710-cd1ea08f1d67}</Project>
+      <Name>DTcms.DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DTcms.Model\DTcms.Model.csproj">
+      <Project>{d67868c9-56b9-4e35-8e15-c105fc44cfb9}</Project>
+      <Name>DTcms.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DTcms.Web.UI\DTcms.Web.UI.csproj">
+      <Project>{58376273-da57-4220-8935-6af4d998c0f4}</Project>
+      <Name>DTcms.Web.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTcms.Web.csproj">
+      <Project>{71add9ef-d3af-4afe-8427-d10a52baaf90}</Project>
+      <Name>DTcms.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plugin.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\avatar.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\verify_code.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\upload_ajax.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\submit_ajax.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\attachment.ashx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions />
+  <!--
+  <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+ 
+  To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>{site.name}</title>
+<meta name="keywords" content="{site.seo_keyword}" />
+<meta name="description" content="{site.seo_description}" />
+<meta name="generator" content="DTcms Forum" />
+<meta name="author" content="DTcms" />
+<meta name="copyright" content="dtcms-forum.net" />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<!--<link rel="shortcut icon" href="{config.webpath}plugins/forum/templet/Default/images/favicon.ico" />
+<link rel="icon" type="image/ico" href="{config.webpath}plugins/forum/templet/Default/images/favicon.ico" />-->
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/Styles/Common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/Styles/Base.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/Styles/Stylesheet.css" />
+<link href="{config.webpath}plugins/forum/templet/Default/scripts/scrollup/css/themes/image.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/scripts/jquery.ex/jquery.ex.css" />
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.ex/jquery.ex.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/scrollup/js/jquery.scrollup.js" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="RSS订阅" href="/rss.aspx" />
+</head>
+<body>
+
+    <!--页面头部-->
+    <%template src="/Default/_header.html"%>
+    <!--/页面头部-->
+
+<div class="wrap">
+  <div class="globalInfo sp clearfix">
+    <div class="forumInfo"> 今日: <cite><%=DTcms.Web.Plugin.Forum.Model.Statistic.TodayPost%></cite>,
+      昨日: <cite><%=DTcms.Web.Plugin.Forum.Model.Statistic.YesterdayPost%></cite>,
+      帖子: <em><%=DTcms.Web.Plugin.Forum.Model.Statistic.TotalPost%></em>,
+      会员: <em><%=DTcms.Web.Plugin.Forum.Model.Statistic.TotalUser%></em> ,
+
+      <%if(DTcms.Web.Plugin.Forum.Model.Statistic.LastUserId>0)%>
+      欢迎新会员: <a href="#<%=DTcms.Web.Plugin.Forum.Model.Statistic.LastUserId%>" title="最新注册的会员"><%=DTcms.Web.Plugin.Forum.Model.Statistic.LastUserNickname%></a> </div>
+      <%/if%>
+    <div class="userInfo" style="display:none;"> <a href="#" title="订阅 RSS" class="rss">RSS</a> <span class="pipe">|</span> <a href="#" title="查看最新的帖子列表">最新回复</a> <span class="pipe">|</span> <a href="#" title="查看精华帖子列表">精华主题</a> </div>
+  </div>
+  <style type="text/css">
+      #jfp_ht {
+      }
+
+          #jfp_ht table {
+              width: 100%;
+              border: none;
+              padding: 0;
+              margin: 0;
+              border-collapse: collapse;
+              border-spacing: 0;
+          }
+
+          #jfp_ht tbody {
+              border: none;
+              padding: 0;
+              margin: 0;
+              vertical-align: top;
+          }
+
+          #jfp_ht td {
+              border: none;
+              padding: 0;
+              margin: 0;
+              vertical-align: top;
+          }
+
+          #jfp_ht .box_panel_context {
+              line-height: 2em;
+          }
+
+              #jfp_ht .box_panel_context ul,
+              #jfp_ht .box_panel_context ol {
+                  margin: 5px 0;
+                  padding-left: 30px;
+              }
+
+          #jfp_ht .info_line {
+              width: 10px;
+              display: block;
+          }
+
+          #jfp_ht .info_bk {
+          }
+
+          #jfp_ht .info_a {
+              width: 330px;
+          }
+
+          #jfp_ht .info_b {
+              width: 50%;
+          }
+
+          #jfp_ht .info_c {
+              width: 50%;
+          }
+  </style>
+  <div id="jfp_ht" class="sp clearfix">
+    <table border="0">
+      <tr>
+        <td class="info_a info_bk">
+          <script type="text/javascript" src="/plugins/advert/advert_js.ashx?id=1"></script>
+        </td>
+        <td class="info_line">&nbsp;</td>
+        <td class="info_b info_bk"><div class="box_panel list_panel board_panel">
+            <div class="box_panel_title clearfix"> <a href="#">最新主题</a> </div>
+            <div class="box_panel_context">
+              <ul>
+                
+                <%set DataTable dtNewList=new DTcms.Web.Plugin.Forum.Label().get_topic_list(10, " [Close]=0 ", "id desc")%>
+                <%csharp%>System.Data.DataRow[] drNewList = dtNewList.Select("1=1","id desc"); <%/csharp%>
+                <%foreach(DataRow dr in drNewList)%>
+                <li><a href="<%linkurl("forum_topic",{dr[id]},1)%>" title="{dr[Title]}">{dr[Title]}</a></li>             
+				<%/foreach%> 
+
+              </ul>
+            </div>
+          </div></td>
+        <td class="info_line">&nbsp;</td>
+        <td class="info_c info_bk"><div class="box_panel list_panel board_panel">
+            <div class="box_panel_title clearfix"> <a href="#">精华主题</a> </div>
+            <div class="box_panel_context">
+              <ul>
+                <%set DataTable dtDigestList=new DTcms.Web.Plugin.Forum.Label().get_topic_list(10, " [Close]=0 and  Digest=1 ", "id desc")%>
+                <%csharp%>System.Data.DataRow[] drDigestList = dtDigestList.Select("1=1 and  Digest=1 ","id desc"); <%/csharp%>
+                <%foreach(DataRow dr in drDigestList)%>
+                <li><a href="<%linkurl("forum_topic",{dr[id]},1)%>" title="{dr[Title]}">{dr[Title]}</a></li>             
+				<%/foreach%>
+              </ul>
+            </div>
+          </div></td>
+      </tr>
+    </table>
+  </div>
+   
+  <%set DataTable dtBoardList=get_board_list(0)%>
+  <%csharp%>
+    System.Data.DataRow[] drBoardList = dtBoardList.Select("ClassLayer=1", "SortId asc"); <%/csharp%>
+  <%foreach(DataRow dr in drBoardList)%>
+  <div class="box_panel list_panel sp board_panel">
+    <input type="hidden" name="cookie_board_id" value="{dr[id]}" />
+    <div class="box_panel_title clearfix">
+      <div class="fl"> <a href="<%linkurl("forum_board",{dr[id]})%>">{dr[Name]}</a> </div>
+      <div class="fr"> <a title="展开/收起" href="javascript:void(0);"> <img id="board_{dr[id]}_ci" src="{config.webpath}plugins/forum/templet/Default/images/collapsed_no.gif" alt="展开与收起" /> </a> </div>
+    </div>
+    <div class="box_panel_context" id="board_{dr[id]}">
+      <div class="list_panel_cut">
+
+          <%if({strtoint({dr[ChildCount]})}==0)%>
+          <!--无子版-->
+     
+          <table>
+          <tbody>
+            <tr>
+              <td class="info board"><div class="single_board clearfix">
+                  <div class="icon"> <a href="<%linkurl("forum_board",{dr[id]})%>"> <img src="<%=string.IsNullOrEmpty(dr["Icon"].ToString())?"/plugins/forum/templet/Default/Images/board_state_standard.gif":dr["Icon"].ToString()%>" alt="{dr[Name]}" /> </a> </div>
+                  <div class="sbc clearfix">
+                    <div class="description">
+                      <p>{dr[Description]}</p>
+                    </div>
+                    <p> 主题:{dr[TopicCount]},
+                      帖子:{dr[PostCount]} </p>
+                    <p>
+                        <%if({strtoint({dr[LastTopicId]})}!=0)%>
+                         最后发表: <a href="<%linkurl("forum_topic",{dr[LastTopicId]},1)%>" title="{dr[LastTopicTitle]} By:{dr[LastPostNickname]}"> {dr[UpdateTime]} </a>
+                        <%else%>
+                        -
+                        <%/if%>
+                    </p>
+                  </div>
+                </div></td>
+            </tr>
+          </tbody>
+        </table>
+
+          <%else if({strtoint({dr[ChildCount]})}!=0&&{strtoint({dr[ChildCol]})}<2)%>
+
+          <!--普通版-->
+
+          <table>
+          <thead>
+            <tr>
+              <td class="board">标题</td>
+              <td class="topic_reply"> 主题
+                /
+                帖子 </td>
+              <td class="last">最后发表</td>
+            </tr>
+          </thead>
+          <tbody>
+
+            <%csharp%> System.Data.DataRow[] drSubList = dtBoardList.Select("ParentId="+{dr[id]}, "SortId asc"); <%/csharp%>
+            <%foreach(DataRow drSub in drSubList)%>
+            <tr>
+              <td class="board"><div class="single_board clearfix">
+                  <div class="icon"> <a href="<%linkurl("forum_board",{drSub[id]})%>">  <img src="<%=string.IsNullOrEmpty(drSub["Icon"].ToString())?"/plugins/forum/templet/Default/Images/board_state_standard.gif":drSub["Icon"].ToString()%>" alt="{drSub[Name]}" /> </a> </div>
+                  <div class="sbc clearfix"> <strong> <a href="<%linkurl("forum_board",{drSub[id]})%>">{drSub[Name]}</a> </strong>
+                    <div class="description">
+                      <p>{drSub[Description]}</p>
+                    </div>
+                  </div>
+                </div></td>
+              <td class="topic_reply"> {drSub[TopicCount]}
+                / <i>{drSub[PostCount]}</i> </td>
+              <td class="last">
+                  
+                  <%if({strtoint({drSub[LastTopicId]})}!=0)%>
+
+                  <ul>
+                  <li> <a href="<%linkurl("forum_topic",{drSub[LastTopicId]},1)%>" title="{drSub[LastTopicTitle]}">{drSub[LastTopicTitle]}</a> </li>
+                  <li>By: <a href="#">{drSub[LastPostNickname]}</a> , <a href="<%linkurl("forum_topic",{drSub[LastTopicId]},1)%>" title="{drSub[LastTopicTitle]} By:{drSub[LastPostNickname]}"> <span title="{drSub[UpdateTime]}">{drSub[UpdateTime]}</span> </a> </li>
+                  </ul>
+
+                  <%else%>
+                  -
+                  <%/if%>
+
+              </td>
+            </tr>
+            <%/foreach%>
+            
+          </tbody>
+        </table>
+
+          <%else if({strtoint({dr[ChildCount]})}!=0&&{strtoint({dr[ChildCol]})}>1)%>
+
+          <!--小版块-->
+
+        <table>
+          <tbody>
+         
+            <%csharp%>               
+              int l = Convert.ToInt32(Math.Ceiling(Convert.ToDouble( Convert.ToInt32(dr["ChildCount"]) / Convert.ToInt32(dr["ChildCol"]))));
+              string ids = "0";
+              string width =( 100 / Convert.ToInt32(dr["ChildCol"])).ToString();
+            <%/csharp%>
+
+            <%for(int i=0;i<=l;i++)%>
+              
+            <%csharp%>     
+            System.Data.DataRow[] drSubList = dtBoardList.Select("id not in (" + ids + ") and ParentId="+{dr[id]}, "SortId asc");       
+            <%/csharp%>
+
+            <tr class="info">
+
+            <%set int s=0%>
+            <%set int r=0%>
+
+            <%foreach(DataRow drSub in drSubList)%>
+
+              <td style="width:<%=width%>%;" class="info board"><div class="single_board clearfix">
+                  <div class="icon"> <a href="<%linkurl("forum_board",{drSub[id]})%>">  <img src="<%=string.IsNullOrEmpty(drSub["Icon"].ToString())?"/plugins/forum/templet/Default/Images/board_state_standard.gif":drSub["Icon"].ToString()%>" alt="{drSub[Name]}" /> </a> </div>
+                  <div class="sbc clearfix"> <strong> <a href="<%linkurl("forum_board",{drSub[id]})%>">{drSub[Name]}</a> </strong>
+                    <p> 主题:{drSub[TopicCount]},帖子:{drSub[PostCount]} </p>
+                      <%if({strtoint({drSub[LastTopicId]})}!=0)%>
+                    <p> 最后发表: <a href="<%linkurl("forum_topic",{drSub[LastTopicId]},1)%>" title="{drSub[LastTopicTitle]} By:{drSub[LastPostNickname]}"> {drSub[UpdateTime]} </a> </p>
+                      <%/if%>
+                  </div>
+                </div></td>
+
+             <%csharp%>
+                ids+=","+drSub["id"].ToString();
+                s+=1;
+                r=Convert.ToInt32(dr["ChildCol"])-s;
+                if(s==Convert.ToInt32(dr["ChildCol"]))
+                {
+                   break;  
+                }            
+             <%/csharp%>
+            <%/foreach%>
+            
+            <%if(r!=0)%>
+            <%for(int y=0;y<=r-1;y++)%>
+             
+                <td style="width:<%=width%>%;" class="info">&nbsp;</td>
+
+            <%/for%>
+            <%/if%>
+
+            </tr>
+           <%/for%>
+
+          </tbody>
+        </table>
+                    
+          <%/if%>
+      </div>
+    </div>
+  </div>
+  <%/foreach%>
+  
+</div>
+
+<!--页面底部-->
+<%template src="/Default/_footer.html"%>
+<!--/页面底部-->
+
+</body>
+</html>
+

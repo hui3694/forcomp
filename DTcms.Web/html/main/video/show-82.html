@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>星梦奇缘 - 真人秀 - DTcms内容管理系统</title>
+<meta name="keywords" content="马玲,男生宿舍,告白,跳泳池,求爱" />
+<meta name="description" content="天津卫视和韩国CJ E&M娱乐共同制作，明星媒人出谋划策，为相亲者奋勇追求心仪对象。" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/scripts/ckplayer/ckplayer.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+<script type="text/javascript">
+$(function(){
+	//设置视频容器大小
+	winResize();
+	$(window).resize(function() {
+		winResize();
+	});
+	//初始化视频容器
+	initCKPlayer('video-box', 'http://movie.ks.js.cn/flv/other/1_0.mp4', '/scripts/ckplayer/ckplayer.swf');
+});
+//改变大小函数
+function winResize(){
+	if($(".section").width() == 1180){
+		$(".video-box").width(840);
+		$(".video-box").height(473);
+	}else{
+		$(".video-box").width(601);
+		$(".video-box").height(338);
+	}
+}
+</script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  <!--右边-->
+  <div class="list-right">
+    <div class="sidebar-box">
+      <div class="line30"></div>
+      <h3>视频类别</h3>
+      <ul class="navbar">
+        
+        <li>
+          <h4><a href="/video/29.html">电视剧</a></h4>
+          <p>
+            
+            <a href="/video/32.html">美剧</a>
+            
+            <a href="/video/33.html">大陆剧</a>
+            
+            <a href="/video/34.html">韩剧</a>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/video/30.html">电影</a></h4>
+          <p>
+            
+            <a href="/video/35.html">华语</a>
+            
+            <a href="/video/36.html">好莱坞</a>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/video/31.html">综艺</a></h4>
+          <p>
+            
+            <a href="/video/37.html" class="selected">真人秀</a>
+            
+            <a href="/video/38.html">情感相亲</a>
+            
+            <a href="/video/39.html">生活美食</a>
+            
+          </p>
+        </li>
+        
+      </ul>
+      <div class="line20"></div>
+      <h3>推荐视频</h3>
+      <div class="focus-list">
+        <ul>
+          
+          <li>
+            <a title="奔跑吧兄弟" href="/video/show-83.html">
+              <b>
+                <em></em>
+                <img src="/upload/201504/19/201504191612121323.jpg" />
+              </b>
+              <span>奔跑吧兄弟</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="星梦奇缘" href="/video/show-82.html">
+              <b>
+                <em></em>
+                <img src="/upload/201504/19/201504191553366190.jpg" />
+              </b>
+              <span>星梦奇缘</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="绿灯侠" href="/video/show-80.html">
+              <b>
+                <em></em>
+                <img src="/upload/201504/19/201504191502166718.jpg" />
+              </b>
+              <span>绿灯侠</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="有种你爱我" href="/video/show-78.html">
+              <b>
+                <em></em>
+                <img src="/upload/201504/19/201504191438024482.jpg" />
+              </b>
+              <span>有种你爱我</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="line10"></div>
+      <h3>人气排行</h3>
+      <ul class="rank-list">
+        
+        <li class="active">
+        
+          <span>04-19</span>
+          <i class="num">1</i><a href="/video/show-79.html">速度与激情7</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">2</i><a href="/video/show-81.html">熊出没之雪岭熊风</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">3</i><a href="/video/show-83.html">奔跑吧兄弟</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">4</i><a href="/video/show-78.html">有种你爱我</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">5</i><a href="/video/show-82.html">星梦奇缘</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">6</i><a href="/video/show-77.html">心花路放</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">7</i><a href="/video/show-85.html">调解面对面</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">8</i><a href="/video/show-84.html">非诚勿扰</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">9</i><a href="/video/show-80.html">绿灯侠</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">10</i><a href="/video/show-76.html">贤内助女王</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+  <!--/右边-->
+  
+  <!--左边-->
+  <div class="list-auto">
+    <div class="line30"></div>
+    <div id="video-box" class="video-box"></div>
+
+    <div class="meta">
+      <h1>星梦奇缘</h1>
+      <p class="meta-info">
+        <span class="time">2015-04-19 15:53:40</span>
+        <span class="comm"><em id="comment">0</em>人评论</span>
+        <span class="view"><em id="view">0</em>次浏览</span>
+        <script type="text/javascript">ajaxComment("#comment","/",82); ajaxView("#view","/",82);</script>
+        分类：真人秀
+      </p>
+    </div>
+    
+    <div class="entry">
+      各大卫视在创新真人秀类型的基础上，对于有稳定收视群体的恋爱类节目依旧难舍，纷纷由演播室搬至户外，并请来大牌明星加盟，已经定档的有6个之多，如何在同质化中寻找突破，天津卫视与韩国顶尖娱乐公司CJEM联合研发制作的“明星家长式”户外交友真人秀《星梦奇缘》据悉，《星梦奇缘》于4月10日开播。
+    </div>
+    
+    <!--上下篇-->
+    <div class="next-prev-single">
+      <p class="prev">上一篇：没有了</p>
+	  <p class="next">下一篇：<a href="/video/show-83.html">奔跑吧兄弟</a></p>
+    </div>
+    <!--/上下篇-->
+    
+    <div class="line15"></div>
+    <!--相关推荐-->
+    <h2 class="base-tit">
+      <span>相关图片</span>
+    </h2>
+    <div class="rel-list">
+      <ul>
+        
+        <li>
+          <div class="img-box">
+            <a title="奔跑吧兄弟" href="/video/show-83.html">
+              <img src="/upload/201504/19/201504191612121323.jpg" />
+            </a>
+          </div>
+          <div class="info">
+            <h3><a title="奔跑吧兄弟" href="/video/show-83.html">奔跑吧兄弟</a></h3>
+            <p>奔跑吧兄弟是浙江卫视全新推出的大型户外竞技真人秀节目，节目于2014年8月28日正式开机，10月10日将登陆浙江卫视周五黄金档。该节目原型为韩版《runningman》，中国改名为《奔跑吧兄弟》由浙江卫视和韩版《Running Man》制作团队SBS联合制作。</p>
+            <span>2015-04-19 16:12:19</span>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    <!--/相关推荐-->
+    <div class="clear"></div>
+    
+    <!--用户评论-->
+    
+    <h2 class="base-tit">
+      <i>共有<b id="comment2">0</b>访客发表了评论</i>
+      <script type="text/javascript">ajaxComment("#comment2","/",82);</script>
+      <span>网友评论</span>
+    </h2>
+    <!--取得评论总数-->
+    <link rel="stylesheet" type="text/css" href="/css/validate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.pagination.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        //初始化评论列表
+        pageInitComment();
+        //初始化发表评论表单
+        AjaxInitForm('#comment_form', '#btnSubmit', 1, '', pageInitComment);
+      });
+      //初始化评论列表
+      function pageInitComment(){
+	AjaxPageList('#comment_list', '#pagination', 10, 0, '/tools/submit_ajax.ashx?action=comment_list&article_id=82', '/templates/main/images/user-avatar.png');
+      }
+    </script>
+    <div class="comment-add">
+      <form id="comment_form" name="comment_form" url="/tools/submit_ajax.ashx?action=comment_add&article_id=82">
+        <div class="editor">
+          <textarea id="txtContent" name="txtContent" class="input" datatype="*" sucmsg=" "></textarea>
+        </div>
+        <div class="subcon">
+          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="提交评论（Ctrl+Enter）" />
+          <span>验证码：</span>
+          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="请填写4位验证码" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
+          <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="/tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> 看不清楚？</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="comment-box">
+      <ol id="comment_list" class="comment-list"></ol>
+    </div>
+    <!--放置页码-->
+    <div class="page-box" style="margin-left:-8px;">
+      <div id="pagination" class="digg"></div>
+    </div>
+    <div class="line10"></div>
+    <!--/放置页码-->
+    <!--用户评论-->
+    
+  </div>
+  <!--/左边-->
+  
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

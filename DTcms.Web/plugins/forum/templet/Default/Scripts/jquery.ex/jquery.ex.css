@@ -1,0 +1,30 @@
+﻿.is0{background:url(./jquery.ex/progressImg.gif) no-repeat 0 0;width:138px;height:7px;}
+.is10{background-position:0 -7px;}
+.is20{background-position:0 -14px;}
+.is30{background-position:0 -21px;}
+.is40{background-position:0 -28px;}
+.is50{background-position:0 -35px;}
+.is60{background-position:0 -42px;}
+.is70{background-position:0 -49px;}
+.is80{background-position:0 -56px;}
+.is90{background-position:0 -63px;}
+.is100{background-position:0 -70px;}
+
+
+.cb3{background:url("images/checkbox.gif");font:0/0 inherit;display:inline-block;width:20px;height:20px;cursor:pointer;vertical-align:middle;
+        -moz-user-focus:ignore;-moz-user-input:disabled;-moz-user-select:none; }
+.cb3_null{background-position:0 0;}
+.cb3_allow{background-position:0 -40px;}
+.cb3_ban{background-position:0 -120px;}
+
+.cb3_null_hover{background-position:-40px 0;}
+.cb3_allow_hover{background-position:-40px -40px;}
+.cb3_ban_hover{background-position:-40px -120px;}
+
+.cb3_null_foucs{background-position:-80px 0;}
+.cb3_allow_foucs{background-position:-80px -40px;}
+.cb3_ban_foucs{background-position:-80px -120px;}
+
+.cb3_null_disable{background-position:-120px 0;}
+.cb3_allow_disable{background-position:-120px -40px;}
+.cb3_ban_disable{background-position:-120px -120px;}

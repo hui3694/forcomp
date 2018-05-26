@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金币兑换 - {site.name}</title>
+<meta name="keywords" content="{site.seo_keyword}" />
+<meta name="description" content="{site.seo_description}" />
+<link href="<%templateskin%>/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{config.webpath}scripts/artdialog/ui-dialog.css" />
+<script type="text/javascript" charset="utf-8" src="{config.webpath}scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="{config.webpath}scripts/artdialog/dialog-plus-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<%template src="_header.html"%>
+<!--/Header-->
+
+<div class="section clearfix">
+  <div class="line30"></div>
+
+  <div class="info-wrap">
+    <!--左侧导航-->
+    <%template src="_ucenter_nav.html"%>
+    <!--/左侧导航-->
+    
+    <!--右侧内容-->
+    <div class="home-box">
+      <%if(action=="convert")%>
+      <!--积分兑换-->
+      <div class="u-tab-head">
+        <p>
+          <a class="selected" href="<%linkurl("userpoint","convert")%>">金币兑换</a>          
+        </p>
+      </div>
+      <div class="u-tab-content">
+        <div class="title-div">
+          <strong>金币兑换</strong>
+        </div>
+        
+        <%if(modelUserExtended.Credit<DTcms.Web.Plugin.Forum.Global.RateExchange)%>
+          <p style="text-align:center;">目前您的论坛金币不足{DTcms.Web.Plugin.Forum.Global.RateExchange}分，不能使用论坛金币兑换功能！</p>
+        <%else%>
+          <link rel="stylesheet" href="{config.webpath}css/validate.css" />
+          <script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.form.min.js"></script>
+          <script type="text/javascript" src="{config.webpath}scripts/jquery/Validform_v5.3.2_min.js"></script>
+          <script type="text/javascript">
+			$(function(){
+			  //初始化表单
+			  AjaxInitForm('#creditForm', '#btnSubmit', 1, '#turl');
+			});
+
+			function creditConvert(obj) {
+
+			    if (parseInt($(obj).val()) > parseInt($("#hideCredit").val())) {
+			        $(obj).val($("#hideCredit").val());
+			    }
+
+			    if (parseInt($(obj).val()) < parseInt($("#hideRateExchange").val())) {
+
+			        $(obj).val($("#hideRateExchange").val());
+			    }
+
+			    var v = parseInt($(obj).val()) / parseInt($("#hideRateExchange").val());
+
+			    if (v < 1) {
+
+			        $("#convertPoint").html(0);
+			        return;			        
+			    }
+			    else {
+			        $("#convertPoint").html(parseInt(v));
+			    }
+
+			}
+
+		  </script>
+          <input id="hideCredit" name="hideCredit" type="hidden" value="<%=Convert.ToInt32(modelUserExtended.Credit)%>" />
+          <input id="hideRateExchange" name="hideRateExchange" type="hidden" value="{DTcms.Web.Plugin.Forum.Global.RateExchange}" />
+          <form id="creditForm" name="pointform" url="{config.webpath}plugins/forum/handler/submit_ajax.ashx?action=user_credit_convert">
+          <div class="form-box">
+            <dl>
+              <dt>论坛金币：</dt>
+              <dd>目前账户论坛金币:<b class="red"><%=Convert.ToInt32(modelUserExtended.Credit)%></b>币，可兑换帐户积分：<b class="red"><%=Math.Floor(modelUserExtended.Credit/DTcms.Web.Plugin.Forum.Global.RateExchange)%></b>分</dd>
+            </dl>
+            <dl>
+              <dt>兑换说明：</dt>
+              <dd>论坛金币兑换最少{DTcms.Web.Plugin.Forum.Global.RateExchange}币，兑换比例为：{DTcms.Web.Plugin.Forum.Global.RateExchange}个论坛金币兑换帐户积分1分，且兑换后论坛等级对应下降。</dd>
+            </dl>
+            <dl>
+              <dt>金币兑换：</dt>
+              <dd>
+                <input name="txtCredit" id="txtCredit" type="text" class="input small" onkeydown="return checkNumber(event);" onchange="creditConvert(this);" datatype="n"  nullmsg="请输入币额" sucmsg=" " />
+              论坛金币转换成 <strong class="red" id="convertPoint">0</strong> 积分
+              </dd>
+            </dl>
+            <dl>
+              <dt>验证用户密码：</dt>
+              <dd>
+                <input name="txtPassword" id="txtPassword" type="password" class="input txt" datatype="*6-20" nullmsg="请输入密码" sucmsg=" " />
+              </dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd><input name="btnSubmit" id="btnSubmit" type="submit" class="btn btn-success" value="确认兑换" /></dd>
+            </dl>
+          </div>
+          </form>
+          <input id="turl" name="turl" type="hidden" value="<%linkurl("usercredit","convert")%>" />
+        <%/if%>
+      </div>
+      <!--/积分兑换-->
+      
+      <%/if%>
+      
+    </div>
+    <!--/右侧内容-->
+  </div>
+</div>
+
+<!--Footer-->
+<%template src="_footer.html"%>
+<!--/Footer-->
+</body>
+</html>

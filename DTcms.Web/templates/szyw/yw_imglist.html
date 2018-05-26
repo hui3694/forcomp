@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{model.seo_title} - {site.name}</title>
+    <meta name="keywords" content="{model.seo_keywords}" />
+    <meta name="description" content="{model.seo_description}" />
+</head>
+<body>
+    <!--类别调用-->
+    <%set DataTable categoryList1=get_category_child_list(channel, 0)%>
+    <%foreach(DataRow cdr1 in categoryList1.Rows)%>
+    <li>
+        <h4><a href="<%linkurl(" news_list",{cdr1[id]})%>">{cdr1[title]}</a></h4>
+        <p>
+            <%set DataTable categoryList2=get_category_child_list(channel, {strtoint({cdr1[id]})})%>
+            <%foreach(DataRow cdr2 in categoryList2.Rows)%>
+            <%if({strtoint({cdr2[id]})}=={category_id})%>
+            <a href="<%linkurl(" news_list",{cdr2[id]})%>" class="selected">{cdr2[title]}</a>
+            <%else%>
+            <a href="<%linkurl(" news_list",{cdr2[id]})%>">{cdr2[title]}</a>
+            <%/if%>
+            <%/foreach%>
+        </p>
+    </li>
+    <%/foreach%>
+
+</body>
+</html>

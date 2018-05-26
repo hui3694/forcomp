@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>小米董事长雷军：手把手教你做新电商 - 人物动态 - DTcms内容管理系统</title>
+<meta content="小米,雷军,电商" name="keywords" />
+<meta content="米电商的崛起，胜在重新制定生态规则的整体打法，从销售模式、电商系统搭建、物流系统支撑、社会化媒体运营等各维度构成一个业界从未见过的新架构整体" name="description" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  <!--右边-->
+  <div class="list-right">
+    <div class="sidebar-box">
+      <div class="line30"></div>
+      <h3>资讯类别</h3>
+      <ul class="navbar">
+        
+        <li>
+          <h4><a href="/news/3.html">互联网媒体</a></h4>
+          <p>
+            
+            <a href="/news/6.html" class="selected">人物动态</a>
+            
+            <a href="/news/7.html">电子商务</a>
+            
+            <a href="/news/8.html">传闻爆料</a>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/news/4.html">科技财经</a></h4>
+          <p>
+            
+            <a href="/news/9.html">IT业界</a>
+            
+            <a href="/news/10.html">经济民生</a>
+            
+            <a href="/news/11.html">数码产品</a>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/news/5.html">汽车房产</a></h4>
+          <p>
+            
+            <a href="/news/12.html">新车行情</a>
+            
+            <a href="/news/13.html">房产动态</a>
+            
+          </p>
+        </li>
+        
+      </ul>
+      <div class="line20"></div>
+      <h3>推荐资讯</h3>
+      <div class="focus-list">
+        <ul>
+          
+          <li>
+            <a title="中国首个东盟电子商务平台“美丽湾”启动" href="/news/show-27.html">
+              <b><img src="/upload/201504/17/201504170015481462.jpg" /></b>
+              <span>中国首个东盟电子商务平台“美丽湾”启动</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="电商下乡，京东、苏宁、阿里农村遭遇战打响？" href="/news/show-23.html">
+              <b><img src="/upload/201504/16/201504161329185965.jpg" /></b>
+              <span>电商下乡，京东、苏宁、阿里农村遭遇战打响？</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="买房还是炒股，2015年买房无法拒绝的5大理由" href="/news/show-14.html">
+              <b><img src="/upload/201504/16/201504161205596364.jpg" /></b>
+              <span>买房还是炒股，2015年买房无法拒绝的5大理由</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="1季度多家房企利润跌幅超50% 去库存促销战打响" href="/news/show-13.html">
+              <b><img src="/upload/201504/16/201504161149414479.jpg" /></b>
+              <span>1季度多家房企利润跌幅超50% 去库存促销战打响</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="line10"></div>
+      <h3>人气排行</h3>
+      <ul class="rank-list">
+        
+        <li class="active">
+        
+          <span>04-17</span>
+          <i class="num">1</i><a href="/news/show-35.html">三星中国手机份额降至8% 国产厂商发起海外包抄1</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">2</i><a href="/news/show-32.html">深圳限购限行后首次公车拍卖 近三成流拍</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">3</i><a href="/news/show-29.html">淘宝严厉打击刷单行为 三家网店虚假交易受罚关门</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">4</i><a href="/news/show-27.html">中国首个东盟电子商务平台“美丽湾”启动</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">5</i><a href="/news/show-23.html">电商下乡，京东、苏宁、阿里农村遭遇战打响？</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">6</i><a href="/news/show-26.html">走小米的路子就想颠覆苹果？乐视君，你还是醒醒吧</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">7</i><a href="/news/show-22.html">58同城与赶集网最快今日将宣布合并</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">8</i><a href="/news/show-25.html">小米董事长雷军：手把手教你做新电商</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">9</i><a href="/news/show-28.html">普通美国人怎么看 Apple Watch？</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">10</i><a href="/news/show-24.html">易车总裁邵京宁：汽车行业电商化的三个阶段</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!--/右边-->
+  
+  <!--左边-->
+  <div class="list-auto">
+    
+    <div class="meta">
+      <h1>小米董事长雷军：手把手教你做新电商</h1>
+      <p class="meta-info">
+        <span class="time">2015-04-16 13:42:04</span>
+        <span>来源:创事记</span>
+        <span>编辑:</span>
+        <span class="comm"><em id="comment">0</em>人评论</span>
+        <span class="view"><em id="view">0</em>次浏览</span>
+        <script type="text/javascript">ajaxComment("#comment","/",25); ajaxView("#view","/",25);</script>
+        分类：人物动态
+      </p>
+    </div>
+    
+    <div class="entry">
+      <p>
+	小米电商的崛起，胜在重新制定生态规则的整体打法，从销售模式、电商系统搭建、物流系统支撑、社会化媒体运营等各维度构成一个业界从未见过的新架构整体。这也是为何很多对手尝试用小米模式围堵小米时，从一些单点切入模仿，却又浑身别扭的症结所在。
+</p>
+<p>
+	用体系化的思维来看小米电商这个新事物，或许能对所谓“小米思维”有一些新的理解：
+</p>
+<p>
+	<strong>一、极致产品“混搭”强峰值承载力</strong>
+</p>
+<p>
+	先看一个小米网在2011年时的电商雏形实验：为了跑顺从零起步的电商系统，小米联合创始人黎万强跟团队商量先做一个“小米小卖部”，并特地从外面购来若干箱的可乐，准备做线上特卖。刚开始有人建议一元一罐，黎万强说“要做就做狠的，一毛钱！”于是，黎万强统发了内部邮件，鼓励小米员工在午饭时间下单抢可乐，并安排专人在领取处询问购买体验。
+</p>
+<p>
+	从这个故事基本能梳理出小米网的一些模式特点：一是销售具有引爆力的拳头产品，价格贴着成本走，以高性价比提供稀缺价值。此次米粉节首轮放出的50万台手机15分钟内即告售罄，小米移动电源（49元/69元价位）则成为首个破10万件销售的明星配件；二是特定时间段集中售卖，这要求配备一个强悍的系统可以负载峰值访问冲击。此次米粉节峰值访问高达1500万人次，后台大秒系统安然无恙，相比此前易迅、微博等平台与小米合作时的宕机窘态，足以说明小米电商的峰值承载能力早已走在前列。
+</p>
+<p>
+	我得到的消息是小米网的数据中心服务器数还不到1000台，与阿里、京东等巨头的庞大机器规模相比，堪称小而精悍，但单位投入效益极高。这是在过去2年半中几乎每周一次的峰值冲击中，逐渐磨合出来的。
+</p>
+<p>
+	<strong>二、“JustInTime+”物流体系</strong>
+</p>
+<p>
+	4月8日下午13：29分，顺丰快递员将米粉节第一单交到了南京一位女用户的手中，从下单、出库到妥投仅用3个多小时。
+</p>
+<p>
+	小米正越来越快。在创业之初，小米是在卷石大厦的紫米会议室现场发货，最开始的一两个月库存周转要30天。此后，小米迅速铺开全国物流、售后体系的建设。至今已陆续在全国开设了10个仓储物流中心，团队规模从400人扩充到1500人，据说库存周期时间逐渐缩短到了7天，同城极速配服务基本可以做到48小时上门，由此基本构筑了支撑小米电商崛起的物流配送网络。
+</p>
+<p>
+	实际上，小米的物流体系在起步之初就借鉴了丰田的JIT（JustInTime准时生产）模式，打造一套力求库存最小化的敏捷生产系统。但小米模式的独特之处在于，它的线上打法缩减了递增的中间渠道环节，极大缩减了终端需求数据的回流时间，并由此发展出了一种极速供应链玩法：提前一周收集预售订单数据，并结合当周的销售额、百度指数、论坛与微博话题热度等指数，制定下一周的生产量级，即本周生产量为下周销售量，货到仓库后即时发出，整个流程接近于零库存。
+</p>
+<p>
+	这种“JustInTime+”模式需要极强的系统对接能力，以及敏捷的生产与精准的配送能力。比如，小米的销售部门会照每月、每周给代工厂传递总体订单信息，但一定会每天实时调整排产计划。而小米物流运营中心会实时对接上游代工厂与下游物流配送商，车辆守在车间外，出货即装载，到仓即发货，以此达到物流发货能力最大化、库存积压最小化。
+</p>
+    </div>
+    
+    <!--分享-->
+      <!-- JiaThis Button BEGIN --> 
+  <div id="ckepop">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tqq">腾讯</a>
+      <a class="jiathis_button_tsina">新浪</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_email">邮件</a>
+      <a class="jiathis_button_fav">收藏夹</a>
+      <a class="jiathis_button_copy">复制网址</a> 
+      <a href="http://www.jiathis.com/share/?uid=90225" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> 
+      <a class="jiathis_counter_style"></a> 
+  </div> 
+  <!-- JiaThis Button END -->
+  <script type="text/javascript">var jiathis_config={data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1336353133859589" charset="utf-8"></script>
+    <!--/分享-->
+    <div class="line15"></div>
+    
+    <!--上下篇-->
+    <div class="next-prev-single">
+      <p class="prev">上一篇：<a href="/news/show-24.html">易车总裁邵京宁：汽车行业电商化的三个阶段</a></p>
+	  <p class="next">下一篇：<a href="/news/show-26.html">走小米的路子就想颠覆苹果？乐视君，你还是醒醒吧</a></p>
+    </div>
+    <!--/上下篇-->
+    
+    <div class="line15"></div>
+    <!--相关推荐-->
+    <h2 class="base-tit">
+      <span>相关资讯</span>
+    </h2>
+    <div class="rel-list">
+      <ul>
+        
+        <div class="nodata">暂无相关的资讯...</div>
+        
+      </ul>
+    </div>
+    <!--/相关推荐-->
+    <div class="clear"></div>
+    
+    <!--用户评论-->
+    
+    <h2 class="base-tit">
+      <i>共有<b id="comment2">0</b>访客发表了评论</i>
+      <script type="text/javascript">ajaxComment("#comment2","/",25);</script>
+      <span>网友评论</span>
+    </h2>
+    <!--取得评论总数-->
+    <link rel="stylesheet" type="text/css" href="/css/validate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.pagination.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        //初始化评论列表
+        pageInitComment();
+        //初始化发表评论表单
+        AjaxInitForm('#comment_form', '#btnSubmit', 1, '', pageInitComment);
+      });
+      //初始化评论列表
+      function pageInitComment(){
+	AjaxPageList('#comment_list', '#pagination', 10, 0, '/tools/submit_ajax.ashx?action=comment_list&article_id=25', '/templates/main/images/user-avatar.png');
+      }
+    </script>
+    <div class="comment-add">
+      <form id="comment_form" name="comment_form" url="/tools/submit_ajax.ashx?action=comment_add&article_id=25">
+        <div class="editor">
+          <textarea id="txtContent" name="txtContent" class="input" datatype="*" sucmsg=" "></textarea>
+        </div>
+        <div class="subcon">
+          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="提交评论（Ctrl+Enter）" />
+          <span>验证码：</span>
+          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="请填写4位验证码" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
+          <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="/tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> 看不清楚？</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="comment-box">
+      <ol id="comment_list" class="comment-list"></ol>
+    </div>
+    <!--放置页码-->
+    <div class="page-box" style="margin-left:-8px;">
+      <div id="pagination" class="digg"></div>
+    </div>
+    <div class="line10"></div>
+    <!--/放置页码-->
+    <!--用户评论-->
+    
+  </div>
+  <!--/左边-->
+  
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

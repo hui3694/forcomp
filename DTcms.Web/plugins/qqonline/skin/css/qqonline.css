@@ -1,0 +1,88 @@
+﻿.qqonline{/*text-shadow:0px 1px 0px #fff;*/
+margin:0px;position:fixed;z-index:99999999;_position:absolute;_top:expression(documentElement.scrollTop+100+"px");width:110px;}
+.qqonline_w0{left:2px;top:180px;}
+.qqonline_w1{left:50%;top:2px;}
+.qqonline_w2{right:2px;top:180px;}
+.qqonline_w3{left:50%;bottom:2px;}
+.qqonline_w4{left:50%;top:50%;}
+.qqonline_list{position:relative;}
+.qqonline_list li{position:relative;padding-bottom:5px;text-align:left;}
+.qqonline_list li i{left:15px;position:absolute;}
+.qqonline_list li span{padding-left:40px;}
+.qqonline_hd{position:relative;}
+.qqonline_hd i,.qqonline_remark,.qqonline_code{display:none;}
+/*all*/
+.qqonline_skin6 .qqonline_hd i,.qqonline_skin7 .qqonline_hd i,.qqonline_skin8 .qqonline_hd i,.qqonline_skin13 .qqonline_hd i,.qqonline_skin14 .qqonline_hd i{display:inline-block;background-color:#fff;width:15px;height:15px;position:absolute;top:5px;right:5px;cursor:pointer;z-index:999;filter:alpha(opacity=10);-moz-opacity:0.1;-khtml-opacity:0.1;opacity:0.1;}
+/*skin1*/
+.qqonline_skin1 .qqonline_hd{height:70px;background:url(../qqskin/1/top.png) no-repeat;}
+.qqonline_skin1 .qqonline_bd{padding-top:5px;background:url(../qqskin/1/middle.png) repeat-y;}
+.qqonline_skin1 .qqonline_fd{height:50px;background:url(../qqskin/1/bottom.png) no-repeat;}
+/*skin2*/
+.qqonline_skin2 .qqonline_hd{height:70px;background:url(../qqskin/2/top.png) no-repeat;}
+.qqonline_skin2 .qqonline_bd{padding-top:5px;background:url(../qqskin/2/middle.png) repeat-y;}
+.qqonline_skin2 .qqonline_fd{height:31px;background:url(../qqskin/2/bottom.png) no-repeat;}
+/*skin3*/
+.qqonline_skin3 .qqonline_hd{height:50px;background:url(../qqskin/3/top.png) no-repeat;}
+.qqonline_skin3 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/3/middle.png) repeat-y;}
+.qqonline_skin3 .qqonline_fd{height:8px;background:url(../qqskin/3/bottom.png) no-repeat;}
+/*skin4*/
+.qqonline_skin4 .qqonline_hd{height:55px;background:url(../qqskin/4/top.png) no-repeat;}
+.qqonline_skin4 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/4/middle.png) repeat-y;}
+.qqonline_skin4 .qqonline_fd{height:21px;background:url(../qqskin/4/bottom.png) no-repeat;}
+/*skin5*/
+.qqonline_skin5 .qqonline_hd{height:22px;background:url(../qqskin/5/top.png) no-repeat;}
+.qqonline_skin5 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/5/middle.png) repeat-y;}
+.qqonline_skin5 .qqonline_fd{height:18px;background:url(../qqskin/5/bottom.png) no-repeat;}
+/*skin6*/
+.qqonline_skin6{width:110px;}
+.qqonline_skin6 .qqonline_hd{height:26px;background:url(../qqskin/6/top.png) no-repeat;}
+.qqonline_skin6 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/6/middle.png) repeat-y;}
+.qqonline_skin6 .qqonline_fd{height:16px;background:url(../qqskin/6/bottom.png) no-repeat;}
+/*skin7*/
+.qqonline_skin7 .qqonline_hd{height:53px;background:url(../qqskin/7/top.png) no-repeat;}
+.qqonline_skin7 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/7/middle.png) repeat-y;}
+.qqonline_skin7 .qqonline_fd{height:31px;background:url(../qqskin/7/bottom.png) no-repeat;}
+/*skin8*/
+.qqonline_skin8 .qqonline_hd{height:36px;background:url(../qqskin/8/top.png) no-repeat;}
+.qqonline_skin8 .qqonline_hd i{top:12px;right:6px;}
+.qqonline_skin8 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/8/middle.png) repeat-y;}
+.qqonline_skin8 .qqonline_fd{height:30px;background:url(../qqskin/8/bottom.png) no-repeat;}
+/*skin9*/
+.qqonline_skin9 .qqonline_hd{height:70px;background:url(../qqskin/9/top.png) no-repeat;}
+.qqonline_skin9 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/9/middle.png) repeat-y;}
+.qqonline_skin9 .qqonline_fd{height:31px;background:url(../qqskin/9/bottom.png) no-repeat;}
+/*skin10*/
+.qqonline_skin10 .qqonline_hd{height:34px;background:url(../qqskin/10/top.png) no-repeat;}
+.qqonline_skin10 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/10/middle.png) repeat-y;}
+.qqonline_skin10 .qqonline_fd{height:14px;background:url(../qqskin/10/bottom.png) no-repeat;}
+/*skin11*/
+.qqonline_skin11 .qqonline_hd{height:64px;background:url(../qqskin/11/top.png) no-repeat;}
+.qqonline_skin11 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/11/middle.png) repeat-y;}
+.qqonline_skin11 .qqonline_fd{height:22px;background:url(../qqskin/11/bottom.png) no-repeat;}
+/*skin12*/
+.qqonline_skin12 .qqonline_hd{height:29px;background:url(../qqskin/12/top.png) no-repeat;}
+.qqonline_skin12 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/12/middle.png) repeat-y;}
+.qqonline_skin12 .qqonline_fd{height:21px;background:url(../qqskin/12/bottom.png) no-repeat;}
+/*skin13*/
+.qqonline_skin13{width:120px;}
+.qqonline_skin13 .qqonline_hd{height:37px;background:url(../qqskin/13/top.png) no-repeat;}
+.qqonline_skin13 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/13/middle.png) repeat-y;}
+.qqonline_skin13 .qqonline_fd{height:10px;background:url(../qqskin/13/bottom.png) no-repeat;}
+.qqonline_skin13 .qqonline_code{display:block;text-align:center;}
+.qqonline_skin13 .qqonline_code img{width:90px;height:90px;margin-bottom:5px;}
+.qqonline_skin13 .qqonline_remark{padding:5px 12px;display:block;margin-bottom:5px;}
+.qqonline_skin13 .qqonline_hd i{top:2px;right:2px;}
+/*skin14*/
+.qqonline_skin14{width:178px;}
+.qqonline_skin14 .qqonline_hd{height:56px;background:url(../qqskin/14/top.png) no-repeat;}
+.qqonline_skin14 .qqonline_bd{padding-top:10px;padding-bottom:5px;background:url(../qqskin/14/middle.png) repeat-y;}
+.qqonline_skin14 .qqonline_bd ul{margin-bottom:20px;}
+.qqonline_skin14 .qqonline_bd li{height:36px;width:140px;margin-left:19px;line-height:36px;overflow:hidden;font-size:14px;padding-bottom:0px;margin-bottom:10px;}
+.qqonline_skin14 .qqonline_bd li a{display:block;height:36px;color:#fff;background:url(../qqskin/14/i.png) left 0px no-repeat;}
+.qqonline_skin14 .qqonline_bd li a:hover{background-position:left bottom;}
+.qqonline_skin14 .qqonline_bd li img{padding-top:10px;}
+.qqonline_skin14 .qqonline_fd{height:16px;background:url(../qqskin/14/bottom.png) no-repeat;}
+.qqonline_skin14 .qqonline_code{display:block;text-align:center;}
+.qqonline_skin14 .qqonline_code img{width:120px;height:120px;margin-bottom:5px;background-color:#fff;padding:8px;border-radius:10px;}
+.qqonline_skin14 .qqonline_remark{padding:5px 12px;display:block;text-align:center;font-size:16px;color:#fff;}
+.qqonline_skin14 .qqonline_hd i{top:12px;right:12px;}

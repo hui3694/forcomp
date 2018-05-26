@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>易车总裁邵京宁：汽车行业电商化的三个阶段 - 人物动态 - DTcms内容管理系统</title>
+<meta content="车电商 易车 4S店 电商 O2O" name="keywords" />
+<meta content="电商只是噱头，产品仍以传统产品为主，4S店主要还是线下的销售渠道，汽车厂商也并没有销售的增长，它的运营的效率和成效也并没有实质性的提升。购车的环节从C端体验来看也没有获得更大的优化，用户并没有获得更好的用户体验" name="description" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  <!--右边-->
+  <div class="list-right">
+    <div class="sidebar-box">
+      <div class="line30"></div>
+      <h3>资讯类别</h3>
+      <ul class="navbar">
+        
+        <li>
+          <h4><a href="/news/3.html">互联网媒体</a></h4>
+          <p>
+            
+            <a href="/news/6.html" class="selected">人物动态</a>
+            
+            <a href="/news/7.html">电子商务</a>
+            
+            <a href="/news/8.html">传闻爆料</a>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/news/4.html">科技财经</a></h4>
+          <p>
+            
+            <a href="/news/9.html">IT业界</a>
+            
+            <a href="/news/10.html">经济民生</a>
+            
+            <a href="/news/11.html">数码产品</a>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/news/5.html">汽车房产</a></h4>
+          <p>
+            
+            <a href="/news/12.html">新车行情</a>
+            
+            <a href="/news/13.html">房产动态</a>
+            
+          </p>
+        </li>
+        
+      </ul>
+      <div class="line20"></div>
+      <h3>推荐资讯</h3>
+      <div class="focus-list">
+        <ul>
+          
+          <li>
+            <a title="中国首个东盟电子商务平台“美丽湾”启动" href="/news/show-27.html">
+              <b><img src="/upload/201504/17/201504170015481462.jpg" /></b>
+              <span>中国首个东盟电子商务平台“美丽湾”启动</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="电商下乡，京东、苏宁、阿里农村遭遇战打响？" href="/news/show-23.html">
+              <b><img src="/upload/201504/16/201504161329185965.jpg" /></b>
+              <span>电商下乡，京东、苏宁、阿里农村遭遇战打响？</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="买房还是炒股，2015年买房无法拒绝的5大理由" href="/news/show-14.html">
+              <b><img src="/upload/201504/16/201504161205596364.jpg" /></b>
+              <span>买房还是炒股，2015年买房无法拒绝的5大理由</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="1季度多家房企利润跌幅超50% 去库存促销战打响" href="/news/show-13.html">
+              <b><img src="/upload/201504/16/201504161149414479.jpg" /></b>
+              <span>1季度多家房企利润跌幅超50% 去库存促销战打响</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="line10"></div>
+      <h3>人气排行</h3>
+      <ul class="rank-list">
+        
+        <li class="active">
+        
+          <span>04-17</span>
+          <i class="num">1</i><a href="/news/show-35.html">三星中国手机份额降至8% 国产厂商发起海外包抄1</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">2</i><a href="/news/show-32.html">深圳限购限行后首次公车拍卖 近三成流拍</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">3</i><a href="/news/show-29.html">淘宝严厉打击刷单行为 三家网店虚假交易受罚关门</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">4</i><a href="/news/show-27.html">中国首个东盟电子商务平台“美丽湾”启动</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">5</i><a href="/news/show-23.html">电商下乡，京东、苏宁、阿里农村遭遇战打响？</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">6</i><a href="/news/show-26.html">走小米的路子就想颠覆苹果？乐视君，你还是醒醒吧</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">7</i><a href="/news/show-22.html">58同城与赶集网最快今日将宣布合并</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">8</i><a href="/news/show-25.html">小米董事长雷军：手把手教你做新电商</a>
+        </li>
+        
+        <li>
+        
+          <span>04-17</span>
+          <i class="num">9</i><a href="/news/show-28.html">普通美国人怎么看 Apple Watch？</a>
+        </li>
+        
+        <li>
+        
+          <span>04-16</span>
+          <i class="num">10</i><a href="/news/show-24.html">易车总裁邵京宁：汽车行业电商化的三个阶段</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!--/右边-->
+  
+  <!--左边-->
+  <div class="list-auto">
+    
+    <div class="meta">
+      <h1>易车总裁邵京宁：汽车行业电商化的三个阶段</h1>
+      <p class="meta-info">
+        <span class="time">2015-04-16 13:37:49</span>
+        <span>来源:易车网</span>
+        <span>编辑:</span>
+        <span class="comm"><em id="comment">0</em>人评论</span>
+        <span class="view"><em id="view">0</em>次浏览</span>
+        <script type="text/javascript">ajaxComment("#comment","/",24); ajaxView("#view","/",24);</script>
+        分类：人物动态
+      </p>
+    </div>
+    
+    <div class="entry">
+      易车总裁邵京宁在艾瑞年度高峰会议上表示，汽车行业作为一个体量大且精英化的行业，与互联网的结合较其他行业相比更为缓慢。
+<p>
+	邵京宁认为，汽车作为一个拥有百年历史的重要的民用固造产业，拥有很深的制造业思维，是非常“骄傲和顽固”的，这造成了与互联网融合的缓慢。
+</p>
+<p>
+	易车对国内51家汽车企业做的调查显示，有55%的互联网营销部门设置在市场部门下面，有10%左右是在销售部下面，有12%没有设定，仅有有3%是独特的销售互联网营销部门。
+</p>
+<p>
+	邵京宁认为，汽车行业的营销和电商还处于一体化阶段，概念还没有成型，还在业务的尝试和摸索当中。可能未来几年之后这个界限会看得更清楚。而过程会经历以下三个阶段：
+</p>
+<p>
+	第一个阶段，电商只是拿来作为噱头，这也是目前的主要的阶段。电商只是噱头，产品仍以传统产品为主，4S店主要还是线下的销售渠道，汽车厂商也并没有销售的增长，它的运营的效率和成效也并没有实质性的提升。购车的环节从C端体验来看也没有获得更大的优化，用户并没有获得更好的用户体验。
+</p>
+<p>
+	第二阶段，依托4S店体系进行厂下销售，这一阶段，从消费者体验来看是最新的尝试体验。依托4S店体系进行厂下销售，经销商负责展示和服务，承担轻库存。邵京宁认为，这种方式可以解决因产定销造成的厂商批发任务刚性，一旦市场销售不出去导致的大量存货、价格下降等问题。
+</p>
+<p>
+	第三阶段是C2B模式研发与生产，即建立以消费者为中心的服务体系，用户可以深度地参与品牌研发和营销的过程。从而最终影响到最高级别的品牌层级的变化，产生互联网思维的以人为本思维的汽车品牌。邵京宁认为，这应该是目前行业可以想象和预见到的最高级阶段。
+</p>
+    </div>
+    
+    <!--分享-->
+      <!-- JiaThis Button BEGIN --> 
+  <div id="ckepop">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tqq">腾讯</a>
+      <a class="jiathis_button_tsina">新浪</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_email">邮件</a>
+      <a class="jiathis_button_fav">收藏夹</a>
+      <a class="jiathis_button_copy">复制网址</a> 
+      <a href="http://www.jiathis.com/share/?uid=90225" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> 
+      <a class="jiathis_counter_style"></a> 
+  </div> 
+  <!-- JiaThis Button END -->
+  <script type="text/javascript">var jiathis_config={data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1336353133859589" charset="utf-8"></script>
+    <!--/分享-->
+    <div class="line15"></div>
+    
+    <!--上下篇-->
+    <div class="next-prev-single">
+      <p class="prev">上一篇：没有了</p>
+	  <p class="next">下一篇：<a href="/news/show-25.html">小米董事长雷军：手把手教你做新电商</a></p>
+    </div>
+    <!--/上下篇-->
+    
+    <div class="line15"></div>
+    <!--相关推荐-->
+    <h2 class="base-tit">
+      <span>相关资讯</span>
+    </h2>
+    <div class="rel-list">
+      <ul>
+        
+        <div class="nodata">暂无相关的资讯...</div>
+        
+      </ul>
+    </div>
+    <!--/相关推荐-->
+    <div class="clear"></div>
+    
+    <!--用户评论-->
+    
+    <h2 class="base-tit">
+      <i>共有<b id="comment2">0</b>访客发表了评论</i>
+      <script type="text/javascript">ajaxComment("#comment2","/",24);</script>
+      <span>网友评论</span>
+    </h2>
+    <!--取得评论总数-->
+    <link rel="stylesheet" type="text/css" href="/css/validate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.pagination.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        //初始化评论列表
+        pageInitComment();
+        //初始化发表评论表单
+        AjaxInitForm('#comment_form', '#btnSubmit', 1, '', pageInitComment);
+      });
+      //初始化评论列表
+      function pageInitComment(){
+	AjaxPageList('#comment_list', '#pagination', 10, 0, '/tools/submit_ajax.ashx?action=comment_list&article_id=24', '/templates/main/images/user-avatar.png');
+      }
+    </script>
+    <div class="comment-add">
+      <form id="comment_form" name="comment_form" url="/tools/submit_ajax.ashx?action=comment_add&article_id=24">
+        <div class="editor">
+          <textarea id="txtContent" name="txtContent" class="input" datatype="*" sucmsg=" "></textarea>
+        </div>
+        <div class="subcon">
+          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="提交评论（Ctrl+Enter）" />
+          <span>验证码：</span>
+          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="请填写4位验证码" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
+          <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="/tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> 看不清楚？</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="comment-box">
+      <ol id="comment_list" class="comment-list"></ol>
+    </div>
+    <!--放置页码-->
+    <div class="page-box" style="margin-left:-8px;">
+      <div id="pagination" class="digg"></div>
+    </div>
+    <div class="line10"></div>
+    <!--/放置页码-->
+    <!--用户评论-->
+    
+  </div>
+  <!--/左边-->
+  
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

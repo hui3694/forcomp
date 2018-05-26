@@ -1,0 +1,42 @@
+.qqonline ul.list li {
+    float: left;
+	display:inline;
+    width: 150px;
+	height:200px;
+	border:1px solid #ddd;
+	overflow:hidden;
+	position:relative;
+	margin: 0 15px 15px 0;
+}
+.qqonline ul.list .check{
+	position:absolute;
+	right:5px;
+}
+.qqonline ul.list .box{
+	display: table-cell;
+    vertical-align: middle;
+    height: 200px;
+	text-align: center;
+}
+.qqonline ul.list .pic{
+    width: 150px;
+}
+.qqonline ul.list .pic i{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.qqonline ul.list .pic img {
+    max-height: 160px;
+    max-width: 120px;
+}
+.qqonline .opt{
+	display:inline-block;
+	width:400px;
+	overflow:hidden;
+}
+.qqonline .opt label{
+	margin-left:2px;
+	margin-right:5px;
+	margin-bottom:5px;
+}

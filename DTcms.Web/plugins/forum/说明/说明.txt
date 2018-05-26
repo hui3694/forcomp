@@ -1,0 +1,34 @@
+﻿
+整个插件 放入文件夾
+
+项目：DTcms.Web\plugins\forum
+
+1.
+因为插件使用到DTcms的方法 所以需要将DTcms.Web.UI.Upload 中的 私有private 改成公共 public
+
+2.
+将文件夹  ueditor 移入 项目：DTcms.Web\scripts 中
+
+3.
+插件用到第三方的dll
+将 Newtonsoft.Json.dll 复制到 项目：DTcms.Web\bin
+
+4.将
+_ucenter_nav.html 
+userforum.html 
+usermessage.html
+usercredit.html
+_header.html
+usercenter.html
+
+放到 项目：DTcms_40_sql_src\DTcms.Web\templates\main 因为会员中心要用到
+
+
+======================================================
+
+插件官方地址
+http://www.dtcms-forum.net
+
+如需要二次开发请加QQ 271478027 咨询
+
+先讲诚信再谈生意

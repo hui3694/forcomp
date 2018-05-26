@@ -1,0 +1,15 @@
+﻿
+.guest_tip{border: 1px dashed #AAAA92;background: #FFFFEE url(../images/attach_nopermission_bg.png) no-repeat 100% 0;font-size: 1em; font-weight: normal; margin-top: 10px; margin-bottom: 10px; line-height: 20px; }
+.guest_tip_icon{padding: 20px 0 20px 70px;border: 3px solid #FFF;background: url(../images/attach_nopermission.png) no-repeat 15px 15px;}
+.guest_tip_info {color: #8CA226;
+font-size: 15px;
+display: block;
+margin-bottom: 10px;
+margin-top: -10px;
+}
+
+.guest_tip_action {
+}
+.guest_tip_action a {
+    color:#336699;
+}

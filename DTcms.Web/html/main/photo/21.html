@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>摄影器材 - DTcms内容管理系统</title>
+<meta name="keywords" content="摄影,器材" />
+<meta name="description" content="收集各种摄影器材图集" />
+<link href="/css/pagination.css" rel="stylesheet" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  
+  <div class="ntitle">
+    <h2>
+      <a href="javascript:;">摄影器材<em></em></a>
+    </h2>
+    <p>
+      <!--小类-->
+      
+      <!--小类-->
+    </p>
+    
+    <span>当前位置：<a href="/index.html">首页</a> &gt; <a href="/photo.html">图片分享</a>&nbsp;&gt;&nbsp;<a href="/photo/15/1.html">摄影设计</a>&nbsp;&gt;&nbsp;<a href="/photo/21/1.html">摄影器材</a></span>
+  </div>
+  
+  <div class="wrapper auto clearfix">
+    <ul class="img-list high ilist">
+      <!--取得一个分页DataTable-->
+      
+      <li>
+        <a title="Takashi Kitajima梦幻迷离的城市夜景摄影作品" href="/photo/show-46.html">
+          <span class="abs-bg"></span>
+          <span class="txt1">Takashi Kitajima梦幻迷离的城市夜景摄影作品</span>
+          <span class="txt2">
+            <i>阅读：0次</i>
+            <p>2015-04-18</p>
+          </span>
+          <img src="/upload/201504/18/thumb_201504181350088573.jpg" />
+        </a>
+      </li>
+      
+    </ul>
+    <!--页码列表-->
+    <div class="page-box">
+      <div class="digg"></div>
+    </div>
+    <!--/页码列表-->
+  </div>
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

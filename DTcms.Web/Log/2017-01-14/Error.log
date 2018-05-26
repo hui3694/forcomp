@@ -1,0 +1,4 @@
+[2017-01-14 15:07:15.7354] 
+客户机IP:::1
+错误地址:http://localhost:40610/tools/lucene.ashx?action=get_dic_count
+异常信息:未能加载文件或程序集“Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed”或它的某一个依赖项。找到的程序集清单定义与程序集引用不匹配。 (异常来自 HRESULT:0x80131040) 

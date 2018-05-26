@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>联系我们 - DTcms内容管理系统</title>
+<meta content="" name="keywords" />
+<meta content="" name="description" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  <!--右边-->
+  <div class="list-right">
+    <div class="sidebar-box">
+      <div class="line30"></div>
+      <h3>栏目导航</h3>
+      <ul class="navbar">
+        
+        <li>
+          <h4><a title="联系我们" href="/content/contact.html">联系我们</a></h4>
+        </li>
+        
+        <li>
+          <h4><a title="关于我们" href="/content/about.html">关于我们</a></h4>
+        </li>
+        
+        <li>
+          <h4><a href="/feedback.html">留言反馈</a></h4>
+        </li>
+        <li>
+          <h4><a href="/link.html">友情链接</a></h4>
+        </li>
+      </ul>
+      <div class="line20"></div>
+      <h3>客户服务</h3>
+      <div class="sidebar-txt">
+        <p><strong>深圳市动力启航软件有限公司</strong></p>
+        <p>地址：深圳市宝安区西乡街道铁岗村一巷二号</p>
+        <p>电话：13695245546</p>
+        <p>E-mail：info@dtcms.net</p>
+        <p>新浪微博：http://weibo.com/dtcms</p>
+      </div>
+    </div>
+  </div>
+  <!--/右边-->
+  
+  <!--左边-->
+  <div class="list-auto">
+    <div class="ntitle">
+      <h2>
+        <a href="javascript:;">联系我们</a>
+      </h2>
+      <span>当前位置：<a href="/index.html">首页</a> &gt; 公司介绍 &gt; 联系我们</span>
+    </div>
+    
+    <div class="entry">
+      <p>
+	<strong>动力启航 - 专注互联网开发最前端 </strong> 
+</p>
+<p>
+	<strong>官方网址：</strong><a href="http://www.dtcms.net" target="_blank">http://www.dtcms.net</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.dtsoft.net">http://www.dtsoft.net</a> 
+</p>
+<p>
+	<strong>所在地区：</strong>广东省深圳市宝安区西乡街道
+</p>
+<p>
+	<strong>业务电话：</strong>+86 13695245546
+</p>
+<p>
+	<strong>新浪微博：</strong><a href="http://weibo.com/dtcms" target="_blank">http://weibo.com/dtcms</a> 
+</p>
+<p>
+	<strong>技术Q群：</strong>17671249（1群已满）、65105443 (2群已满)、65105043 (3群已满)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;124834949 (4群已满)、264768101（5群）
+</p>
+<p>
+	<strong>电子邮箱：</strong><a href="mailto:info@dtcms.net">info@dtcms.net</a> 
+</p>
+    </div>
+    
+    <!--分享-->
+      <!-- JiaThis Button BEGIN --> 
+  <div id="ckepop">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tqq">腾讯</a>
+      <a class="jiathis_button_tsina">新浪</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_email">邮件</a>
+      <a class="jiathis_button_fav">收藏夹</a>
+      <a class="jiathis_button_copy">复制网址</a> 
+      <a href="http://www.jiathis.com/share/?uid=90225" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> 
+      <a class="jiathis_counter_style"></a> 
+  </div> 
+  <!-- JiaThis Button END -->
+  <script type="text/javascript">var jiathis_config={data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1336353133859589" charset="utf-8"></script>
+    <!--/分享-->
+    
+  </div>
+  <!--/左边-->
+  
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

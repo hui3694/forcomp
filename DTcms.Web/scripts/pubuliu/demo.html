@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="jquery-1.10.2.js"></script>
+    <script src="freewall.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery.wookmark.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery.imagesloaded.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery-ui-1.11.0.js"></script>
+    <script src="jquery.shapeshift.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //拖拽插件调用
+        $(document).ready(function () {
+            $("#sortable").shapeshift();
+        })
+        //瀑布流插件调用
+        function waterfall() {
+            var handler = $('.rimg #sortable>div');
+            handler.wookmark({
+                // Prepare layout options.
+                autoResize: true, // This will auto-update the layout when the browser window is resized.
+                container: $('#tiless #sortable'), // Optional, used for some extra CSS styling
+                offset: 5, // Optional, the distance between grid items
+                outerOffset: 10, // Optional, the distance to the containers border
+                itemWidth: 240 // Optional, the width of a grid item
+            });
+        }
+        $('.rimg #sortable').imagesLoaded(waterfall);
+    </script>
+    <style>
+        #sortable .file_p img,#sortable .file_p .cont{
+				width: 240px;
+			}
+    </style>
+</head>
+<body>
+    <div class="rimg">
+        <div class="gallery" id="tiless" role="tiless">
+            <div id="sortable">
+                <div class="file_p">
+                    <div class="cont">
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    你好你好
+                    </div>
+                    <img src="../../upload/201611/28/201611280847148584.jpg" />
+                </div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280850261663.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280853037613.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280856394467.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280857222201.png" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280858032515.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280859099573.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280859211059.png" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280859327546.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280859479904.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280903049397.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280903261709.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280903262209.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280903428249.png" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280905005943.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280924484633.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280924560827.jpg" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280925075624.png" /></div>
+                <div class="file_p"><img src="../../upload/201611/28/201611280925201021.jpg" /></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

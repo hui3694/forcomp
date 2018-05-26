@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>{modelTopic.Title} - {site.name}</title>
+<meta name="keywords" content="{site.seo_keyword}" />
+<meta name="description" content="{site.seo_description}" />
+<meta name="generator" content="dtcms forum" />
+<meta name="author" content="DTcms" />
+<meta name="copyright" content="dtcms-forum.net" />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<!--<link rel="shortcut icon" href="{config.webpath}plugins/forum/templet/Default/images/favicon.ico" />
+<link rel="icon" type="image/ico" href="{config.webpath}plugins/forum/templet/Default/images/favicon.ico" />-->
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/Styles/Common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/Styles/Base.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/Styles/Stylesheet.css" />
+<link href="{config.webpath}plugins/forum/templet/Default/scripts/scrollup/css/themes/image.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" media="all" href="{config.webpath}plugins/forum/templet/Default/scripts/jquery.ex/jquery.ex.css" />
+<link href="{config.webpath}plugins/forum/templet/Default/scripts/easydialog/easydialog.css" rel="stylesheet" type="text/css" />
+<link href="{config.webpath}plugins/forum/templet/Default/scripts/shadowbox/shadowbox.css" rel="stylesheet" type="text/css" />
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.ex/jquery.ex.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/scrollup/js/jquery.scrollup.js" type="text/javascript"></script>
+<link href="#" rel="canonical" />
+</head>
+<body>
+<!--页面头部-->
+<%template src="/Default/_header.html"%>
+<!--/页面头部-->
+<div class="wrap">
+  <div class="sp clearfix">
+    <div class="button_panel fl">
+      <ul class="fl">
+        <%if(modelUserExtended!=null)%>
+        <li> <a href="<%linkurl("forum_post","create",modelBoard.Id)%>"> <img src="{config.webpath}plugins/forum/templet/Default/images/post_button.png" alt="发帖" /> </a> </li>
+        <li> <a href="<%linkurl("forum_post","reply",modelBoard.Id,modelTopic.Id)%>"> <img src="{config.webpath}plugins/forum/templet/Default/images/reply_button.png" alt="回复" /> </a> </li>
+        <%if(bolOperate)%>
+        <li> <a href="javascript:void(0);"> <img class="mypop" data-pop-id="manage_panel" src="{config.webpath}plugins/forum/templet/Default/images/manage_button.png" alt="管理" /> </a> </li>
+        <%/if%>
+        <%else%>
+        <li> <span class="no_ct"> 您所在分组(<strong>游客</strong>)还不能进行回复
+          ，您可以进行<a href="<%linkurl("login")%>">登录</a>或<a href="<%linkurl("register")%>">注册</a> </span> </li>
+        <%/if%>
+      </ul>
+    </div>
+    <div class="page_panel fr">
+      <ul class="fl">
+        {pagelist}
+      </ul>
+    </div>
+  </div>
+  <div id="top_reply" class="box_panel sp post_list_panel">
+    <form id="moderate" method="post" action="#">
+      <%if(bolOperate)%>
+      <input name="board_id" type="hidden" value="<%=board_id%>" />
+      <input name="topic_id" type="hidden" value="<%=topic_id%>" />
+      <input name="post_id" type="hidden" value="<%=modelTopic.PostId%>" />
+      <input name="turl" type="hidden" value="{turl}" />
+      <div id="manage_panel" class="pop_panel manage_pop_panel">
+        <div class="content">
+          <h3>主题管理</h3>
+          <ul>
+            <li><a href="<%linkurl("forum_manage","top")%>" class="manage_action">主题置顶/取消</a></li>
+            <li><a href="<%linkurl("forum_manage","digest")%>" class="manage_action">精华设置/取消</a></li>
+            <li><a href="<%linkurl("forum_manage","close")%>" class="manage_action">主题打开/关闭</a></li>
+            <li><a href="<%linkurl("forum_manage","highlight")%>" class="manage_action">主题高亮</a></li>
+            <li><a href="<%linkurl("forum_manage","ban")%>" class="manage_action">主题屏蔽</a></li>
+            <li><a href="<%linkurl("forum_manage","delete")%>" class="manage_action">删除主题</a></li>
+            <li><a href="<%linkurl("forum_manage","move")%>" class="manage_action">移动主题</a></li>
+            <li><a href="<%linkurl("forum_manage","type")%>" class="manage_action" style="display:none;">主题分类</a></li>
+          </ul>
+          <h3>批量回复管理</h3>
+          <ul>
+            <li>
+              <input id="post_select_all" type="checkbox" class="select_all" />
+              <label for="post_select_all">全部回复</label>
+            </li>
+          </ul>
+          <ul>
+            <li><a href="<%linkurl("forum_manage","banreply")%>" class="manage_action">屏蔽回复</a></li>
+            <li><a href="<%linkurl("forum_manage","deletereply")%>" class="manage_action">删除回复</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="manageTopic" class="box_panel box_panel__color_easy post_manage_panel">
+        <div class="box_panel_title clearfix">
+          <div class="fl">选择了<span id="manageTopicCount">0</span>个回复</div>
+          <div class="fr">
+            <input id="flex_post_select_all" type="checkbox" class="select_all" />
+            <label for="flex_post_select_all">全部回复</label>
+            <span class="pipe">|</span> <span class="select_all_cancel">取消</span> </div>
+        </div>
+        <div class="box_panel_context">
+          <ul>
+            <li><a href="<%linkurl("forum_manage","banreply")%>" class="manage_action">屏蔽回复</a></li>
+            <li><a href="<%linkurl("forum_manage","deletereply")%>" class="manage_action">删除回复</a></li>
+          </ul>
+        </div>
+      </div>
+      <%/if%>
+      <div class="thread_bar clearfix">
+        <div class="thread_info">
+          <ul>
+            <li> <em>{modelTopic.ViewCount}</em> 阅读 </li>
+            <li> <em>{modelTopic.ReplayCount}</em> 回复 </li>
+          </ul>
+        </div>
+        <h1> {modelTopic.Title} </h1>
+        <div class="post_size_control"> <em onclick="$('.msg').removeClass().addClass('msg t_bigfont')">大</em> <span class="pipe">|</span> <em onclick="$('.msg').removeClass().addClass('msg t_msgfont')">中</em> <span class="pipe">|</span> <em onclick="$('.msg').removeClass().addClass('msg t_smallfont')">小</em> </div>
+      </div>
+      <%foreach(DataRow dr in drPostList)%>
+      <div class="wline">
+        <div class="left_bg">&nbsp;</div>
+      </div>
+      <div id="reply_{dr[id]}" class="post">
+        <table class="pt">
+          <tr>
+            <td rowspan="2" class="user_info" data-userId="{dr[PostUserId]}" ><div class="user_pop clearfix" id="user_pop_{dr[id]}">
+                <div class="userex">
+                  <div class="avatar"> <img src="/plugins/forum/handler/avatar.ashx?uid={dr[PostUserId]}&size=120" onerror="this.onerror=null;this.src='{config.webpath}plugins/forum/templet/Default/images/avatar_none_120.jpg'" alt="<!--Nickname-->" /> </div>
+                  <%if(modelUserExtended!=null)%>
+                  <div class="post_pm" style="line-height:25px;"> <a target="_blank" href="<%linkurl("usermessage","add")%>#{dr[PostUsername]}">发送短消息</a> </div>
+                  <%/if%>
+                </div>
+                <div class="popex">
+                  <ul class="attr">
+                    <li>
+                      <label>UID:</label>
+                      <!--UserId-->
+                    </li>
+                    <li>
+                      <label>性别:</label>
+                      <!--Gender-->
+                    </li>
+                    <li>
+                      <label>IP:</label>
+                      <!--LoginIp-->
+                    </li>
+                    <li>
+                      <label>金币:</label>
+                      <!--Credit-->
+                    </li>
+                    <li>
+                      <label>主题:</label>
+                      <!--TopicCount-->
+                    </li>
+                    <li>
+                      <label>帖子:</label>
+                      <!--PostCount-->
+                    </li>
+                    <li>
+                      <label>精华:</label>
+                      <!--PostDigestCount-->
+                    </li>
+                    <li>
+                      <label>注册日期:</label>
+                      <!--RegTime-->
+                    </li>
+                    <li>
+                      <label>最后登录:</label>
+                      <!--LoginTime-->
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <%if({strtoint({dr[PostUserId]})}==modelTopic.PostUserId)%>
+              <div class="man_icon">楼主帖</div>
+              <%/if%>
+              <div class="avatar UserInfoPanelEx" data-exid="user_pop_{dr[id]}"> <img src="/plugins/forum/handler/avatar.ashx?uid={dr[PostUserId]}&size=120" onerror="this.onerror=null;this.src='{config.webpath}plugins/forum/templet/Default/images/avatar_none_120.jpg'" alt="<!--Nickname-->" /> </div>
+              <div class="username"> <span class="user_online_icon user_offline_male" title="离线" style="display:none;"></span> <a href="#{dr[PostUserId]}"><span style="color:#0066ff;">
+                <!--Nickname-->
+                </span></a> </div>
+              <div class="exinfo">
+                <ul class="attr">
+                  <li>
+                    <label>金币:</label>
+                    <!--Credit-->
+                  </li>
+                </ul>
+                <div class="xz" data-medal="<!--Medal-->"> </div>
+              </div></td>
+            <td class="post_info"><div class="post_toolbar clearfix">
+                <div class="fl">
+                  <%if({strtoint({dr[row_number]})}!=1&&bolOperate)%>
+                  <input id="post_{dr[id]}_select" type="checkbox" value="{dr[id]}" name="rids"/>
+                  <label for="post_{dr[id]}_select">管理</label>
+                  <span class="pipe">|</span>
+                  <%/if%>
+                  发表于: <span title="{dr[PostDateTime]}"> {dr[PostDateTime]} </span> </div>
+                <div class="fr">
+                  <%if(modelUserExtended!=null)%>
+                  <%if({strtoint({dr[row_number]})}==1)%>
+                  <%if({strtoint({dr[PostUserId]})}==modelUserExtended.UserId)%>
+                  <a href="<%linkurl("forum_post","update",modelBoard.Id,modelTopic.Id,{dr[id]})%>">编辑</a>
+                  <%/if%>
+                  <%else%>
+                  <%if({strtoint({dr[PostUserId]})}==modelUserExtended.UserId)%>
+                  <a href="<%linkurl("forum_post","editor",modelBoard.Id,modelTopic.Id,{dr[id]})%>">编辑</a>
+                  <%/if%>
+                  <%/if%>
+                  <%/if%>
+                  <span class="pipe">|</span> <strong>{dr[row_number]} 楼</strong> </div>
+              </div>
+              <div class="post_main">
+                <%if({strtoint({dr[Ban]})}==1)%>
+                <div class="mb">提示:该帖被管理员人员屏蔽，限有管理权限的成员或发帖用户可见</div>
+                <%else%>
+                <div id="postMessage_{dr[id]}" class="msg t_msgfont">
+                  <div class="adright" style="display:none;"> <a href="#" target="_blank"><img src="#" /></a> </div>
+                  <%if({dr[QuotePostIds]}!="")%>
+                  <blockquote> 引用[{dr[QuoteNickname]}]:<br />
+                    {dr[QuoteMessage]}</blockquote>
+                  <%/if%>
+                  {dr[Message]} </div>
+                <%if({dr[Attachment]}!="0")%>
+                <%set DataTable dtAttList=new DTcms.Web.Plugin.Forum.Label().get_attachment_list({strtoint({dr[PostUserId]})},{strtoint({dr[BoardId]})},{strtoint({dr[TopicId]})},{strtoint({dr[Id]})})%>
+                <%csharp%>
+                System.Data.DataRow[] drAttList = dtAttList.Select("1=1","id asc");
+                <%/csharp%>
+                <%if(drAttList.Length!=0)%>
+                <div class="lastedit" style="display:none;"> **** 于 <span title="2013-04-13 15:03">2013-04-13 15:03</span> 编辑过此帖 </div>
+                <div class="list_panel rate_list_panel">
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>附件列表</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%foreach(DataRow dr2 in drAttList)%>
+                      <%set string tempSize=""%>                       
+                      <tr>
+                        <td><span id="attachment_{dr2[id]}" class="att attachment" data-pop-id="attachment_{dr2[id]}_tip">
+                          <div id="attachment_{dr2[id]}_tip" class="attachment_tip" style="display:none;">
+                            <p>文件：{dr2[Name]}</p>
+                            <p>大小：
+                              <%if({strtoint({dr2[FileSize]})}>1024)%>
+                              <%csharp%>
+                               tempSize = ({strtoint({dr2[FileSize]})}/1024f).ToString("#.##");
+                              <%/csharp%>
+                              {tempSize}MB
+                              <%else%>
+                              {dr2[FileSize]}KB
+                              <%/if%>
+                            </p>
+                            <p>描述：{dr2[Description]}</p>
+                            <p>下载：{dr2[Download]} 次</p>
+                            <p><a href="/plugins/forum/handler/attachment.ashx?site=main&action=down&aid={dr2[id]}" target="_blank">下载</a></p>
+                          </div>
+                          <a href="/plugins/forum/handler/attachment.ashx?site=main&action=down&aid={dr2[id]}" target="_blank" class="post_attachs">{dr2[Name]}</a>
+						  <span class="att_size"> (
+                          <%if({strtoint({dr2[FileSize]})}>1024)%>
+						 {tempSize}MB
+                          <%else%>
+                          {dr2[FileSize]}KB
+                          <%/if%>
+                          ) </span></span> </td>
+                      </tr>
+                      <%/foreach%>
+                    </tbody>
+                  </table>
+                </div>
+                <%/if%>
+                <%/if%>
+                <%/if%>
+              </div></td>
+          </tr>
+          <tr>
+            <td class="ex"><div class="signatures" data-userId="{dr[PostUserId]}" style="_overflow:hidden;_height:100px;max-height:100px; display:none;"> </div></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class="post_tool_a"><div class="post_tool clearfix">
+                <div class="fl">
+                  <ul>
+                    <li class="action_reply"><a href="<%linkurl("forum_post","reply",modelBoard.Id,modelTopic.Id)%>">回复</a></li>
+                    <li class="action_quote"><a href="<%linkurl("forum_post","reply",modelBoard.Id,modelTopic.Id,{dr[id]})%>">引用</a></li>
+                    <%if(modelUserExtended!=null)%>
+                    <li class="action_update">
+                      <%if({strtoint({dr[row_number]})}==1)%>
+                      <%if({strtoint({dr[PostUserId]})}==modelUserExtended.UserId)%>
+                      <a href="<%linkurl("forum_post","update",modelBoard.Id,modelTopic.Id,{dr[id]})%>">编辑</a>
+                      <%/if%>
+                      <%else%>
+                      <%if({strtoint({dr[PostUserId]})}==modelUserExtended.UserId)%>
+                      <a href="<%linkurl("forum_post","editor",modelBoard.Id,modelTopic.Id,{dr[id]})%>">编辑</a>
+                      <%/if%>
+                      <%/if%>
+                    </li>
+                    <%if({strtoint({dr[First]})}!=1)%>
+                    <%if({strtoint({dr[PostUserId]})}==modelUserExtended.UserId)%>
+                    <li class="action_delete"> <a href="<%linkurl("forum_post","selfdelete",modelBoard.Id,modelTopic.Id,{dr[id]})%>" onclick = "javascript:return window.confirm('确定要删除吗?');">删除我的回复</a> </li>
+                    <%/if%>
+                    
+                    <%else%>
+
+                      <%if({strtoint({dr[PostUserId]})}==modelUserExtended.UserId)%>
+                    <li class="action_delete"> <a href="<%linkurl("forum_post","selftopicdelete",modelBoard.Id,modelTopic.Id,{dr[id]})%>" onclick = "javascript:return window.confirm('确定要删除吗?');">删除我的主题</a> </li>
+                    <%/if%>
+
+                    <%/if%>
+                    <%/if%>
+                  </ul>
+                </div>
+                <div class="fr"> <a href="#top_reply">返回顶部</a> </div>
+              </div></td>
+          </tr>
+        </table>
+      </div>
+      <%/foreach%>
+    </form>
+  </div>
+  <div class="sp clearfix">
+    <div class="button_panel fl">
+      <ul class="fl">
+        <%if(modelUserExtended!=null)%>
+        <li> <a href="<%linkurl("forum_post","create",modelBoard.Id)%>"> <img src="{config.webpath}plugins/forum/templet/Default/images/post_button.png" alt="发帖" /> </a> </li>
+        <li> <a href="<%linkurl("forum_post","reply",modelBoard.Id,modelTopic.Id)%>"> <img src="{config.webpath}plugins/forum/templet/Default/images/reply_button.png" alt="回复" /> </a> </li>
+        <%else%>
+        <li> <span class="no_ct"> 您所在分组(<strong>游客</strong>)还不能进行回复
+          ，您可以进行<a href="<%linkurl("login")%>">登录</a>或<a href="<%linkurl("register")%>">注册</a> </span> </li>
+        <%/if%>
+      </ul>
+    </div>
+    <div class="page_panel fr">
+      <ul class="fl">
+        {pagelist}
+      </ul>
+    </div>
+  </div>
+  <%if(modelUserExtended!=null)%>
+  <div class="box_panel sp">
+    <div class="box_panel_title clearfix">
+      <div class="fl">快速回复</div>
+      <div class="fr"><a href="<%linkurl("forum_post","reply",modelBoard.Id,modelTopic.Id)%>">使用高级回帖</a>（可批量传图、插入附件等）</div>
+    </div>
+    <div class="box_panel_context quickly_create_reply">
+      <form id="post" method="post" action="#" onsubmit="return nsubmit();">
+        <input id="smile" name="smile" type="hidden" value="1" />
+        <input id="signature" name="signature" type="hidden" value="1" />
+        <input id="AutoUrl" name="AutoUrl" type="hidden" value="1" />
+        <input type="hidden" name="url" value="" />
+        <input id="title" name="title" type="hidden" value="{modelTopic.Title}" />
+        <input id="board_id" name="board_id" type="hidden" value="<%=board_id%>" />
+        <input id="topic_id" name="topic_id" type="hidden" value="<%=topic_id%>" />
+        <input id="action" name="action" type="hidden" value="reply" />
+        <input id="turl" name="turl" type="hidden" value="{turl}" />
+        <table>
+          <tr>
+            <td class="author"><div class="username">{modelUserExtended.Nickname}</div>
+              <div class="avatar"> <img src="/plugins/forum/handler/avatar.ashx?uid={modelUserExtended.UserId}&size=120" onerror="this.onerror=null;this.src='/plugins/forum/templet/Default/Images/avatar_none_120.jpg'" alt="{modelUserExtended.Nickname}" /> </div></td>
+            <td class="quickly_create_reply_main"><script type="text/plain" id="postEditor" style="width:100%;height:340px;"></script>
+              <div class="editor_loading">&nbsp;</div>
+              <div class="editor">
+                <div>
+                  <textarea name="message" id = "textarea_message" class = "TextField" cols = "60" rows = "20" style="visibility: hidden; display: none;"></textarea>
+                </div>
+                <div class="options">
+                  <input class="vc text" id="vc" name="vc" size="4" style="text-transform:uppercase;" tabindex="3" type="text" value="">
+                  <img id="vcimg" src="{config.webpath}plugins/forum/templet/Default/images/loading.gif" alt="code"> <a href="#" id="vcimgc" tabindex="6">看不清,换一张</a> </div>
+                <div class="action">
+                  <button type="submit" name="Ok" class="button skyblue">确认发布</button>
+                  [在内容区直接按 Ctrl+Enter 可完成发布] </div>
+              </div></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+  <%/if%>
+</div>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/common.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.lazyload.js" type="text/javascript"></script>
+<script type="text/javascript">
+        $(function () {
+            //加载图像
+            $("img[data-lasy]").lazyload({
+                data_attribute: "lasy",
+                failure_limit: 10,
+                skip_invisible: false,
+                effect: "fadeIn"
+            });
+        });
+    </script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/shadowbox/shadowbox.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/easydialog/easydialog.js" type="text/javascript"></script>
+<script src="{config.webpath}plugins/forum/templet/Default/scripts/jquery.form.js" type="text/javascript"></script>
+<link href="{config.webpath}plugins/forum/templet/Default/UMeditor/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" charset="utf-8" src="{config.webpath}plugins/forum/templet/Default/UMeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="{config.webpath}plugins/forum/templet/Default/UMeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="{config.webpath}plugins/forum/templet/Default/UMeditor/zh-cn.js"></script>
+<script type="text/javascript" src="{config.webpath}plugins/forum/templet/Default/Scripts/Post.js"></script>
+<%set DataTable dtMedalList=new DTcms.Web.Plugin.Forum.Label().get_medal_list()%>
+<%csharp%>
+System.Data.DataRow[] drMedalList = dtMedalList.Select("1=1");
+<%/csharp%>
+<%foreach(DataRow dr in drMedalList)%>
+<input id="Medal{dr[id]}" type="hidden" data-name="{dr[Name]}" data-description="{dr[Description]}" data-url="{dr[Url]}" data-available="{dr[Available]}" value="{dr[Image]}"/>
+<%/foreach%>
+<!--页面底部-->
+<%template src="/Default/_footer.html"%>
+<!--/页面底部-->
+</body>
+</html>

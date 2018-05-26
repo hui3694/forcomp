@@ -1,0 +1,99 @@
+﻿	
+<div class="wrap">
+  <link rel="stylesheet" type="text/css" media="all" href="/plugins/forum/Static/AttachmentMsg/Main.css" />    
+
+  <div> </div>
+  <div class="header clearfix">
+    <div class="header_logo">
+      <h1><a href="/index.aspx">论坛</a></h1>
+    </div>
+    <div class="header_user clearfix">
+      <div class="header_user_nav">
+
+          <%if(modelUserExtended==null)%>
+
+        <div class="header_user_nav_line"> <a href="<%linkurl("login")%>">登录</a> <span class="pipe">|</span> <a href="<%linkurl("register")%>">注册</a> </div>
+        <div class="header_user_nav_line"> <a href="<%linkurl("repassword")%>">找回密码</a> </div>
+
+          <%else%>
+
+          <div class="header_user_nav_line">
+                            <cite>                                
+                                    <a href="#">
+                                        {modelUserExtended.Nickname}
+                                    </a>                                
+                            </cite>
+                            
+                                <span class="pipe">|</span>
+                                <a href="<%linkurl("usercenter","index")%>">会员中心</a>				        
+                                  
+
+                            <span class="pipe">|</span>
+                            <a href="<%linkurl("usercenter","exit")%>" onclick="javascript:return window.confirm('确定要退出吗?');">登出</a>
+                        </div>
+          <div class="header_user_nav_line">
+				金币：<%=Convert.ToInt32(modelUserExtended.Credit)%>
+                <span class="pipe">|</span>
+				用户组：
+                {modelUserExtended.GroupName}
+                            
+            </div>
+
+          <%/if%>
+      </div>
+        
+        <%if(modelUserExtended==null)%>
+
+      <div class="header_avatar"> <img src="/plugins/forum/handler/avatar.ashx?uid=0&size=50" onerror="this.onerror=null;this.src='/plugins/forum/templet/Default/Images/avatar_none_50.jpg'" alt="游客" title="游客" /> </div>
+
+        <%else%>
+        <div class="header_avatar"> <img src="/plugins/forum/handler/avatar.ashx?uid={modelUserExtended.UserId}&size=50" onerror="this.onerror=null;this.src='/plugins/forum/templet/Default/Images/avatar_none_50.jpg'" alt="{modelUserExtended.Nickname}" title="{modelUserExtended.Nickname}" /> </div>
+        <%/if%>
+
+    </div>
+  </div>
+  <div class="menu sp clearfix">
+    <div class="fl">&nbsp;</div>
+    <div class="fr">&nbsp;</div>	
+    <div class="menu_context">
+      <ul>
+        <li><a href="/index.aspx"  target="_blank" >首页</a></li>
+        <li><a href="<%linkurl("forum_index","index")%>" >论坛</a></li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="menuex clearfix">
+    <div class="search">
+      <form method="get" action="#" target="_blank">
+        <input type="text" name="keys" id="SearchKeys" autocomplete="off" x-webkit-speech="" speech="" placeholder="请输入搜索内容" />
+        <button type="button" onclick="search($('#SearchKeys').val(),'<%linkurl("forum_search")%>')">搜索</button>        
+      </form>
+    </div>
+    <div class="hoskeywords clearfix">
+      <ul>
+        <li class="pipe">|</li>
+        <li><strong>热搜：</strong></li>
+        <li><a href="<%linkurl("forum_search")%>?keys=API" target="_blank">API</a></li>
+        <li><a href="<%linkurl("forum_search")%>?keys=Notify" target="_blank">Notify</a></li>
+        <li><a href="<%linkurl("forum_search")%>?keys=.NET" target="_blank">.net</a></li>
+        <li><a href="<%linkurl("forum_search")%>?keys=SQL" target="_blank">SQL</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+    <%if(Request.Url.ToString().ToLower().IndexOf("index.")==-1)%>
+
+    <style>.topic_list_panel .author{width:160px; }</style>
+    <div class="location">
+        <%=get_location(board_id)%>                        
+    </div>    
+
+    <%/if%>
+
+  <noscript>
+  <div class="ginfo sp" style="display: block; text-align: center;"> 本站由于需要 Javascript 才能正常运行。建议您开启 Javascript 支持或使用有 Javascript 支持的浏览器。 </div>
+  </noscript>
+</div>

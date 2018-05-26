@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>站内短信息 - {site.name}</title>
+<meta name="keywords" content="{site.seo_keyword}" />
+<meta name="description" content="{site.seo_description}" />
+<link href="<%templateskin%>/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{config.webpath}css/pagination.css" rel="stylesheet" type="text/css" />
+<link href="{config.webpath}scripts/artdialog/ui-dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="{config.webpath}scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="{config.webpath}scripts/artdialog/dialog-plus-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/common.js"></script>
+
+<script type="text/javascript">
+	function ExecPostBack(checkValue) {
+		if (arguments.length == 1) {
+			ExecDelete('{config.webpath}tools/submit_ajax.ashx?action=#', checkValue, '#turl');
+		}else{
+			var valueArr = '';
+			$("input[name='checkId']:checked").each(function(i){
+				valueArr += $(this).val();
+				if(i < $("input[name='checkId']:checked").length - 1){
+					valueArr += ","
+				}
+			});
+			ExecDelete('{config.webpath}tools/submit_ajax.ashx?action=#', valueArr, '#turl');
+		}
+    }
+</script>
+
+</head>
+
+<body>
+<!--Header-->
+<%template src="_header.html"%>
+<!--/Header-->
+
+<div class="section clearfix">
+  <div class="line30"></div>
+
+  <div class="info-wrap">
+    <!--左侧导航-->
+    <%template src="_ucenter_nav.html"%>
+    <!--/左侧导航-->
+    
+    <!--右侧内容-->
+    <div class="home-box">
+      <%if(action=="topic")%>
+
+      <!--主题-->
+      <div class="u-tab-head">
+        <p>
+          <a class="selected" href="<%linkurl("userforum","topic")%>">我的主题</a>
+          <a  href="<%linkurl("userforum","post")%>">我的回复</a>
+        </p>
+
+      </div>
+      <div class="u-tab-content">
+        <div class="title-div">
+          <strong>我的主题</strong>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mtable">
+                      <thead>
+              <tr>
+                <td colspan="2" class="title"> 标题 </td>
+                <td class="author">作者</td>
+                <td class="nums">回复/查看</td>
+                <td class="last">最后发表</td>
+              </tr>
+            </thead>
+          <%set DataTable list=new DTcms.Web.Plugin.Forum.Label().get_user_topic_list(10, page, "UserId="+userModel.id+""," id desc ", out totalcount)%> <!--取得一个DataTable-->
+          <%set string pagelist=get_page_link(10, page, totalcount, "userforum", action, "__id__")%> <!--取得分页页码列表-->
+          <%foreach(DataRow dr in list.Rows)%>
+            <tr>
+              <tr>
+                <td class="icon"><a href="<%linkurl("forum_topic",{dr[id]},1)%>" target="_blank"> <img src="{config.webpath}plugins/forum/templet/Default/images/topic_state_standard.gif" title="普通帖" alt="普通帖" /> </a> </td>
+                <td class="title">
+                  <span class="topic_title"> <a href="<%linkurl("forum_topic",{dr[id]},1)%>" title="{dr[Title]}" target="_blank"> {dr[Title]} </a> </span> </td>
+                <td class="author"><img src="/plugins/forum/handler/avatar.ashx?uid={dr[PostUserId]}&size=50" style="background-color: #fff;padding:2px;border: 1px solid #eee;margin: 2px 5px 0 0;width: 32px;height: 32px;float: left;" />
+                  <div> <cite> <a href="#"><span style="color:#0066ff;display: block;">{dr[PostNickname]}</span></a> </cite> <em title="{dr[PostDatetime]}"> {dr[PostDatetime]} </em> </div></td>
+                <td class="nums"><em style="display: block;">{dr[ViewCount]}</em> <em style="display: block;">{dr[ReplayCount]}</em> </td>
+                <td class="last"><cite> <a href="#{dr[LastPostUserId]}"><span style="color:#0066ff;display: block;">{dr[LastPostNickname]}</span></a> </cite> <em title="{dr[LastPostDatetime]}"> <a href="<%linkurl("forum_topic",{dr[id]},-1)%>" target="_blank">{dr[LastPostDatetime]}</a> </em> </td>
+              </tr>
+            </tr>
+          <%/foreach%>
+          <%if(list.Rows.Count==0)%>
+            <tr><td align="center">暂无记录...</td></tr>
+          <%/if%>
+        </table>
+                <div class="page-foot">
+          <div class="flickr right">{pagelist}</div><!--放置页码列表-->          
+        </div>
+      </div>
+      <input id="turl" type="hidden" value="<%linkurl("userforum","topic")%>" />
+      <!--/主题-->
+      
+      <%else if(action=="post")%>
+      <!--回贴-->
+      <div class="u-tab-head">
+        <p>
+          <a href="<%linkurl("userforum","topic")%>">我的主题</a>
+          <a class="selected"  href="<%linkurl("userforum","post")%>">我的回复</a>
+        </p>
+
+      </div>
+      <div class="u-tab-content">
+        <div class="title-div">
+          <strong>我的回复</strong>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mtable">
+                      <thead>
+              <tr>
+                <td colspan="2" class="title"> 标题 </td>
+                <td class="author">作者</td>
+                <td class="nums">回复/查看</td>
+                <td class="last">最后发表</td>
+              </tr>
+            </thead>
+          <%set DataTable list=new DTcms.Web.Plugin.Forum.Label().get_user_post_list(10, page, "UserId='"+userModel.id+"' "," id desc ", out totalcount)%> <!--取得一个DataTable-->
+      <%set string pagelist=get_page_link(10, page, totalcount, "userforum", action, "__id__")%> <!--取得分页页码列表-->
+          <%foreach(DataRow dr in list.Rows)%>
+            <tr>
+                <td class="icon"><a href="<%linkurl("forum_topic",{dr[id]},1)%>" target="_blank"> <img src="{config.webpath}plugins/forum/templet/Default/images/topic_state_standard.gif" title="普通帖" alt="普通帖" /> </a> </td>
+                <td class="title">
+                  <span class="topic_title"> <a href="<%linkurl("forum_topic",{dr[id]},1)%>" title="{dr[Title]}" target="_blank"> {dr[Title]} </a> </span> </td>
+                <td class="author"><img src="/plugins/forum/handler/avatar.ashx?uid={dr[PostUserId]}&size=50" style="background-color: #fff;padding:2px;border: 1px solid #eee;margin: 2px 5px 0 0;width: 32px;height: 32px;float: left;" />
+                  <div> <cite> <a href="#"><span style="color:#0066ff;display: block;">{dr[PostNickname]}</span></a> </cite> <em title="{dr[PostDatetime]}"> {dr[PostDatetime]} </em> </div></td>
+                <td class="nums"><em style="display: block;">{dr[ViewCount]}</em> <em style="display: block;">{dr[ReplayCount]}</em> </td>
+                <td class="last"><cite> <a href="#{dr[LastPostUserId]}"><span style="color:#0066ff;display: block;">{dr[LastPostNickname]}</span></a> </cite> <em title="{dr[LastPostDatetime]}"> <a href="<%linkurl("forum_topic",{dr[id]},-1)%>" target="_blank">{dr[LastPostDatetime]}</a> </em> </td>
+              </tr>
+          <%/foreach%>
+          <%if(list.Rows.Count==0)%>
+            <tr><td align="center">暂无记录...</td></tr>
+          <%/if%>
+        </table>
+        <div class="page-foot">
+          <div class="flickr right">{pagelist}</div><!--放置页码列表-->          
+        </div>
+      </div>
+      <input id="turl" type="hidden" value="<%linkurl("userforum","post")%>" />
+      <!--/回贴-->
+     
+      <%/if%>
+      
+    </div>
+    <!--/右侧内容-->
+  </div>
+</div>
+
+<!--Footer-->
+<%template src="_footer.html"%>
+<!--/Footer-->
+</body>
+</html>

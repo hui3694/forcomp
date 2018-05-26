@@ -1,0 +1,107 @@
+﻿<div class="wrap">
+    <!--<div>
+
+    </div>
+    <div class="footer">
+        <div class="link">
+            <p>
+
+                <a href="http://www.dtcms.net" target="_blank">DTcms 官方站</a>
+                |
+                <a href="http://www.dtcms-forum.net/" target="_blank">论坛源码</a>
+                |
+                <a href="http://www.dtcms-forum.net/" target="_blank">联系我们</a>
+                |
+                <a href="javascript:alert('仅支持群主拉入');" target="_blank">QQ交流群</a>
+
+            </p>
+            <p>
+                <a href="/">DTcms 论坛插件</a>
+
+                |
+                <a href="javascript:void(0);" onclick="javascript:widthauto(this);">切换到宽版</a>
+
+            </p>
+        </div>
+        <p>
+            Powered by <strong>DTcms Forum</strong> <em>1.0</em> (c) 2016-2025 <a href="http://www.DTcms-Forum.net/" target="_blank">dtcms-forum.net</a>
+        </p>
+        <p>Server time <%=System.DateTime.Now.ToString()%></p>
+
+    </div>-->
+
+
+    <script src="{config.webpath}plugins/forum/templet/Default/scripts/common.js" type="text/javascript"></script>
+    <script src="{config.webpath}plugins/forum/templet/Default/scripts/Board.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        var CSSLOADED = [];
+        function loadcss(cssname) {
+            if (!CSSLOADED[cssname]) {
+                if ($('#css_' + cssname).length <= 0) {
+                    css = document.createElement('link');
+                    css.id = 'css_' + cssname,
+                    css.type = 'text/css';
+                    css.rel = 'stylesheet';
+                    css.href = '{config.webpath}plugins/forum/templet/Default/styles/' + cssname + '.css';
+                    var headNode = document.getElementsByTagName("head")[0];
+                    headNode.appendChild(css);
+                } else {
+                    $('#css_' + cssname).href = '{config.webpath}plugins/forum/templet/Default/styles/' + cssname + '.css';
+                }
+                CSSLOADED[cssname] = 1;
+            }
+        }
+
+        function widthauto(obj) {
+            if ($('#css_width_auto').length > 0) {
+                CSSLOADED['width_auto'] = 1;
+            }
+            if (!CSSLOADED['width_auto'] || $('#css_width_auto').attr("disabled")) {
+                if (!CSSLOADED['width_auto']) {
+                    loadcss('width_auto');
+                } else {
+                    $('#css_width_auto').removeAttr("disabled");
+                }
+                //HTMLNODE.className += ' widthauto';
+                $.cookie('DTcms_Forum_1_width_auto', 'true', { expires: 100, path: '/' });
+                obj.innerHTML = '切换到窄版';
+            } else {
+                $('#css_width_auto').attr("disabled", "disabled");
+                //HTMLNODE.className = HTMLNODE.className.replace(' widthauto', '');
+                $.cookie('DTcms_Forum_1_width_auto', 'false', { expires: 100, path: '/' });
+                obj.innerHTML = '切换到宽版';
+            }
+        }
+
+        $(function () {
+            $.scrollUp({
+                scrollName: 'scrollUp',
+                scrollDistance: 300,
+                scrollFrom: 'top',
+                scrollSpeed: 300,
+                easingType: 'linear',
+                animation: 'fade',
+                animationInSpeed: 200,
+                animationOutSpeed: 200,
+                scrollText: '回到顶部',
+                scrollTitle: false,
+                scrollImg: true,
+                activeOverlay: false,
+                zIndex: 2147483647
+            });
+
+
+            $("a[data-href]").click(function () {
+                var url = $(this).data('href');
+                if (window.confirm("您将要访问的网址不属于 DTcms 官方论坛 ，我们无法确认该网页是否安全。是否要继续访问？"))
+                    window.open(url);
+                return false;
+            });
+        });
+    </script>
+
+
+
+</div>

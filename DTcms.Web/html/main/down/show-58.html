@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>jQThumb – jQuery缩略图插件 - JS代码 - DTcms内容管理系统</title>
+<meta name="keywords" content="jQThumb,jQuery,缩略图插件" />
+<meta name="description" content="一堆不同尺寸的图片创建相同尺寸的缩略图可不是件容易的事，除非有一个强大的后台程序或靠谱的软件，如果都没有或不想使用后台程序，那么可以试试 jQThumb。jQThumb 是一款基于 jQuery 的缩略图插件，它能够很方便的制作指定的尺寸的缩略图。" />
+<link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="/index.html">DTcms内容管理系统</a>
+        <p class="nav">
+          <a href="/news/index.html">资讯</a>
+          <a href="/goods.html">商城</a>
+          <a href="/video.html">视频</a>
+          <a href="/photo.html">图片</a>
+          <a href="/down.html">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "/tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="/user/center/exit.html">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/user/center/index.html">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="/register.html">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="/login.html">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="/cart.html">购物车<span id="shoppingCartCount"><script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="/content/contact.html">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Header-->
+
+<div class="section clearfix">
+  <!--右边-->
+  <div class="list-right">
+    <div class="sidebar-box">
+      <div class="line30"></div>
+      <h3>资源类别</h3>
+      <ul class="navbar">
+        
+        <li>
+          <h4><a href="/down/26.html">JS代码</a></h4>
+          <p>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/down/27.html">PSD素材</a></h4>
+          <p>
+            
+          </p>
+        </li>
+        
+        <li>
+          <h4><a href="/down/28.html">网页素材</a></h4>
+          <p>
+            
+          </p>
+        </li>
+        
+      </ul>
+      <div class="line20"></div>
+      <h3>推荐资源</h3>
+      <div class="focus-list">
+        <ul>
+          
+          <li>
+            <a title="腾讯游戏盒子2013官网页面html代码" href="/down/show-66.html">
+              <b><img src="/upload/201504/19/201504190052499389.png" /></b>
+              <span>腾讯游戏盒子2013官网页面html代码</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="30个IOS7风格简洁线条图标PSD素材" href="/down/show-65.html">
+              <b><img src="/upload/201504/19/201504190047488297.png" /></b>
+              <span>30个IOS7风格简洁线条图标PSD素材</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="六边形上传按钮PSD源文件下载" href="/down/show-63.html">
+              <b><img src="/upload/201504/19/201504190033256767.png" /></b>
+              <span>六边形上传按钮PSD源文件下载</span>
+            </a>
+          </li>
+          
+          <li>
+            <a title="ck_slide – 简单的jQuery幻灯片插件" href="/down/show-60.html">
+              <b><img src="/upload/201504/18/201504182357178753.jpg" /></b>
+              <span>ck_slide – 简单的jQuery幻灯片插件</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="line10"></div>
+      <h3>人气排行</h3>
+      <ul class="rank-list">
+        
+        <li class="active">
+        
+          <span>04-19</span>
+          <i class="num">1</i><a href="/down/show-66.html">腾讯游戏盒子2013官网页面html代码</a>
+        </li>
+        
+        <li>
+        
+          <span>04-18</span>
+          <i class="num">2</i><a href="/down/show-60.html">ck_slide – 简单的jQuery幻灯片插件</a>
+        </li>
+        
+        <li>
+        
+          <span>04-18</span>
+          <i class="num">3</i><a href="/down/show-57.html">jqueryrotate制作机锋网积分抽奖效果</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">4</i><a href="/down/show-70.html">PgwMenu – jQuery/Zepto响应式菜单</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">5</i><a href="/down/show-65.html">30个IOS7风格简洁线条图标PSD素材</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">6</i><a href="/down/show-63.html">六边形上传按钮PSD源文件下载</a>
+        </li>
+        
+        <li>
+        
+          <span>04-18</span>
+          <i class="num">7</i><a href="/down/show-56.html">干净整洁的绿色扁平化UI套件(PSD)</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">8</i><a href="/down/show-69.html">让IE7 IE8支持CSS3 background-size属性</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">9</i><a href="/down/show-68.html">Owl Carousel制作百度百科2014新首页幻灯片</a>
+        </li>
+        
+        <li>
+        
+          <span>04-19</span>
+          <i class="num">10</i><a href="/down/show-67.html">简单的描边图标</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!--/右边-->
+  
+  <!--左边-->
+  <div class="list-auto">
+    
+    <div class="meta">
+      <h1>jQThumb – jQuery缩略图插件</h1>
+      <p class="meta-info">
+        <span class="time">2015-04-18 23:37:55</span>
+        <span class="comm"><em id="comment">0</em>人评论</span>
+        <span class="view"><em id="view">0</em>次浏览</span>
+        <script type="text/javascript">ajaxComment("#comment","/",58); ajaxView("#view","/",58);</script>
+        分类：JS代码
+      </p>
+    </div>
+    
+    <div class="entry">
+      <p>
+	为一堆不同尺寸的图片创建相同尺寸的缩略图可不是件容易的事，除非有一个强大的后台程序或靠谱的软件，如果都没有或不想使用后台程序，那么可以试试 jQThumb。jQThumb 是一款基于 jQuery 的缩略图插件，它能够很方便的制作指定的尺寸的缩略图。
+</p>
+<p>
+	jQThumb 兼容所有浏览器，包括 IE6。在高级浏览器中使用背景方式实现，并设置图片的尺寸（background-size）和位置（background-position）实现居中；在 IE6 等老旧的浏览器中使用图片的方式实现，并使用绝对定位和 margin 实现居中。
+</p>
+<p align="center">
+	<img alt="" src="http://cdn.dowebok.com/img/124.jpg" />
+</p>
+    </div>
+    
+    <!--分享-->
+      <!-- JiaThis Button BEGIN --> 
+  <div id="ckepop">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tqq">腾讯</a>
+      <a class="jiathis_button_tsina">新浪</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_email">邮件</a>
+      <a class="jiathis_button_fav">收藏夹</a>
+      <a class="jiathis_button_copy">复制网址</a> 
+      <a href="http://www.jiathis.com/share/?uid=90225" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> 
+      <a class="jiathis_counter_style"></a> 
+  </div> 
+  <!-- JiaThis Button END -->
+  <script type="text/javascript">var jiathis_config={data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1336353133859589" charset="utf-8"></script>
+    <!--/分享-->
+    <div class="line15"></div>
+    
+    <!--附件列表-->
+    <h2 class="base-tit">
+      <span>附件下载</span>
+    </h2>
+    <ul class="attach-list">
+      
+      <li>
+        <span><a href="javascript:;" onclick="downLink(0,'/tools/download.ashx?site=main&id=3');">点击下载</a></span>
+        附件：jQThumb – jQuery缩略图插件.zip
+        <i>大小：
+          
+            772KB
+          
+        </i>
+        <i>下载：<script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_attach_count&id=3"></script>次</i>
+        <i>所需积分：0分</i>
+      </li>
+      
+    </ul>
+    <!--/附件列表-->
+    
+    <div class="line15"></div>
+    <!--相关推荐-->
+    <h2 class="base-tit">
+      <span>相关资源</span>
+    </h2>
+    <div class="rel-list">
+      <ul>
+        
+        <li>
+          <div class="img-box">
+            <a title="ck_slide – 简单的jQuery幻灯片插件" href="/down/show-60.html">
+              <img src="/upload/201504/18/201504182357178753.jpg" />
+            </a>
+          </div>
+          <div class="info">
+            <h3><a title="ck_slide – 简单的jQuery幻灯片插件" href="/down/show-60.html">ck_slide – 简单的jQuery幻灯片插件</a></h3>
+            <p>ck_slide 是一款国产的 jQuery 幻灯片插件，它非常小巧，压缩后仅 3KB，所以它的功能也不算丰富，但一般使用已经够了。它支持淡入淡出/左右滚动、箭头/圆点控制、自动播放。</p>
+            <span>2015-04-18 23:57:36</span>
+          </div>
+        </li>
+        
+        <li>
+          <div class="img-box">
+            <a title="jqueryrotate制作机锋网积分抽奖效果" href="/down/show-57.html">
+              <img src="/upload/201504/18/201504182324354376.jpg" />
+            </a>
+          </div>
+          <div class="info">
+            <h3><a title="jqueryrotate制作机锋网积分抽奖效果" href="/down/show-57.html">jqueryrotate制作机锋网积分抽奖效果</a></h3>
+            <p>应一网友的要求，做了一个类似机锋网积分抽奖的效果。其实这个效果和之前的“百度红包大放送抽奖效果”是一样的，使用了 jQuery 旋转插件——jquery.rotate.js，只是转盘不一样罢了。</p>
+            <span>2015-04-18 23:24:54</span>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    <!--/相关推荐-->
+    <div class="clear"></div>
+    
+    <!--用户评论-->
+    
+    <h2 class="base-tit">
+      <i>共有<b id="comment2">0</b>访客发表了评论</i>
+      <script type="text/javascript">ajaxComment("#comment2","/",58);</script>
+      <span>网友评论</span>
+    </h2>
+    <!--取得评论总数-->
+    <link rel="stylesheet" type="text/css" href="/css/validate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css" />
+    <link rel="stylesheet" type="text/css" href="/scripts/artdialog/ui-dialog.css" />
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/artdialog/dialog-plus-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/Validform_v5.3.2_min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery.pagination.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        //初始化评论列表
+        pageInitComment();
+        //初始化发表评论表单
+        AjaxInitForm('#comment_form', '#btnSubmit', 1, '', pageInitComment);
+      });
+      //初始化评论列表
+      function pageInitComment(){
+	AjaxPageList('#comment_list', '#pagination', 10, 0, '/tools/submit_ajax.ashx?action=comment_list&article_id=58', '/templates/main/images/user-avatar.png');
+      }
+    </script>
+    <div class="comment-add">
+      <form id="comment_form" name="comment_form" url="/tools/submit_ajax.ashx?action=comment_add&article_id=58">
+        <div class="editor">
+          <textarea id="txtContent" name="txtContent" class="input" datatype="*" sucmsg=" "></textarea>
+        </div>
+        <div class="subcon">
+          <input id="btnSubmit" name="submit" class="btn right" type="submit" value="提交评论（Ctrl+Enter）" />
+          <span>验证码：</span>
+          <input id="txtCode" name="txtCode" type="text" class="input small" datatype="s4-4" errormsg="请填写4位验证码" sucmsg=" " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('btnSubmit').click();return false};"  />
+          <a href="javascript:;" onclick="ToggleCode(this, '/tools/verify_code.ashx');return false;"><img src="/tools/verify_code.ashx" width="80" height="22" style="vertical-align:middle;" /> 看不清楚？</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="comment-box">
+      <ol id="comment_list" class="comment-list"></ol>
+    </div>
+    <!--放置页码-->
+    <div class="page-box" style="margin-left:-8px;">
+      <div id="pagination" class="digg"></div>
+    </div>
+    <div class="line10"></div>
+    <!--/放置页码-->
+    <!--用户评论-->
+    
+  </div>
+  <!--/左边-->
+  
+</div>
+
+<!--Footer-->
+<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="/index.html">首 页</a>|
+    <a target="_blank" href="/content/about.html">关于我们</a>|
+    <a target="_blank" href="/news/index.html">新闻资讯</a>|
+    <a target="_blank" href="/goods.html">购物商城</a>|
+    <a target="_blank" href="/video.html">视频专区</a>|
+    <a target="_blank" href="/down.html">资源下载</a>|
+    <a target="_blank" href="/photo.html">图片分享</a>|
+    <a target="_blank" href="/feedback.html">留言反馈</a>|
+    <a target="_blank" href="/link.html">友情链接</a>|
+    <a target="_blank" href="/content/contact.html">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号 DTcms版本号：4.0.3</p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<!--/Footer-->
+</body>
+</html>

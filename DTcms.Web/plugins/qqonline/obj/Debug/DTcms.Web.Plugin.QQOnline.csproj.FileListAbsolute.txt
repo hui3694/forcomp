@@ -1,0 +1,54 @@
+G:\DTcms_商业版\DTcms.Web\plugins\DTcms.Web.Plugin.QQOnline\bin\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版\DTcms.Web\plugins\DTcms.Web.Plugin.QQOnline\bin\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\DTcms.Web.Plugin.QQOnline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版\DTcms.Web\plugins\DTcms.Web.Plugin.QQOnline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.BLL.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Common.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.DAL.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.DBUtility.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Model.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Web.UI.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\NLog.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\NVelocity.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\Newtonsoft.Json.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.BLL.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Common.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.DAL.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.DBUtility.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Model.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\DTcms.Web.UI.pdb
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\NLog.xml
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\NVelocity.xml
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\bin\Debug\Newtonsoft.Json.xml
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+F:\DTcms_商业版\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+F:\DTcms_商业版\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+F:\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+F:\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+F:\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版_源码\DTcms_商业版\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版_源码\DTcms_商业版\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版_源码\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+G:\DTcms_商业版_源码\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版_源码\DTcms_商业版\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版_源码\DTcms_4.0.3 2016-11-04\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版_源码\DTcms_4.0.3 2016-11-04\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版_源码\DTcms_4.0.3 2016-11-04\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+G:\DTcms_商业版_源码\DTcms_4.0.3 2016-11-04\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版_源码\DTcms_4.0.3 2016-11-04\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版_出售\DTcms_4.0.3 2016-11-04\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版_出售\DTcms_4.0.3 2016-11-04\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+G:\DTcms_商业版_出售\DTcms_4.0.3 2016-11-04\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+G:\DTcms_商业版_出售\DTcms_4.0.3 2016-11-04\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+G:\DTcms_商业版_出售\DTcms_4.0.3 2016-11-04\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+H:\YWCMS\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+H:\YWCMS\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+H:\YWCMS\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
