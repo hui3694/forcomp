@@ -52,16 +52,8 @@ H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
 H:\YWCMS\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
 H:\YWCMS\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
-<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
 F:\demo\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
 F:\demo\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
-D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
-D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
-D:\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
-D:\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
-D:\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb

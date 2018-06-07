@@ -186,7 +186,6 @@ H:\YWCMS\DTcms.DAL\bin\Debug\Newtonsoft.Json.xml
 H:\YWCMS\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 H:\YWCMS\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
-<<<<<<< HEAD
 F:\demo\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.dll
 F:\demo\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
 F:\demo\forcomp\DTcms.DAL\bin\Debug\DTcms.Common.dll
@@ -204,22 +203,3 @@ F:\demo\forcomp\DTcms.DAL\bin\Debug\NVelocity.xml
 F:\demo\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 F:\demo\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.dll
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.Common.dll
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.DBUtility.dll
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.Model.dll
-D:\forcomp\DTcms.DAL\bin\Debug\Newtonsoft.Json.dll
-D:\forcomp\DTcms.DAL\bin\Debug\NLog.dll
-D:\forcomp\DTcms.DAL\bin\Debug\NVelocity.dll
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.Common.pdb
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.DBUtility.pdb
-D:\forcomp\DTcms.DAL\bin\Debug\DTcms.Model.pdb
-D:\forcomp\DTcms.DAL\bin\Debug\Newtonsoft.Json.xml
-D:\forcomp\DTcms.DAL\bin\Debug\NLog.xml
-D:\forcomp\DTcms.DAL\bin\Debug\NVelocity.xml
-D:\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
-D:\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.dll
-D:\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.pdb

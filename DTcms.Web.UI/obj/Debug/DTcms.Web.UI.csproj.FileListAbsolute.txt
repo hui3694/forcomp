@@ -292,7 +292,6 @@ H:\YWCMS\DTcms.Web.UI\bin\Debug\DTcms.DBUtility.pdb
 H:\YWCMS\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.dll
 H:\YWCMS\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.pdb
-<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Web.UI.dll
 F:\demo\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Web.UI.pdb
 F:\demo\forcomp\DTcms.Web.UI\bin\Debug\DTcms.BLL.dll
@@ -321,33 +320,3 @@ F:\demo\forcomp\DTcms.Web.UI\bin\Debug\DTcms.DBUtility.pdb
 F:\demo\forcomp\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.dll
 F:\demo\forcomp\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.pdb
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Web.UI.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Web.UI.pdb
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.BLL.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Common.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Model.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Search.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\Lucene.Net.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.DAL.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\Newtonsoft.Json.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\NLog.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\NVelocity.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\PanGu.Lucene.Analyzer.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\PanGu.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\PanGu.HighLight.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.DBUtility.dll
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.BLL.pdb
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Common.pdb
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Model.pdb
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.Search.pdb
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.DAL.pdb
-D:\forcomp\DTcms.Web.UI\bin\Debug\Newtonsoft.Json.xml
-D:\forcomp\DTcms.Web.UI\bin\Debug\NLog.xml
-D:\forcomp\DTcms.Web.UI\bin\Debug\NVelocity.xml
-D:\forcomp\DTcms.Web.UI\bin\Debug\PanGu.xml
-D:\forcomp\DTcms.Web.UI\bin\Debug\DTcms.DBUtility.pdb
-D:\forcomp\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.csprojResolveAssemblyReference.cache
-D:\forcomp\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.dll
-D:\forcomp\DTcms.Web.UI\obj\Debug\DTcms.Web.UI.pdb

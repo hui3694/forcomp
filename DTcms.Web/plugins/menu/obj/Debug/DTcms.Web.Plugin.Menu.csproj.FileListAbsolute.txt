@@ -43,16 +43,8 @@ H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Menu.pdb
 H:\YWCMS\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.dll
 H:\YWCMS\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.pdb
-<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.dll
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.pdb
 F:\demo\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.dll
 F:\demo\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.pdb
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
-D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.dll
-D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.pdb
-D:\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.csprojResolveAssemblyReference.cache
-D:\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.dll
-D:\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.pdb
