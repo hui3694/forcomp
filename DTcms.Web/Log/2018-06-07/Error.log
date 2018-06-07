@@ -1,0 +1,76 @@
+[2018-06-07 18:35:55.1321] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:f:\demo\forcomp\DTcms.Web\admin\news\news_list.aspx(56): error CS1061: “ASP.admin_news_news_list_aspx”不包含“btnWxPost_Click”的定义，并且找不到可接受类型为“ASP.admin_news_news_list_aspx”的第一个参数的扩展方法“btnWxPost_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-07 18:36:07.7090] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:38:56.7679] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:40:44.0501] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:41:23.0530] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:41:29.4077] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:41:32.7669] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:41:56.9164] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:43:06.0170] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:45:43.4252] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:45:59.5222] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:46:03.9076] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:46:09.0991] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:46:31.5527] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/article_edit.aspx?action=Copy&id=1&backurl=
+异常信息:文件“/admin/news/article_edit.aspx”不存在。 
+[2018-06-07 18:48:15.6276] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:48:31.6773] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:49:01.1892] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 18:56:05.7842] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-07 19:00:53.6414] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 

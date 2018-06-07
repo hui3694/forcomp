@@ -69,6 +69,7 @@
     <Compile Include="manager_role.cs" />
     <Compile Include="manager_role_value.cs" />
     <Compile Include="navigation.cs" />
+    <Compile Include="news.cs" />
     <Compile Include="orders.cs" />
     <Compile Include="order_config.cs" />
     <Compile Include="payment.cs" />

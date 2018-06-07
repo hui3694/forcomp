@@ -32,6 +32,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -141,6 +142,7 @@
     <Content Include="admin\manager\manager_pwd.aspx" />
     <Content Include="admin\manager\role_edit.aspx" />
     <Content Include="admin\manager\role_list.aspx" />
+    <Content Include="admin\news\news_list.aspx" />
     <Content Include="admin\order\express_edit.aspx" />
     <Content Include="admin\order\express_list.aspx" />
     <Content Include="admin\order\order_config.aspx" />
@@ -1166,6 +1168,13 @@
     </Compile>
     <Compile Include="admin\manager\role_list.aspx.designer.cs">
       <DependentUpon>role_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\news\news_list.aspx.cs">
+      <DependentUpon>news_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\news\news_list.aspx.designer.cs">
+      <DependentUpon>news_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\order\express_edit.aspx.cs">
       <DependentUpon>express_edit.aspx</DependentUpon>
