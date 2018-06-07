@@ -89,8 +89,6 @@ H:\YWCMS\DTcms.Search\obj\Debug\DTcms.Search.csprojResolveAssemblyReference.cach
 H:\YWCMS\DTcms.Search\obj\Debug\DTcms.Search.dll
 H:\YWCMS\DTcms.Search\obj\Debug\DTcms.Search.pdb
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Search\bin\Debug\DTcms.Search.dll
 F:\demo\forcomp\DTcms.Search\bin\Debug\DTcms.Search.pdb
 F:\demo\forcomp\DTcms.Search\bin\Debug\DTcms.Common.dll
@@ -109,9 +107,6 @@ F:\demo\forcomp\DTcms.Search\bin\Debug\NVelocity.xml
 F:\demo\forcomp\DTcms.Search\obj\Debug\DTcms.Search.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.Search\obj\Debug\DTcms.Search.dll
 F:\demo\forcomp\DTcms.Search\obj\Debug\DTcms.Search.pdb
-=======
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 D:\forcomp\DTcms.Search\bin\Debug\DTcms.Search.dll
@@ -132,10 +127,3 @@ D:\forcomp\DTcms.Search\bin\Debug\NVelocity.xml
 D:\forcomp\DTcms.Search\obj\Debug\DTcms.Search.csprojResolveAssemblyReference.cache
 D:\forcomp\DTcms.Search\obj\Debug\DTcms.Search.dll
 D:\forcomp\DTcms.Search\obj\Debug\DTcms.Search.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
-=======
->>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
