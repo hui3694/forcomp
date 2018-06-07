@@ -1,0 +1,8 @@
+[2018-05-27 00:41:36.3847] 
+客户机IP:::1
+错误地址:http://localhost:40610/__browserLink/requestData/80b18b6ddd1a46299e3407dfcf930a2b?version=2
+异常信息:对象名 'dt_channel_site' 无效。 
+[2018-05-27 00:41:39.1691] 
+客户机IP:::1
+错误地址:http://localhost:40610/admin/login.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
