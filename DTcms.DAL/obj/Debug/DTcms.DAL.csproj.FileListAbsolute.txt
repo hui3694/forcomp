@@ -188,6 +188,7 @@ H:\YWCMS\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 H:\YWCMS\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\demo\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.dll
 F:\demo\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
 F:\demo\forcomp\DTcms.DAL\bin\Debug\DTcms.Common.dll
@@ -208,6 +209,8 @@ F:\demo\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
 =======
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 D:\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.dll
 D:\forcomp\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
 D:\forcomp\DTcms.DAL\bin\Debug\DTcms.Common.dll
@@ -226,6 +229,9 @@ D:\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
 D:\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 D:\forcomp\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7

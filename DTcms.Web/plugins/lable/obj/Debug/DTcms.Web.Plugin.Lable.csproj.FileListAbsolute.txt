@@ -56,6 +56,7 @@ H:\YWCMS\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.dll
 H:\YWCMS\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.dll
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.pdb
 F:\demo\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.csprojResolveAssemblyReference.cache
@@ -64,12 +65,17 @@ F:\demo\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.pdb
 =======
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.dll
 D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.pdb
 D:\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.csprojResolveAssemblyReference.cache
 D:\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.dll
 D:\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7

@@ -34,6 +34,7 @@ H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Forum.pdb
 H:\YWCMS\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Web\bin\NLog.config
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Forum.dll
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Forum.pdb
@@ -43,6 +44,8 @@ F:\demo\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb
 =======
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 D:\forcomp\DTcms.Web\bin\NLog.config
 D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Forum.dll
 D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Forum.pdb
@@ -50,6 +53,9 @@ D:\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.csprojResolv
 D:\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.dll
 D:\forcomp\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7

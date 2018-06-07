@@ -130,6 +130,7 @@ H:\YWCMS\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.dll
 H:\YWCMS\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.dll
 F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.pdb
 F:\demo\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.csprojResolveAssemblyReference.cache
@@ -138,12 +139,17 @@ F:\demo\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.p
 =======
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.dll
 D:\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.pdb
 D:\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.csprojResolveAssemblyReference.cache
 D:\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.dll
 D:\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7

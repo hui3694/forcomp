@@ -216,6 +216,7 @@ H:\YWCMS\DTcms.BLL\obj\Debug\DTcms.BLL.dll
 H:\YWCMS\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\demo\forcomp\DTcms.BLL\bin\Debug\DTcms.BLL.dll
 F:\demo\forcomp\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
 F:\demo\forcomp\DTcms.BLL\bin\Debug\DTcms.Common.dll
@@ -238,6 +239,8 @@ F:\demo\forcomp\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
 =======
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 D:\forcomp\DTcms.BLL\bin\Debug\DTcms.BLL.dll
 D:\forcomp\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
 D:\forcomp\DTcms.BLL\bin\Debug\DTcms.Common.dll
@@ -258,6 +261,9 @@ D:\forcomp\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
 D:\forcomp\DTcms.BLL\obj\Debug\DTcms.BLL.dll
 D:\forcomp\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
+=======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
 =======
 >>>>>>> 1de53936b10807c89e420b3cf17abce8a38819c7
