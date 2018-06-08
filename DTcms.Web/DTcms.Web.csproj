@@ -1722,6 +1722,9 @@
     <Compile Include="tools\admin_ajax.ashx.cs">
       <DependentUpon>admin_ajax.ashx</DependentUpon>
     </Compile>
+    <Compile Include="tools\app_ajax.ashx.cs">
+      <DependentUpon>app_ajax.ashx</DependentUpon>
+    </Compile>
     <Compile Include="tools\download.ashx.cs">
       <DependentUpon>download.ashx</DependentUpon>
     </Compile>
@@ -1830,6 +1833,7 @@
     <None Include="templates\mobile\jqmobi\plugins\README.md" />
     <Content Include="xmlconfig\lucene.config" />
     <Content Include="tools\lucene.ashx" />
+    <Content Include="tools\app_ajax.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
