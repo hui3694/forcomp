@@ -12,6 +12,7 @@ namespace DTcms.Model
 
         private int _id = 0;
         private string _title = string.Empty;
+        private string _zhaiyao = string.Empty;
         private string _cont = string.Empty;
         private string _img = string.Empty;
         private int _sort = 0;
@@ -37,6 +38,14 @@ namespace DTcms.Model
         {
            set { _title = value; }
            get { return _title; }
+        }
+        /// <summary>
+        /// 摘要
+        /// </summary>
+        public string zhaiyao
+        {
+           set { _zhaiyao = value; }
+           get { return _zhaiyao; }
         }
         public string cont
         {

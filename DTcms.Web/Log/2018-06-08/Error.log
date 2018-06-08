@@ -1,0 +1,172 @@
+[2018-06-08 15:55:34.6720] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 15:55:34.6720] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1528444534609
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 15:55:34.7169] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 15:55:34.7299] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 15:55:34.7299] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 15:55:34.7299] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:05:33.4848] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_edit.aspx?action=Edit&id=1&backurl=
+异常信息:f:\demo\forcomp\DTcms.Web\admin\news\news_edit.aspx(228): error CS1061: “ASP.admin_news_news_edit_aspx”不包含“channel_id”的定义，并且找不到可接受类型为“ASP.admin_news_news_edit_aspx”的第一个参数的扩展方法“channel_id”(是否缺少 using 指令或程序集引用?) 
+[2018-06-08 16:06:38.8133] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:06:38.8133] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1528445198753
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:06:38.8502] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:06:38.8621] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:06:38.8621] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:06:38.8621] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:15.5007] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:15.5007] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1528445235504
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:38.7955] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:38.8084] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1528445258804
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:38.8481] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:38.8670] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:38.8670] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:07:38.8670] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:13:32.1717] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:13:32.1717] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1528445612175
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:13:32.2056] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:13:32.2056] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:13:32.2056] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:13:32.2205] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:14:07.5371] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:14:07.5471] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1528445647544
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:14:07.5820] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:14:07.5939] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:14:07.5939] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:14:07.5939] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:16:28.1056] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:16:28.1056] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:16:28.1056] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-08 16:20:07.6875] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_edit.aspx?action=Edit&id=1&backurl=
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-08 16:21:00.5490] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_edit.aspx?action=Edit&id=1&backurl=
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-08 16:21:03.8915] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_edit.aspx?action=Edit&id=1&backurl=
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-08 16:21:05.3865] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-08 16:26:57.6742] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_edit.aspx?action=Edit&id=1&backurl=
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-08 16:42:07.5235] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_list.aspx
+异常信息:f:\demo\forcomp\DTcms.Web\admin\news\news_list.aspx(135): error CS1061: “ASP.admin_news_news_list_aspx”不包含“channel_id”的定义，并且找不到可接受类型为“ASP.admin_news_news_list_aspx”的第一个参数的扩展方法“channel_id”(是否缺少 using 指令或程序集引用?) 
+[2018-06-08 16:44:16.2569] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/news_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 

@@ -49,7 +49,7 @@
       <a class="menu-btn"></a>
       <div class="l-list">
         <ul class="icon-list">
-          <li runat="server" id="addBtnPannel"><a class="add" href="article_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>&backurl=<%=DTRequest.GetUrlParameter() %>"><i></i><span>新增</span></a></li>
+          <li runat="server" id="addBtnPannel"><a class="add" href="news_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>&backurl=<%=DTRequest.GetUrlParameter() %>"><i></i><span>新增</span></a></li>
           <li runat="server" id="editBtnPannel"><asp:LinkButton ID="btnSave" runat="server" CssClass="save" onclick="btnSave_Click"><i></i><span>保存</span></asp:LinkButton></li>
           <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i></i><span>全选</span></a></li>
           <li runat="server" id="delBtnPannel"><asp:LinkButton ID="btnDelete" runat="server" CssClass="del" OnClientClick="return ExePostBack('btnDelete');" onclick="btnDelete_Click"><i></i><span>彻底删除</span></asp:LinkButton></li>
@@ -61,6 +61,12 @@
       <div class="r-list">
         <asp:TextBox ID="txtKeywords" runat="server" CssClass="keyword" />
         <asp:LinkButton ID="lbtnSearch" runat="server" CssClass="btn-search" onclick="btnSearch_Click">查询</asp:LinkButton>
+      </div>
+      <div class="r-list">
+        <asp:TextBox ID="TextBox1" runat="server" CssClass="keyword" />
+        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn-search" onclick="btnSearch_Click">查询</asp:LinkButton>
+        <asp:LinkButton ID="lbtnViewImg" runat="server" CssClass="img-view" onclick="lbtnViewImg_Click" ToolTip="图像列表视图" />
+        <asp:LinkButton ID="lbtnViewTxt" runat="server" CssClass="txt-view" onclick="lbtnViewTxt_Click" ToolTip="文字列表视图" />
       </div>
     </div>
   </div>
@@ -89,7 +95,7 @@
         <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" style="vertical-align:middle;" />
         <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
       </td>
-      <td><a href="article_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>"><%#Eval("title")%></a></td>
+      <td><a href="news_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>"><%#Eval("title")%></a></td>
       <td><%#string.Format("{0:g}",Eval("time"))%></td>
       <td><asp:TextBox ID="txtSortId" runat="server" Text='<%#Eval("sort")%>' CssClass="sort" onkeydown="return checkNumber(event);" /></td>
       <td><%# Convert.ToInt32(Eval("is_hide")) == 0 ? "√" : Convert.ToInt32(Eval("is_hide")) == 1 ? "×" : "-"%></td>
@@ -100,7 +106,8 @@
         </div>
       </td>
       <td align="center">
-        <a href="article_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>">修改</a>
+        <a href="news_edit.aspx?action=<%#DTEnums.ActionEnum.Copy %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>">复制</a>
+        <a href="news_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>">修改</a>
       </td>
     </tr>
   </ItemTemplate>
@@ -112,7 +119,42 @@
   <!--/文字列表-->
 
   <!--图片列表-->
-  
+  <asp:Repeater ID="rptList2" runat="server" onitemcommand="rptList_ItemCommand">
+  <HeaderTemplate>
+  <div class="imglist">
+    <ul>
+  </HeaderTemplate>
+  <ItemTemplate>
+      <li>
+        <div class="details<%#Eval("img").ToString() != "" ? "" : " nopic"%>">
+          <div class="check">
+            <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" />
+            <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
+          </div>
+          <%#Eval("img").ToString() != "" ? "<div class=\"pic\"><img src=\"../skin/default/loadimg.gif\" data-original=\"" + Eval("img") + "\" /></div><i class=\"absbg\"></i>" : ""%>
+          <h1><span><a href="news_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>"><%#Eval("title")%></a></span></h1>
+          <div class="remark">
+            <%#Eval("zhaiyao").ToString() == "" ? "暂无内容摘要说明..." : Eval("zhaiyao").ToString()%>
+          </div>
+          <div class="tools">
+            <asp:LinkButton ID="lbtnIsMsg" CommandName="lbtnIsMsg" runat="server" CssClass='<%# Convert.ToInt32(Eval("is_msg")) == 1 ? "msg selected" : "msg"%>' ToolTip='<%# Convert.ToInt32(Eval("is_msg")) == 1 ? "取消评论" : "设置评论"%>' />
+            <asp:LinkButton ID="lbtnIsHide" CommandName="lbtnIsHide" runat="server" CssClass='<%# Convert.ToInt32(Eval("is_hide")) == 1 ? "hot selected" : "hot"%>' ToolTip='<%# Convert.ToInt32(Eval("is_hide")) == 1 ? "取消隐藏" : "设置隐藏"%>' />
+            <asp:TextBox ID="txtSortId" runat="server" Text='<%#Eval("sort")%>' CssClass="sort" onkeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)));" />
+          </div>
+          <div class="foot">
+            <p class="time"><%#string.Format("{0:yyyy-MM-dd HH:mm:ss}", Eval("time"))%></p>
+            <a href="news_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>" title="编辑" class="edit">编辑</a>
+            <a href="news_edit.aspx?action=<%#DTEnums.ActionEnum.Copy %>&id=<%#Eval("id")%>&backurl=<%=DTRequest.GetUrlParameter() %>" title="复制" class="copy">复制</a>
+          </div>
+        </div>
+      </li>
+  </ItemTemplate>
+  <FooterTemplate>
+      <%#rptList2.Items.Count == 0 ? "<div align=\"center\" style=\"font-size:12px;line-height:30px;color:#666;\">暂无记录</div>" : ""%>
+    </ul>
+  </div>
+  </FooterTemplate>
+  </asp:Repeater>
   <!--/图片列表-->
 </div>
 <!--/列表-->

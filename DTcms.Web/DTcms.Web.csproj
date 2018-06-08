@@ -142,6 +142,7 @@
     <Content Include="admin\manager\manager_pwd.aspx" />
     <Content Include="admin\manager\role_edit.aspx" />
     <Content Include="admin\manager\role_list.aspx" />
+    <Content Include="admin\news\news_edit.aspx" />
     <Content Include="admin\news\news_list.aspx" />
     <Content Include="admin\order\express_edit.aspx" />
     <Content Include="admin\order\express_list.aspx" />
@@ -1169,6 +1170,13 @@
     <Compile Include="admin\manager\role_list.aspx.designer.cs">
       <DependentUpon>role_list.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\news\news_edit.aspx.cs">
+      <DependentUpon>news_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\news\news_edit.aspx.designer.cs">
+      <DependentUpon>news_edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\news\news_list.aspx.cs">
       <DependentUpon>news_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1838,7 +1846,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>40608</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:40610/</IISUrl>
+          <IISUrl>http://localhost:40620/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

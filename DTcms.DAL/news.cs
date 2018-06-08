@@ -18,7 +18,7 @@ namespace DTcms.DAL
         public news(string _databaseprefix)
         {
             this.databaseprefix = _databaseprefix;
-            this.column = "id,title,cont,img,sort,click,is_msg,is_hide,time";
+            this.column = "id,title,zhaiyao,cont,img,sort,click,is_msg,is_hide,time";
         }
 
         #region 基本方法
@@ -95,12 +95,13 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into [" + databaseprefix + "news](");
-            strSql.Append("title,cont,img,sort,click,is_msg,is_hide,time");
+            strSql.Append("title,zhaiyao,cont,img,sort,click,is_msg,is_hide,time");
             strSql.Append(") values(");
-            strSql.Append("@title,@cont,@img,@sort,@click,@is_msg,@is_hide,@time)");
+            strSql.Append("@title,@zhaiyao,@cont,@img,@sort,@click,@is_msg,@is_hide,@time)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                 new SqlParameter("@title", SqlDbType.VarChar,100),
+                new SqlParameter("@zhaiyao", SqlDbType.VarChar,255),
                 new SqlParameter("@cont", SqlDbType.NText),
                 new SqlParameter("@img", SqlDbType.VarChar,255),
                 new SqlParameter("@sort", SqlDbType.Int,4),
@@ -110,13 +111,14 @@ namespace DTcms.DAL
 				new SqlParameter("@time", SqlDbType.DateTime)
             };
             parameters[0].Value = model.title;
-            parameters[1].Value = model.cont;
-            parameters[2].Value = model.img;
-            parameters[3].Value = model.sort;
-            parameters[4].Value = model.click;
-            parameters[5].Value = model.is_msg;
-            parameters[6].Value = model.is_hide;
-            parameters[7].Value = model.time;
+            parameters[1].Value = model.zhaiyao;
+            parameters[2].Value = model.cont;
+            parameters[3].Value = model.img;
+            parameters[4].Value = model.sort;
+            parameters[5].Value = model.click;
+            parameters[6].Value = model.is_msg;
+            parameters[7].Value = model.is_hide;
+            parameters[8].Value = model.time;
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (null != obj)
             {
@@ -152,6 +154,7 @@ namespace DTcms.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update [" + databaseprefix + "news] set ");
             strSql.Append("title=@title,");
+            strSql.Append("zhaiyao=@zhaiyao,");
             strSql.Append("cont=@cont,");
             strSql.Append("img=@img,");
             strSql.Append("sort=@sort,");
@@ -162,6 +165,7 @@ namespace DTcms.DAL
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
                 new SqlParameter("@title", SqlDbType.VarChar,100),
+                new SqlParameter("@zhaiyao", SqlDbType.VarChar,255),
                 new SqlParameter("@cont", SqlDbType.NText),
                 new SqlParameter("@img", SqlDbType.VarChar,255),
                 new SqlParameter("@sort", SqlDbType.Int,4),
@@ -172,14 +176,15 @@ namespace DTcms.DAL
                 new SqlParameter("@id", SqlDbType.Int,4)
             };
             parameters[0].Value = model.title;
-            parameters[1].Value = model.cont;
-            parameters[2].Value = model.img;
-            parameters[3].Value = model.sort;
-            parameters[4].Value = model.click;
-            parameters[5].Value = model.is_msg;
-            parameters[6].Value = model.is_hide;
-            parameters[7].Value = model.time;
-            parameters[8].Value = model.id;
+            parameters[1].Value = model.zhaiyao;
+            parameters[2].Value = model.cont;
+            parameters[3].Value = model.img;
+            parameters[4].Value = model.sort;
+            parameters[5].Value = model.click;
+            parameters[6].Value = model.is_msg;
+            parameters[7].Value = model.is_hide;
+            parameters[8].Value = model.time;
+            parameters[9].Value = model.id;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -307,6 +312,10 @@ namespace DTcms.DAL
             	if (null != row["title"])
             	{
             		model.title = row["title"].ToString();
+            	}
+            	if (null != row["zhaiyao"])
+            	{
+            		model.zhaiyao = row["zhaiyao"].ToString();
             	}
             	if (null != row["cont"])
             	{

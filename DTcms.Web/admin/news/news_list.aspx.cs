@@ -20,13 +20,19 @@ namespace DTcms.Web.admin.news
         protected string keywords = string.Empty;
         protected string prolistview = string.Empty;
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.keywords = DTRequest.GetQueryString("keywords");
 
             this.pageSize = GetPageSize(10);
-            
-            this.prolistview = "Txt";
+
+            this.prolistview = Utils.GetCookie("news_list_view");
+            if (string.IsNullOrEmpty(this.prolistview))
+            {
+                this.prolistview = "Txt";
+            }
+
             if (!Page.IsPostBack)
             {
                 ChkAdminLevel("news_list", DTEnums.ActionEnum.View.ToString()); //检查权限
@@ -56,12 +62,14 @@ namespace DTcms.Web.admin.news
             switch (this.prolistview)
             {
                 case "Txt":
+                    this.rptList2.Visible = false;
                     this.rptList1.DataSource = bll.GetList(this.pageSize, this.page, _strWhere, _orderby, out this.totalCount);
                     this.rptList1.DataBind();
                     break;
                 default:
-                    this.rptList1.DataSource = bll.GetList(this.pageSize, this.page, _strWhere, _orderby, out this.totalCount);
-                    this.rptList1.DataBind();
+                    this.rptList1.Visible = false;
+                    this.rptList2.DataSource = bll.GetList(this.pageSize, this.page, _strWhere, _orderby, out this.totalCount);
+                    this.rptList2.DataBind();
                     break;
             }
             //绑定页码
@@ -187,6 +195,9 @@ namespace DTcms.Web.admin.news
             if (this.rptList1.Visible == true)
             {
                 rptList = this.rptList1;
+            }else
+            {
+                rptList = this.rptList2;
             }
 
             for (int i = 0; i < rptList.Items.Count; i++)
@@ -215,6 +226,10 @@ namespace DTcms.Web.admin.news
             if (this.rptList1.Visible == true)
             {
                 rptList = this.rptList1;
+            }
+            else
+            {
+                rptList = this.rptList2;
             }
        
             //循环删除
