@@ -32,9 +32,20 @@ namespace DTcms.Web.tools
 
         private void get_news_list(HttpContext context)
         {
-            int page = DTRequest.GetFormInt("page");
+            int page = DTRequest.GetInt("page",1);
             int count = 0;
-            DataSet ds = new BLL.news().GetList(8, page, "", "time desc", out count);
+            var pageSize = 3;
+            int sum = new BLL.news().GetCount("");
+
+            if ((page - 1) * pageSize > sum)
+            {
+                //没有更多数据
+                context.Response.Write("{\"status\":0,\"msg\":\"没有更多数据\"}");
+                return;
+            }
+
+            DataSet ds = new BLL.news().GetList(pageSize, page, "", "sort,time desc", out count);
+
             string strJson = DTcms.Common.JsonHelper.DataTableToJSON(ds.Tables[0]);
 
             context.Response.Write(strJson);
