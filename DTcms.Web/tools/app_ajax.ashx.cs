@@ -29,6 +29,9 @@ namespace DTcms.Web.tools
                 case "get_category_list"://获取产品栏目列表
                     get_category_list(context);
                     break;
+                case "get_openid":  //获取openid
+                    get_openid(context);
+                    break;
             }
 
         }
@@ -85,6 +88,25 @@ namespace DTcms.Web.tools
             strJson = strJson.TrimEnd(',') + "]";
             context.Response.Write(strJson.TrimEnd(','));
 
+        }
+
+        private void get_openid(HttpContext context)
+        {
+            string appid = DTRequest.GetFormString("appid");
+            string secre = DTRequest.GetFormString("secre");
+            string code = DTRequest.GetFormString("code");
+
+            System.Net.WebRequest wReq = System.Net.WebRequest.Create("https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=" + secre + "&js_code=" + code+ "&grant_type=authorization_code");
+            // Get the response instance. 
+            System.Net.WebResponse wResp = wReq.GetResponse();
+            System.IO.Stream respStream = wResp.GetResponseStream();
+            // Dim reader As StreamReader = New StreamReader(respStream) 
+            using (System.IO.StreamReader reader = new System.IO.StreamReader(respStream, System.Text.Encoding.GetEncoding("utf-8")))
+            {
+                context.Response.Write(reader.ReadToEnd());
+                
+            }
+            
         }
 
         public bool IsReusable

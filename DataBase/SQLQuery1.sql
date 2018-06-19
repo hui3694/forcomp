@@ -29,3 +29,24 @@ insert into fg_pro_category values('title','','',1,0,1)
 select * from fg_pro_category
 
 select count(1) from fg_article_category
+
+--drop table fg_user
+create table fg_user(
+	id int primary key identity,
+	avatar varchar(100),
+	nickname varchar(100),
+	openid varchar(50),
+	unionid varchar(50),
+	point int,
+	img varchar(100),
+	level int,
+	parent_id int,
+	phone varchar(20),
+	email varchar(32),
+	sex int,
+	area varchar(100),
+	status int,
+	reg_time datetime,
+	login_time datetime
+)
+select * from fg_user
