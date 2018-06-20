@@ -1,0 +1,11 @@
+﻿
+<!--头部栏目调用-->
+<%set DataTable MainMenu=get_plugin_method("DTcms.Web.Plugin.Menu", "menu", "get_menu_list", 1, 0)%>
+<%foreach(DataRow dr in MainMenu.Rows)%>
+{dr[link_url]}
+target="{dr[target]}"
+{dr[title]}
+<%/foreach%>
+
+
+

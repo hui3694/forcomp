@@ -1,0 +1,17 @@
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.DAL.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.DAL.pdb
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.Common.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.DBUtility.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.Model.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\Newtonsoft.Json.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\NLog.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\NVelocity.dll
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.Common.pdb
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.DBUtility.pdb
+F:\demo\forcomp\DTcms.DAL\bin\Release\DTcms.Model.pdb
+F:\demo\forcomp\DTcms.DAL\bin\Release\Newtonsoft.Json.xml
+F:\demo\forcomp\DTcms.DAL\bin\Release\NLog.xml
+F:\demo\forcomp\DTcms.DAL\bin\Release\NVelocity.xml
+F:\demo\forcomp\DTcms.DAL\obj\Release\DTcms.DAL.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.DAL\obj\Release\DTcms.DAL.dll
+F:\demo\forcomp\DTcms.DAL\obj\Release\DTcms.DAL.pdb

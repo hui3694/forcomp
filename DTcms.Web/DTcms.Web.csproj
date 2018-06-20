@@ -1838,6 +1838,7 @@
     <Content Include="scripts\erweima\dist\cjs\qrious.js.map" />
     <Content Include="scripts\erweima\dist\umd\qrious.js.map" />
     <Content Include="scripts\erweima\dist\umd\qrious.min.js.map" />
+    <None Include="Properties\PublishProfiles\配置文件1.pubxml" />
     <None Include="scripts\ueditor\third-party\.DS_Store" />
     <None Include="scripts\ueditor\third-party\jquery-1.10.2.min.map" />
     <None Include="scripts\ueditor\third-party\video-js\font\vjs.eot" />

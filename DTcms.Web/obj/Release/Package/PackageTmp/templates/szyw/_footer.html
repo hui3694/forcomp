@@ -1,0 +1,14 @@
+﻿<div class="footer clearfix">
+  <div class="foot-nav">
+    <%set DataTable footMenu=get_plugin_method("DTcms.Web.Plugin.Menu", "menu", "get_menu_list", 3, 0)%>
+    <%foreach(DataRow dr in footMenu.Rows)%>
+    <a href="{dr[link_url]}" target="{dr[target]}" title="{dr[title]}">{dr[title]}</a>
+    <%/foreach%>
+  </div>
+  <div class="copyright">
+    <p>版权所有 <%=site.company%> <a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">{site.crod}</a> DTcms版本号：<%=Utils.GetVersion()%></p>
+    <p><%=site.copyright%></p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>
+<script src="/plugins/qqonline/skin/js/qqonline.js" language="javascript"></script>

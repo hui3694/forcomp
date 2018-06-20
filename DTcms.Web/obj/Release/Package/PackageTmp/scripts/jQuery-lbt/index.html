@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        /************************样式区。原本都打算写到JS里面的。不过这玩意改的比较多。新手改CSS没啥问题我就写在这了*****************************************/
+        /*  修改输出屏大小  */
+        .banner { /*  修改输出屏大小  */
+            width: 550px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .banner .img {
+                width: 99999px;
+                position: absolute;
+                left: 0px;
+                top: 0;
+            }
+
+                .banner .img li {
+                    float: left;
+                }
+                /*/ 修改图片大小 /*/
+                .banner .img img {
+                    width: 550px;
+                }
+            /*/ 小圆圈 /*/
+            .banner .num {
+                position: absolute;
+                width: 100%;
+                bottom: 10px;
+                left: 0;
+                text-align: center;
+                font-size: 0px;
+            }
+
+                .banner .num li {
+                    width: 10px;
+                    height: 10px;
+                    background: #888;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: 0 3px;
+                    cursor: pointer;
+                }
+
+                    .banner .num li.on {
+                        background: #F60;
+                    }
+            /*/ 按钮 /*/
+            .banner .btn {
+                width: 30px;
+                height: 50px;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                top: 50%;
+                margin-top: -25px;
+                cursor: pointer;
+                text-align: center;
+                line-height: 50px;
+                color: #fff;
+                font-size: 40px;
+                font-family: "宋体";
+                display: none;
+            }
+
+            .banner:hover .btn {
+                display: block;
+            }
+
+            .banner .btn_l {
+                left: 0;
+            }
+
+            .banner .btn_r {
+                right: 0;
+            }
+
+
+        /*/ 第一个轮播 /*/
+        #ban1 .banner {
+            width: 1000px;
+            height: 500px;
+            margin: 100px auto;
+            border: 5px solid #000;
+        }
+
+            #ban1 .banner .img img {
+                width: 1000px;
+                height: 500px;
+            }
+    </style>
+</head>
+<body>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/gdlb.js"></script>
+
+
+
+    <div id="ban1">
+        <div class="banner">
+            <ul class="img">
+                <li><a href="#"><img src="images/1.png"></a></li>
+                <li><a href="#"><img src="images/2.png"></a></li>
+                <li><a href="#"><img src="images/3.png"></a></li>
+            </ul>
+
+            <ul class="num"></ul>
+
+            <div class="btn btn_l">&lt;</div>
+            <div class="btn btn_r">&gt;</div>
+
+        </div>
+
+    </div>
+    <div id="ban2">
+        <div class="banner">
+            <ul class="img">
+                <li><a href="#"><img src="images/1.png"></a></li>
+                <li><a href="#"><img src="images/2.png"></a></li>
+                <li><a href="#"><img src="images/3.png"></a></li>
+                <li><a href="#"><img src="images/4.png"></a></li>
+            </ul>
+            <ul class="num"></ul>
+            <div class="btn btn_l">&lt;</div>
+            <div class="btn btn_r">&gt;</div>
+        </div>
+    </div>
+
+
+</body>
+</html>

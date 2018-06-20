@@ -1,0 +1,11 @@
+F:\demo\forcomp\DTcms.Common\bin\Release\DTcms.Common.dll
+F:\demo\forcomp\DTcms.Common\bin\Release\DTcms.Common.pdb
+F:\demo\forcomp\DTcms.Common\bin\Release\Newtonsoft.Json.dll
+F:\demo\forcomp\DTcms.Common\bin\Release\NLog.dll
+F:\demo\forcomp\DTcms.Common\bin\Release\NVelocity.dll
+F:\demo\forcomp\DTcms.Common\bin\Release\Newtonsoft.Json.xml
+F:\demo\forcomp\DTcms.Common\bin\Release\NLog.xml
+F:\demo\forcomp\DTcms.Common\bin\Release\NVelocity.xml
+F:\demo\forcomp\DTcms.Common\obj\Release\DTcms.Common.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.Common\obj\Release\DTcms.Common.dll
+F:\demo\forcomp\DTcms.Common\obj\Release\DTcms.Common.pdb

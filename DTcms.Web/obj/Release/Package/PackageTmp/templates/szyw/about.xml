@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template>
+	<version>1.0.0</version>
+	<preview>about.png</preview>
+	<name>默认模板</name>
+	<demo>http://www.szyw88.com/</demo>
+	<author>深圳域网</author>
+	<website>http://www.dtcms.net/</website>
+	<description>V1.0版本</description>
+	<createdate>2017-01-11</createdate>
+</template>

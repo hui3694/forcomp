@@ -1,4 +1,5 @@
 use db_forcomp
+--资讯
 --drop table fg_news
 create table fg_news(
 	id int primary key identity,
@@ -15,6 +16,7 @@ create table fg_news(
 insert into fg_news values('title','zhaiyao','内容','img',0,123,1,0,getdate())
 select * from fg_news order by sort,time desc
 
+--产品栏目
 --drop table fg_pro_category
 create table fg_pro_category(
 	id int primary key identity,
@@ -30,6 +32,7 @@ select * from fg_pro_category
 
 select count(1) from fg_article_category
 
+--用户表
 --drop table fg_user
 create table fg_user(
 	id int primary key identity,
@@ -50,3 +53,15 @@ create table fg_user(
 	login_time datetime
 )
 select * from fg_user
+
+--浏览,点赞
+--drop table fg_news_view
+create table fg_news_view(
+	id int primary key identity,
+	user_id int,
+	isPN int,		--产品/新闻 1,2
+	type int,		--浏览/点赞 1,2
+	news_id int,	--所属id
+	time datetime default getdate()
+)
+select * from fg_news_view

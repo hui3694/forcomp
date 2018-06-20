@@ -32,6 +32,12 @@ namespace DTcms.Web.tools
                 case "get_openid":  //获取openid
                     get_openid(context);
                     break;
+                case "register":
+                    register(context);
+                    break;
+                case "news_view":
+                    news_view(context);
+                    break;
             }
 
         }
@@ -51,8 +57,11 @@ namespace DTcms.Web.tools
             }
 
             DataSet ds = new BLL.news().GetList(pageSize, page, "", "sort,time desc", out count);
+            DataTable dt = ds.Tables[0];
+            
 
             string strJson = DTcms.Common.JsonHelper.DataTableToJSON(ds.Tables[0]);
+            
 
             context.Response.Write(strJson);
         }
@@ -92,9 +101,9 @@ namespace DTcms.Web.tools
 
         private void get_openid(HttpContext context)
         {
-            string appid = DTRequest.GetFormString("appid");
-            string secre = DTRequest.GetFormString("secre");
-            string code = DTRequest.GetFormString("code");
+            string appid = DTRequest.GetString("appid");
+            string secre = DTRequest.GetString("secre");
+            string code = DTRequest.GetString("code");
 
             System.Net.WebRequest wReq = System.Net.WebRequest.Create("https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=" + secre + "&js_code=" + code+ "&grant_type=authorization_code");
             // Get the response instance. 
@@ -104,9 +113,57 @@ namespace DTcms.Web.tools
             using (System.IO.StreamReader reader = new System.IO.StreamReader(respStream, System.Text.Encoding.GetEncoding("utf-8")))
             {
                 context.Response.Write(reader.ReadToEnd());
-                
             }
-            
+        }
+
+        private void register(HttpContext context)
+        {
+            string avatar = DTRequest.GetString("avatar");
+            string nickname = DTRequest.GetString("nickname");
+            string openid = DTRequest.GetString("openid");
+            int parent_id = DTRequest.GetInt("parent_id",0);
+            int gender = DTRequest.GetInt("gender",0);
+            string country = DTRequest.GetString("country");
+            string province = DTRequest.GetString("province");
+            string city = DTRequest.GetString("city");
+
+            Model.user model = new Model.user();
+            model.avatar = avatar;
+            model.nickname = nickname;
+            model.openid = openid;
+            model.parent_id = parent_id;
+            model.sex = gender;
+
+            if(new BLL.user().Add(model) > 0){
+                context.Response.Write("{\"status\":1}");
+            }else
+            {
+                context.Response.Write("{\"status\":0}");
+            }
+        }
+
+        private void news_view(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            int isPN = DTRequest.GetInt("isPN", 0);
+            int type = DTRequest.GetInt("type", 0);
+            int newsId = DTRequest.GetInt("id", 0);
+
+            Model.news_view model = new Model.news_view();
+            model.user_id = uid;
+            model.ispn = isPN;
+            model.type = type;
+            model.news_id = newsId;
+            model.time = DateTime.Now;
+
+            if(new BLL.news_view().Add(model)>0)
+            {
+                context.Response.Write("{\"status\":1}");
+            }
+            else
+            {
+                context.Response.Write("{\"status\":0}");
+            }
         }
 
         public bool IsReusable

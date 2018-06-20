@@ -71,6 +71,7 @@
     <Compile Include="manager_role_value.cs" />
     <Compile Include="navigation.cs" />
     <Compile Include="news.cs" />
+    <Compile Include="news_view.cs" />
     <Compile Include="orders.cs" />
     <Compile Include="order_config.cs" />
     <Compile Include="payment.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="sms_template.cs" />
     <Compile Include="sys_config.cs" />
     <Compile Include="url_rewrite.cs" />
+    <Compile Include="user.cs" />
     <Compile Include="users.cs" />
     <Compile Include="user_addr_book.cs" />
     <Compile Include="user_amount_log.cs" />
