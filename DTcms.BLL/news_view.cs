@@ -14,7 +14,7 @@ namespace DTcms.BLL
 
         public news_view()  
         {
-              dal = new DAL.news_view(siteConfig.sysdatabaseprefix);
+              dal = new DAL.news_view("fg_");
         }
 
         #region 基本方法
@@ -26,6 +26,11 @@ namespace DTcms.BLL
         public bool Exists(int id)
         {
               return dal.Exists(id);
+        }
+
+        public bool Exists(string strwhere)
+        {
+            return dal.Exists(strwhere);
         }
 
         /// <summary>

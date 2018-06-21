@@ -65,3 +65,9 @@ create table fg_news_view(
 	time datetime default getdate()
 )
 select * from fg_news_view
+
+
+
+/*
+select * from fg_news where title like '%news%'
+*/

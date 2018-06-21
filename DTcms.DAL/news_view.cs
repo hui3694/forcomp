@@ -35,6 +35,12 @@ namespace DTcms.DAL
             parameters[0].Value = id;
             return DbHelperSQL.Exists("select count(1) from [" + databaseprefix + "news_view] where id=@id", parameters);
         }
+
+        public bool Exists(string where)
+        {
+            return DbHelperSQL.Exists("select count(1) from [" + databaseprefix + "news_view] where "+where);
+        }
+
         /// <summary>
         /// 返回数据总数
         /// </summary>
