@@ -1,0 +1,36 @@
+[2018-06-22 17:06:32.2781] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_model&id=5&uid=1
+异常信息:列名 'news' 无效。 
+[2018-06-22 18:20:16.6082] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_commend&id=1
+异常信息:在列包含数据的情况下不能更改其 DataType。 
+[2018-06-22 18:24:52.7688] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_commend&id=1
+异常信息:索引超出了数组界限。 
+[2018-06-22 18:25:44.5193] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_commend&id=1
+异常信息:在位置 1 处没有任何行。 
+[2018-06-22 18:26:02.9567] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_commend&id=1
+异常信息:在位置 1 处没有任何行。 
+[2018-06-22 18:42:30.8563] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_model&id=5&uid=0
+异常信息:对象名 'dt_news' 无效。 
+[2018-06-22 18:42:59.3940] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_model&id=5&uid=0
+异常信息:对象名 'dt_news' 无效。 
+[2018-06-22 18:43:21.2877] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_model&id=5&uid=0
+异常信息:对象名 'dt_news' 无效。 
+[2018-06-22 18:43:43.3696] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_news_model&id=5&uid=0
+异常信息:对象名 'dt_news' 无效。 

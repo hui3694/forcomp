@@ -70,6 +70,7 @@
     <Compile Include="manager_role_value.cs" />
     <Compile Include="navigation.cs" />
     <Compile Include="news.cs" />
+    <Compile Include="news_commend.cs" />
     <Compile Include="news_view.cs" />
     <Compile Include="orders.cs" />
     <Compile Include="order_config.cs" />

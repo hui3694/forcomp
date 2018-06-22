@@ -41,6 +41,12 @@ namespace DTcms.Web.tools
                 case "get_news_model":
                     get_news_model(context);
                     break;
+                case "get_news_commend":
+                    get_news_commend(context);
+                    break;
+                case "post_news_commend":
+                    post_news_commend(context);
+                    break;
 
             }
 
@@ -70,9 +76,9 @@ namespace DTcms.Web.tools
 
             foreach (DataRow dr in dt.Rows)
             {
-                dr["zan"] = new BLL.news_view().GetCount("isPN=2 and type=1");
+                dr["view"] = new BLL.news_view().GetCount("news_id="+dr["id"].ToString()+" and isPN=2 and type=1");
                 dr["collect"] = 0;
-                dr["view"] = new BLL.news_view().GetCount("isPN=2 and type=2");
+                dr["zan"] = new BLL.news_view().GetCount("news_id=" + dr["id"].ToString() + " and isPN=2 and type=2");
             }
             
 
@@ -132,6 +138,8 @@ namespace DTcms.Web.tools
             }
         }
 
+
+        #region register
         private void register(HttpContext context)
         {
             string avatar = DTRequest.GetString("avatar");
@@ -150,13 +158,18 @@ namespace DTcms.Web.tools
             model.parent_id = parent_id;
             model.sex = gender;
 
-            if(new BLL.user().Add(model) > 0){
-                context.Response.Write("{\"status\":1}");
+            if (new BLL.user().GetCount("openid='" + openid + "'") ==0 && new BLL.user().Add(model) > 0) {
+                string ret = JsonHelper.DataTableToJSON(new BLL.user().GetList(1, "openid='" + openid + "'", "").Tables[0]);
+                ret = ret.TrimEnd(']').TrimStart('[');
+                context.Response.Write(ret);
             }else
             {
-                context.Response.Write("{\"status\":0}");
+                string ret = JsonHelper.DataTableToJSON(new BLL.user().GetList(1, "openid='" + openid + "'", "").Tables[0]);
+                ret = ret.TrimEnd(']').TrimStart('[');
+                context.Response.Write(ret);
             }
         }
+        #endregion
 
         #region 浏览/点赞
         private void news_view(HttpContext context)
@@ -173,10 +186,18 @@ namespace DTcms.Web.tools
             model.news_id = newsId;
             model.time = DateTime.Now;
 
-            if(!new BLL.news_view().Exists("user_id="+uid+" and isPN="+isPN+" and type="+type))
+            if(uid==0 || new BLL.news_view().GetCount("user_id="+uid+" and isPN="+isPN+" and type="+type)==0)
             {
                 new BLL.news_view().Add(model);
-                context.Response.Write("{\"status\":1}");
+                if (model.ispn == 2 && model.type==2)
+                {
+                    context.Response.Write("{\"status\":1,\"msg\":\"收藏成功！\"}");
+                }
+                else
+                {
+                    context.Response.Write("{\"status\":1,\"msg\":\"浏览量+1\"}");
+                }
+                
             }
             else
             {//更新浏览时间，取消收藏
@@ -200,7 +221,7 @@ namespace DTcms.Web.tools
             model.id = id;
             if(new BLL.news_view().Update(model))
             {
-                return "{\"status\":1}";
+                return "{\"status\":1,\"msg\":\"更新浏览时间\"}";
             }else
             {
                 return "{\"status\":0}";
@@ -215,8 +236,9 @@ namespace DTcms.Web.tools
             int id = Convert.ToInt32(new BLL.news_view().GetList(0, "user_id=" + model.user_id + " and isPN=" + model.ispn + " and type=" + model.type, "").Tables[0].Rows[0]["id"]);
             if(new BLL.news_view().Delete(id))
             {
-                return "{\"status\":1}";
-            }else
+                return "{\"status\":1,\"msg\":\"取消收藏成功\"}";
+            }
+            else
             {
                 return "{\"status\":0}";
             }
@@ -227,19 +249,80 @@ namespace DTcms.Web.tools
         private void get_news_model(HttpContext context)
         {
             int id = DTRequest.GetInt("id", 0);
+            int uid = DTRequest.GetInt("uid", 0);
             DataTable dt= new BLL.news().GetList(1,"id="+id,"").Tables[0];
             if (dt.Rows.Count>0)
             {
                 string time= Convert.ToDateTime(dt.Rows[0]["time"]).ToString("yyyy-MM-dd HH:mm"); 
                 dt.Columns.Remove("time");
                 dt.Columns.Add("time", typeof(string));
+                dt.Columns.Add("isCollect", typeof(int));
                 dt.Rows[0]["time"] = time;
-                
+                if (uid != 0)
+                {
+                    dt.Rows[0]["isCollect"] = new BLL.news_view().GetCount("user_id=" + uid + " and isPN=2 and type=2 and news_id=" + dt.Rows[0]["id"].ToString()) > 0 ? 1 : 0;
+                }else
+                {
+                    dt.Rows[0]["isCollect"] = 0;
+                }
+
                 context.Response.Write(JsonHelper.DataTableToJSON(dt).TrimEnd(']').TrimStart('['));
             }
             
         }
 
+
+        #region 评论
+        private void get_news_commend(HttpContext context)
+        {
+            int news_id = DTRequest.GetInt("id", 0);
+            DataTable dt = new BLL.news_commend().GetList(0, "news_id=" + news_id, "time").Tables[0];
+
+            string[] arr = new string[dt.Rows.Count];
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                arr[i]= Convert.ToDateTime(dt.Rows[i]["time"].ToString()).ToString("yyyy-MM-dd HH:mm");
+            }
+            dt.Columns.Remove("time");
+            dt.Columns.Add("time");
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["time"] = arr[i];
+            }
+
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+
+        private void post_news_commend(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            string name = DTRequest.GetString("name");
+            string avatar = DTRequest.GetString("avatar");
+            int isPN = DTRequest.GetInt("isPN", 0);
+            int news_id = DTRequest.GetInt("news_id", 0);
+            string cont = DTRequest.GetString("cont");
+
+            Model.news_commend model = new Model.news_commend();
+            model.user_id = uid;
+            model.name = name;
+            model.avatar = avatar;
+            model.ispn = isPN;
+            model.news_id = news_id;
+            model.ishide = 0;
+            model.time = DateTime.Now;
+            model.cont = cont;
+
+            if(new BLL.news_commend().Add(model) > 0)
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+            }
+
+        }
+
+        #endregion
 
         public bool IsReusable
         {

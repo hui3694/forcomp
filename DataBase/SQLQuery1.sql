@@ -60,11 +60,27 @@ create table fg_news_view(
 	id int primary key identity,
 	user_id int,
 	isPN int,		--产品/新闻 1,2
-	type int,		--浏览/点赞 1,2
+	type int,		--浏览/点赞收藏 1,2
 	news_id int,	--所属id
 	time datetime default getdate()
 )
-select * from fg_news_view
+select * from fg_news_view where type=2
+
+--评论表
+--drop table fg_news_commend
+create table fg_news_commend(
+	id int primary key identity,
+	user_id int,
+	name nvarchar(100),
+	avatar nvarchar(100),
+	cont nvarchar(max),
+	isPN int,		--产品/新闻 1,2
+	news_id int,
+	isHide int,
+	time datetime default getdate()
+)
+insert into fg_news_commend values(1,'123','123','cont',1,1,1,getdate())
+select * from fg_news_commend
 
 
 

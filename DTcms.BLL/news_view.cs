@@ -28,11 +28,6 @@ namespace DTcms.BLL
               return dal.Exists(id);
         }
 
-        public bool Exists(string strwhere)
-        {
-            return dal.Exists(strwhere);
-        }
-
         /// <summary>
         /// 按条件查询数据总数
         /// </summary>

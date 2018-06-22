@@ -7,14 +7,14 @@ namespace DTcms.BLL
     /// <summary>
     /// 业务逻辑层
     /// </summary>
-    public class pro_category
+    public class news_commend
     {
         private readonly Model.siteconfig siteConfig = new BLL.siteconfig().loadConfig();
-        private readonly DAL.pro_category dal;
+        private readonly DAL.news_commend dal;
 
-        public pro_category()  
+        public news_commend()  
         {
-              dal = new DAL.pro_category("fg_");
+              dal = new DAL.news_commend("fg_");
         }
 
         #region 基本方法
@@ -31,21 +31,31 @@ namespace DTcms.BLL
         /// <summary>
         /// 按名称查询是否存在记录
         /// </summary>
-        /// <param name="title">标题</param>
+        /// <param name="name">名称</param>
         /// <returns>True Or False</returns>
-        public bool Exists(string title)
+        public bool Exists(string name)
         {
-              return dal.Exists(title);
+              return dal.Exists(name);
         }
 
         /// <summary>
-        /// 按ID号查询标题
+        /// 查询名称
         /// </summary>
         /// <param name="id">ID号</param>
         /// <returns>标题</returns>
-        public string GetTitle(int id)
+        public string GetName(int id)
         {
-              return dal.GetTitle(id);
+              return dal.GetName(id);
+        }
+
+        /// <summary>
+        /// 根据名称查询ID
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <returns>ID</returns>
+        public int GetId(string name)
+        {
+              return dal.GetId(name);
         }
 
         /// <summary>
@@ -63,9 +73,9 @@ namespace DTcms.BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        /// <param name="model">Model.pro_category</param>
+        /// <param name="model">Model.news_commend</param>
         /// <returns>ID</returns>
-        public int Add(Model.pro_category model)
+        public int Add(Model.news_commend model)
         {
               return dal.Add(model);
         }
@@ -87,9 +97,9 @@ namespace DTcms.BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        /// <param name="model">Model.pro_category</param>
+        /// <param name="model">Model.news_commend</param>
         /// <returns>True Or False</returns>
-        public bool Update(Model.pro_category model)
+        public bool Update(Model.news_commend model)
         {
               return dal.Update(model);
         }
@@ -112,12 +122,21 @@ namespace DTcms.BLL
         /// 返回一个实体
         /// </summary>
         /// <param name="id">ID号</param>
-        /// <returns>Model.pro_category</returns>
-        public Model.pro_category GetModel(int id)
+        /// <returns>Model.news_commend</returns>
+        public Model.news_commend GetModel(int id)
         {
               return dal.GetModel(id);
         }
         #endregion
+        /// <summary>
+        /// 按名称返回一个实体
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <returns>Model.news_commend</returns>
+        public Model.news_commend GetModel(string name)
+        {
+              return dal.GetModel(name);
+        }
 
         #region 获得前几行数据
         /// <summary>
