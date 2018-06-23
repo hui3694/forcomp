@@ -36,7 +36,7 @@ select count(1) from fg_article_category
 --drop table fg_user
 create table fg_user(
 	id int primary key identity,
-	avatar varchar(100),
+	avatar varchar(200),
 	nickname varchar(100),
 	openid varchar(50),
 	unionid varchar(50),
@@ -72,7 +72,7 @@ create table fg_news_commend(
 	id int primary key identity,
 	user_id int,
 	name nvarchar(100),
-	avatar nvarchar(100),
+	avatar nvarchar(200),
 	cont nvarchar(max),
 	isPN int,		--产品/新闻 1,2
 	news_id int,
@@ -82,7 +82,26 @@ create table fg_news_commend(
 insert into fg_news_commend values(1,'123','123','cont',1,1,1,getdate())
 select * from fg_news_commend
 
+--产品表
+--drop table fg_product
+create table fg_product(
+	id int primary key identity,
+	category int,
+	title nvarchar(100),
+	img nvarchar(200),
+	cont nvarchar(max),
 
+	lat decimal,			--纬度
+	lon decimal,			--经度
+	city nvarchar(50),		--城市
+	addr nvarchar(200),		--详细地址
+
+	user_id int,		--客户经理
+	status int,			--产品状态 1待审核，2审核通过，3审核失败
+	pass_time datetime,
+	add_time datetime default getdate()
+)
+select * from fg_product
 
 /*
 select * from fg_news where title like '%news%'

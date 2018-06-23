@@ -47,6 +47,9 @@ namespace DTcms.Web.tools
                 case "post_news_commend":
                     post_news_commend(context);
                     break;
+                case "update_user":
+                    update_user(context);
+                    break;
 
             }
 
@@ -77,7 +80,7 @@ namespace DTcms.Web.tools
             foreach (DataRow dr in dt.Rows)
             {
                 dr["view"] = new BLL.news_view().GetCount("news_id="+dr["id"].ToString()+" and isPN=2 and type=1");
-                dr["collect"] = 0;
+                dr["collect"] = new BLL.news_commend().GetCount("news_id=" + dr["id"].ToString());
                 dr["zan"] = new BLL.news_view().GetCount("news_id=" + dr["id"].ToString() + " and isPN=2 and type=2");
             }
             
@@ -324,6 +327,27 @@ namespace DTcms.Web.tools
 
         #endregion
 
+        private void update_user(HttpContext context)
+        {
+            string openid = DTRequest.GetString("openid");
+            string name = DTRequest.GetString("name");
+            int sex = DTRequest.GetInt("sex", 0);
+            string phone = DTRequest.GetString("phone");
+            string email = DTRequest.GetString("email");
+            Model.user model = new BLL.user().GetModel(openid);
+            model.nickname = name;
+            model.sex = sex;
+            model.phone = phone;
+            model.email = email;
+            if(new BLL.user().Update(model))
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"修改失败！\"}");
+            }
+
+        }
         public bool IsReusable
         {
             get

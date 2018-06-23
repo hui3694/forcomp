@@ -67,7 +67,7 @@ namespace DTcms.DAL
             strSql.Append("@avatar,@nickname,@openid,@unionid,@point,@img,@level,@parent_id,@phone,@email,@sex,@area,@status,@reg_time,@login_time)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
-                new SqlParameter("@avatar", SqlDbType.VarChar,100),
+                new SqlParameter("@avatar", SqlDbType.VarChar,200),
                 new SqlParameter("@nickname", SqlDbType.VarChar,100),
                 new SqlParameter("@openid", SqlDbType.VarChar,50),
                 new SqlParameter("@unionid", SqlDbType.VarChar,50),
@@ -149,7 +149,7 @@ namespace DTcms.DAL
             strSql.Append("login_time=@login_time");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-                new SqlParameter("@avatar", SqlDbType.VarChar,100),
+                new SqlParameter("@avatar", SqlDbType.VarChar,200),
                 new SqlParameter("@nickname", SqlDbType.VarChar,100),
                 new SqlParameter("@openid", SqlDbType.VarChar,50),
                 new SqlParameter("@unionid", SqlDbType.VarChar,50),
@@ -228,6 +228,23 @@ namespace DTcms.DAL
             };
             parameters[0].Value = id;
             DataSet ds = DbHelperSQL.Query("select " + this.column + " from [" + databaseprefix + "user] where id=@id", parameters);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return DataRowToModel(ds.Tables[0].Rows[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Model.user GetModel(string openid)
+        {
+            SqlParameter[] parameters = {
+                    new SqlParameter("@openid", SqlDbType.NVarChar)
+            };
+            parameters[0].Value = openid;
+            DataSet ds = DbHelperSQL.Query("select " + this.column + " from [" + databaseprefix + "user] where openid=@openid", parameters);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 return DataRowToModel(ds.Tables[0].Rows[0]);

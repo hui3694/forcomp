@@ -97,6 +97,11 @@ namespace DTcms.BLL
         {
               return dal.GetModel(id);
         }
+
+        public Model.user GetModel(string openid)
+        {
+            return dal.GetModel(openid);
+        }
         #endregion
 
         #region 获得前几行数据

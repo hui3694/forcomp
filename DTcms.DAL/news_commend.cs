@@ -120,7 +120,7 @@ namespace DTcms.DAL
             SqlParameter[] parameters = {
                 new SqlParameter("@user_id", SqlDbType.Int,4),
                 new SqlParameter("@name", SqlDbType.NVarChar,100),
-                new SqlParameter("@avatar", SqlDbType.NVarChar,100),
+                new SqlParameter("@avatar", SqlDbType.NVarChar,200),
                 new SqlParameter("@cont", SqlDbType.NText),
                 new SqlParameter("@ispn", SqlDbType.Int,4),
                 new SqlParameter("@news_id", SqlDbType.Int,4),
@@ -181,7 +181,7 @@ namespace DTcms.DAL
             SqlParameter[] parameters = {
                 new SqlParameter("@user_id", SqlDbType.Int,4),
                 new SqlParameter("@name", SqlDbType.NVarChar,100),
-                new SqlParameter("@avatar", SqlDbType.NVarChar,100),
+                new SqlParameter("@avatar", SqlDbType.NVarChar,200),
                 new SqlParameter("@cont", SqlDbType.NText),
                 new SqlParameter("@ispn", SqlDbType.Int,4),
                 new SqlParameter("@news_id", SqlDbType.Int,4),
