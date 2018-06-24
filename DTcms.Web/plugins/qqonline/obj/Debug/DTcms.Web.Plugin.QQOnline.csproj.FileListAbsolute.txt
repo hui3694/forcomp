@@ -57,3 +57,8 @@ F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
 F:\demo\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
 F:\demo\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb
+E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.dll
+E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.QQOnline.pdb
+E:\web\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.csprojResolveAssemblyReference.cache
+E:\web\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.dll
+E:\web\forcomp\DTcms.Web\plugins\qqonline\obj\Debug\DTcms.Web.Plugin.QQOnline.pdb

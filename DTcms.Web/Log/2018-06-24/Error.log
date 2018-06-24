@@ -1,0 +1,20 @@
+[2018-06-24 22:04:07.0713] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=product_add&title=title&addr=上海市黄浦区人民大道200号&cont=cont&category=8&lat=31.23037&lon=121.4737&city=上海市&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:对象名 'dt_product' 无效。 
+[2018-06-24 22:09:47.2734] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=product_add&title=title&addr=上海市黄浦区人民大道200号&cont=cont&category=8&lat=31.23037&lon=121.4737&city=上海市&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:对象名 'dt_product' 无效。 
+[2018-06-24 22:38:03.0378] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_category_list
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-06-24 22:38:03.0378] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_category_list
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-06-24 22:42:49.3367] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_category_list
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 

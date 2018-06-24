@@ -59,3 +59,8 @@ F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Baseback.pdb
 F:\demo\forcomp\DTcms.Web\plugins\baseback\obj\Debug\DTcms.Web.Plugin.Baseback.csprojResolveAssemblyReference.cache
 F:\demo\forcomp\DTcms.Web\plugins\baseback\obj\Debug\DTcms.Web.Plugin.Baseback.dll
 F:\demo\forcomp\DTcms.Web\plugins\baseback\obj\Debug\DTcms.Web.Plugin.Baseback.pdb
+E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Baseback.dll
+E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Baseback.pdb
+E:\web\forcomp\DTcms.Web\plugins\baseback\obj\Debug\DTcms.Web.Plugin.Baseback.csprojResolveAssemblyReference.cache
+E:\web\forcomp\DTcms.Web\plugins\baseback\obj\Debug\DTcms.Web.Plugin.Baseback.dll
+E:\web\forcomp\DTcms.Web\plugins\baseback\obj\Debug\DTcms.Web.Plugin.Baseback.pdb

@@ -50,6 +50,9 @@ namespace DTcms.Web.tools
                 case "update_user":
                     update_user(context);
                     break;
+                case "product_add":
+                    product_add(context);
+                    break;
 
             }
 
@@ -91,6 +94,7 @@ namespace DTcms.Web.tools
             context.Response.Write(strJson);
         }
 
+        #region product
         private void get_category_list(HttpContext context)
         {
             string strJson = "";
@@ -109,11 +113,13 @@ namespace DTcms.Web.tools
                 DataSet ds2 = new BLL.pro_category().GetList(0, "parent_id=" + dr["id"], "");
                 foreach(DataRow dr2 in ds2.Tables[0].Rows)
                 {
+                    int num = new BLL.product().GetCount("category=" + dr2["id"].ToString());
                     strJson += "{";
                     strJson += "\"id\":\"" + dr2["id"].ToString() + "\",";
                     strJson += "\"title\":\"" + dr2["title"].ToString() + "\",";
                     strJson += "\"img\":\"" + dr2["img"].ToString() + "\",";
-                    strJson += "\"img2\":\"" + dr2["img2"].ToString() + "\"";
+                    strJson += "\"img2\":\"" + dr2["img2"].ToString() + "\",";
+                    strJson += "\"num\":" + num;
                     strJson += "},";
                 }
                 strJson = strJson.TrimEnd(',') + "]";
@@ -123,6 +129,49 @@ namespace DTcms.Web.tools
             context.Response.Write(strJson.TrimEnd(','));
 
         }
+
+        private void product_add(HttpContext context)
+        {
+            int cateogry = DTRequest.GetInt("category", 0);
+            string title = DTRequest.GetString("title");
+            string cont = DTRequest.GetString("cont");
+            string lat = DTRequest.GetString("lat");
+            string lon = DTRequest.GetString("lon");
+            string city = DTRequest.GetString("city");
+            string addr = DTRequest.GetString("addr");
+            string openid = DTRequest.GetString("openid");
+
+            Model.product model = new Model.product();
+            Model.user user = new BLL.user().GetModel(openid);
+            if (user!=null)
+            {
+                model.user_id = user.id;
+            }else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+                return;
+            }
+            model.category = cateogry;
+            model.title = title;
+            model.cont = cont;
+            model.lat = lat;
+            model.lon = lon;
+            model.city = city;
+            model.addr = addr;
+            model.status = 1;
+
+
+
+            if (new BLL.product().Add(model) > 0)
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+            }
+
+        }
+        #endregion
 
         private void get_openid(HttpContext context)
         {

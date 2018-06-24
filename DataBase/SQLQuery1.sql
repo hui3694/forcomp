@@ -91,8 +91,8 @@ create table fg_product(
 	img nvarchar(200),
 	cont nvarchar(max),
 
-	lat decimal,			--纬度
-	lon decimal,			--经度
+	lat nvarchar(30),			--纬度
+	lon nvarchar(30),			--经度
 	city nvarchar(50),		--城市
 	addr nvarchar(200),		--详细地址
 
@@ -106,3 +106,4 @@ select * from fg_product
 /*
 select * from fg_news where title like '%news%'
 */
+use db_forcomp
