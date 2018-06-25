@@ -53,11 +53,18 @@ namespace DTcms.Web.tools
                 case "product_add":
                     product_add(context);
                     break;
+                case "get_pro_list":
+                    get_pro_list(context);
+                    break;
+                case "get_pro_model":
+                    get_pro_model(context);
+                    break;
 
             }
 
         }
 
+        #region news
         private void get_news_list(HttpContext context)
         {
             int page = DTRequest.GetInt("page",1);
@@ -79,12 +86,20 @@ namespace DTcms.Web.tools
             dt.Columns.Add("zan", typeof(int));
             dt.Columns.Add("collect", typeof(int));
             dt.Columns.Add("view", typeof(int));
+            string[] arr = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                arr[i] = Convert.ToDateTime(dt.Rows[i]["time"].ToString()).ToString("yyyy-MM-dd HH:mm");
+            }
+            dt.Columns.Remove("time");
+            dt.Columns.Add("time",typeof(string));
 
             foreach (DataRow dr in dt.Rows)
             {
                 dr["view"] = new BLL.news_view().GetCount("news_id="+dr["id"].ToString()+" and isPN=2 and type=1");
                 dr["collect"] = new BLL.news_commend().GetCount("news_id=" + dr["id"].ToString());
                 dr["zan"] = new BLL.news_view().GetCount("news_id=" + dr["id"].ToString() + " and isPN=2 and type=2");
+                dr["time"] = arr[dt.Rows.IndexOf(dr)];
             }
             
 
@@ -93,7 +108,33 @@ namespace DTcms.Web.tools
 
             context.Response.Write(strJson);
         }
+        private void get_news_model(HttpContext context)
+        {
+            int id = DTRequest.GetInt("id", 0);
+            int uid = DTRequest.GetInt("uid", 0);
+            DataTable dt = new BLL.news().GetList(1, "id=" + id, "").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                string time = Convert.ToDateTime(dt.Rows[0]["time"]).ToString("yyyy-MM-dd HH:mm");
+                dt.Columns.Remove("time");
+                dt.Columns.Add("time", typeof(string));
+                dt.Columns.Add("isCollect", typeof(int));
+                dt.Rows[0]["time"] = time;
+                if (uid != 0)
+                {
+                    dt.Rows[0]["isCollect"] = new BLL.news_view().GetCount("user_id=" + uid + " and isPN=2 and type=2 and news_id=" + dt.Rows[0]["id"].ToString()) > 0 ? 1 : 0;
+                }
+                else
+                {
+                    dt.Rows[0]["isCollect"] = 0;
+                }
 
+                context.Response.Write(JsonHelper.DataTableToJSON(dt).TrimEnd(']').TrimStart('['));
+            }
+
+        }
+        #endregion
+        
         #region product
         private void get_category_list(HttpContext context)
         {
@@ -128,6 +169,44 @@ namespace DTcms.Web.tools
             strJson = strJson.TrimEnd(',') + "]";
             context.Response.Write(strJson.TrimEnd(','));
 
+        }
+
+        private void get_pro_list(HttpContext context)
+        {
+            int page = DTRequest.GetInt("page", 1);
+            int category = DTRequest.GetInt("category", 0);
+            int uid = DTRequest.GetInt("uid", 0);
+            string keywords = DTRequest.GetString("keywords");
+
+            int count = 0;
+            int pageSize = 8;
+            int sum = new BLL.product().GetCount("");
+
+            if ((page - 1) * pageSize > sum)
+            {
+                //没有更多数据
+                context.Response.Write("{\"status\":0,\"msg\":\"没有更多数据\"}");
+                return;
+            }
+
+            DataSet ds = new BLL.product().GetList(pageSize, page, "category="+category+" and title like '%" + keywords + "%'", "pass_time desc", out count);
+            DataTable dt = ds.Tables[0];
+            dt.Columns.Add("zan", typeof(int));
+            dt.Columns.Add("collect", typeof(int));
+            dt.Columns.Add("view", typeof(int));
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["view"] = new BLL.news_view().GetCount("news_id=" + dr["id"].ToString() + " and isPN=1 and type=1");
+                dr["collect"] = new BLL.news_commend().GetCount("news_id=" + dr["id"].ToString());
+                dr["zan"] = new BLL.news_view().GetCount("news_id=" + dr["id"].ToString() + " and isPN=1 and type=2");
+            }
+
+
+            string strJson = DTcms.Common.JsonHelper.DataTableToJSON(ds.Tables[0]);
+
+
+            context.Response.Write(strJson);
         }
 
         private void product_add(HttpContext context)
@@ -168,6 +247,36 @@ namespace DTcms.Web.tools
             }else
             {
                 context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+            }
+
+        }
+
+        private void get_pro_model(HttpContext context)
+        {
+            int id = DTRequest.GetInt("id", 0);
+            int uid = DTRequest.GetInt("uid", 0);
+            DataTable dt = new BLL.product().GetList(1, "id=" + id, "").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                string pass_time = Convert.ToDateTime(dt.Rows[0]["pass_time"]).ToString("yyyy-MM-dd HH:mm");
+                string add_time = Convert.ToDateTime(dt.Rows[0]["add_time"]).ToString("yyyy-MM-dd HH:mm");
+                dt.Columns.Remove("pass_time");
+                dt.Columns.Add("pass_time", typeof(string));
+                dt.Columns.Remove("add_time");
+                dt.Columns.Add("add_time", typeof(string));
+                dt.Columns.Add("isCollect", typeof(int));
+                dt.Rows[0]["pass_time"] = pass_time;
+                dt.Rows[0]["add_time"] = add_time;
+                if (uid != 0)
+                {
+                    dt.Rows[0]["isCollect"] = new BLL.news_view().GetCount("user_id=" + uid + " and isPN=2 and type=2 and news_id=" + dt.Rows[0]["id"].ToString()) > 0 ? 1 : 0;
+                }
+                else
+                {
+                    dt.Rows[0]["isCollect"] = 0;
+                }
+
+                context.Response.Write(JsonHelper.DataTableToJSON(dt).TrimEnd(']').TrimStart('['));
             }
 
         }
@@ -298,31 +407,6 @@ namespace DTcms.Web.tools
         }
         #endregion
 
-        private void get_news_model(HttpContext context)
-        {
-            int id = DTRequest.GetInt("id", 0);
-            int uid = DTRequest.GetInt("uid", 0);
-            DataTable dt= new BLL.news().GetList(1,"id="+id,"").Tables[0];
-            if (dt.Rows.Count>0)
-            {
-                string time= Convert.ToDateTime(dt.Rows[0]["time"]).ToString("yyyy-MM-dd HH:mm"); 
-                dt.Columns.Remove("time");
-                dt.Columns.Add("time", typeof(string));
-                dt.Columns.Add("isCollect", typeof(int));
-                dt.Rows[0]["time"] = time;
-                if (uid != 0)
-                {
-                    dt.Rows[0]["isCollect"] = new BLL.news_view().GetCount("user_id=" + uid + " and isPN=2 and type=2 and news_id=" + dt.Rows[0]["id"].ToString()) > 0 ? 1 : 0;
-                }else
-                {
-                    dt.Rows[0]["isCollect"] = 0;
-                }
-
-                context.Response.Write(JsonHelper.DataTableToJSON(dt).TrimEnd(']').TrimStart('['));
-            }
-            
-        }
-
 
         #region 评论
         private void get_news_commend(HttpContext context)
@@ -363,6 +447,12 @@ namespace DTcms.Web.tools
             model.ishide = 0;
             model.time = DateTime.Now;
             model.cont = cont;
+
+            if (isPN == 1 && new BLL.user().GetCount("uid="+uid+" and phone!=''")==0)
+            {//判断为产品，需要填写手机号
+                context.Response.Write("{\"status\":0,\"msg\":\"请先在个人信息中补充联系电话！\"}");
+                return;
+            }
 
             if(new BLL.news_commend().Add(model) > 0)
             {

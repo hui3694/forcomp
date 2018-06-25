@@ -189,11 +189,11 @@ namespace DTcms.Web.admin.news
             //内容摘要提取内容前255个字符
             if (string.IsNullOrEmpty(txtZhaiyao.Text.Trim()))
             {
-                model.zhaiyao = Utils.DropHTML(txtContent.Value, 255);
+                model.zhaiyao = Utils.DropHTML(txtContent.Value, 120);
             }
             else
             {
-                model.zhaiyao = Utils.DropHTML(txtZhaiyao.Text, 255);
+                model.zhaiyao = Utils.DropHTML(txtZhaiyao.Text, 120);
             }
 
             //是否将编辑器远程图片保存到本地

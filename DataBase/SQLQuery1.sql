@@ -107,3 +107,4 @@ select * from fg_product
 select * from fg_news where title like '%news%'
 */
 use db_forcomp
+
