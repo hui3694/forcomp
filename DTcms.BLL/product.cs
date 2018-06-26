@@ -153,5 +153,10 @@ namespace DTcms.BLL
         {
             return dal.GetCityList();
         }
+
+        public DataSet GetUserComment(int user_id)
+        {
+            return dal.GetUserComment(user_id);
+        }
     }
 }

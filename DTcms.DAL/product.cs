@@ -316,6 +316,13 @@ namespace DTcms.DAL
             return DbHelperSQL.Query(strSql.ToString());
         }
 
+        public DataSet GetUserComment(int user_id)
+        {//select * from fg_news_commend where news_id in(select id from fg_product where user_id=1) and isPN=1 order by time desc
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * from [" + databaseprefix + "news_commend] where news_id in(select id from [" + databaseprefix + "product] where user_id="+user_id+") and isPN=1 order by time desc");
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
         #region 私有方法
         /// <summary>
         /// 组合成对象实体

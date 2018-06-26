@@ -62,6 +62,9 @@ namespace DTcms.Web.tools
                 case "get_pro_city":
                     get_pro_city(context);
                     break;
+                case "get_proUser_comment":
+                    get_proUser_comment(context);
+                    break;
 
             }
 
@@ -294,7 +297,28 @@ namespace DTcms.Web.tools
             context.Response.Write(JsonHelper.DataTableToJSON(dt));
         }
 
+        private void get_proUser_comment(HttpContext context)
+        {
+            int user_id = DTRequest.GetInt("uid", 0);
+            //select * from fg_news_commend where news_id in(select id from fg_product where user_id=1) and isPN=1 order by time desc
+            DataTable dt = new BLL.product().GetUserComment(user_id).Tables[0];
+            string[] arr = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                arr[i] = Convert.ToDateTime(dt.Rows[i]["time"].ToString()).ToString("yyyy-MM-dd HH:mm");
+            }
+            dt.Columns.Remove("time");
+            dt.Columns.Add("time", typeof(string));
 
+            dt.Columns.Add("phone", typeof(string));
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["time"] = arr[dt.Rows.IndexOf(dr)];
+                Model.user user = new BLL.user().GetModel(Convert.ToInt32(dr["user_id"]));
+                dr["phone"] = user.phone;
+            }
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
         #endregion
 
         private void get_openid(HttpContext context)
