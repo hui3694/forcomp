@@ -59,6 +59,9 @@ namespace DTcms.Web.tools
                 case "get_pro_model":
                     get_pro_model(context);
                     break;
+                case "get_pro_city":
+                    get_pro_city(context);
+                    break;
 
             }
 
@@ -138,6 +141,8 @@ namespace DTcms.Web.tools
         #region product
         private void get_category_list(HttpContext context)
         {
+            string city = DTRequest.GetString("city");
+
             string strJson = "";
             strJson += "[";
             DataSet ds = new BLL.pro_category().GetList(0, "parent_id=0", "");
@@ -154,7 +159,7 @@ namespace DTcms.Web.tools
                 DataSet ds2 = new BLL.pro_category().GetList(0, "parent_id=" + dr["id"], "");
                 foreach(DataRow dr2 in ds2.Tables[0].Rows)
                 {
-                    int num = new BLL.product().GetCount("category=" + dr2["id"].ToString());
+                    int num = new BLL.product().GetCount("city='" + city + "' and category=" + dr2["id"].ToString());
                     strJson += "{";
                     strJson += "\"id\":\"" + dr2["id"].ToString() + "\",";
                     strJson += "\"title\":\"" + dr2["title"].ToString() + "\",";
@@ -177,19 +182,20 @@ namespace DTcms.Web.tools
             int category = DTRequest.GetInt("category", 0);
             int uid = DTRequest.GetInt("uid", 0);
             string keywords = DTRequest.GetString("keywords");
+            string city = DTRequest.GetString("city");
 
             int count = 0;
             int pageSize = 8;
-            int sum = new BLL.product().GetCount("");
+            int sum = new BLL.product().GetCount("city='" + city + "' and category=" + (category==0? "category":category.ToString()));
 
-            if ((page - 1) * pageSize > sum)
+            if ((page - 1) * pageSize >= sum)
             {
                 //没有更多数据
                 context.Response.Write("{\"status\":0,\"msg\":\"没有更多数据\"}");
                 return;
             }
 
-            DataSet ds = new BLL.product().GetList(pageSize, page, "category="+category+" and title like '%" + keywords + "%'", "pass_time desc", out count);
+            DataSet ds = new BLL.product().GetList(pageSize, page, "city='" + city + "' and category=" + (category == 0 ? "category" : category.ToString()) + " and title like '%" + keywords + "%'", "pass_time desc", out count);
             DataTable dt = ds.Tables[0];
             dt.Columns.Add("zan", typeof(int));
             dt.Columns.Add("collect", typeof(int));
@@ -280,6 +286,15 @@ namespace DTcms.Web.tools
             }
 
         }
+
+        private void get_pro_city(HttpContext context)
+        {
+            DataSet cityList = new BLL.product().GetCityList();
+            DataTable dt = cityList.Tables[0];
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+
+
         #endregion
 
         private void get_openid(HttpContext context)

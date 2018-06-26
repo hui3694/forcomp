@@ -148,5 +148,10 @@ namespace DTcms.BLL
               return dal.GetList(pageSize, pageIndex, strWhere, filedOrder, out recordCount);
         }
         #endregion
+
+        public DataSet GetCityList()
+        {
+            return dal.GetCityList();
+        }
     }
 }

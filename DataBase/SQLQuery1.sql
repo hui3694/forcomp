@@ -108,3 +108,8 @@ select * from fg_news where title like '%news%'
 */
 use db_forcomp
 
+select * from fg_product where city='…œ∫£ –'
+select distinct(city) from fg_product 
+
+
+select * from fg_news_commend where news_id in(select id from fg_product where user_id=1) order by time desc

@@ -309,6 +309,13 @@ namespace DTcms.DAL
         }
         #endregion
 
+        public DataSet GetCityList()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select distinct(city) from [" + databaseprefix + "product]");
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
         #region 私有方法
         /// <summary>
         /// 组合成对象实体
