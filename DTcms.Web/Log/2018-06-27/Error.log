@@ -1,0 +1,14 @@
+[2018-06-27 15:48:27.0659] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_user_view_list&uid=1&isPN=1&type=1
+异常信息:索引和长度必须引用该字符串内的位置。
+参数名: length 
+[2018-06-27 16:05:01.5518] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_user_view_list&uid=1&isPN=2&type=1
+异常信息:索引和长度必须引用该字符串内的位置。
+参数名: length 
+[2018-06-27 16:06:43.4283] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_user_view_list&uid=1&isPN=1&type=1
+异常信息:未将对象引用设置到对象的实例。 

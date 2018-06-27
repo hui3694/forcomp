@@ -32,7 +32,7 @@ namespace DTcms.Web.tools
                 case "get_openid":  //获取openid
                     get_openid(context);
                     break;
-                case "register":
+                case "register":     
                     register(context);
                     break;
                 case "news_view":
@@ -65,7 +65,9 @@ namespace DTcms.Web.tools
                 case "get_proUser_comment":
                     get_proUser_comment(context);
                     break;
-
+                case "get_user_view_list":
+                    get_user_view_list(context);
+                    break;
             }
 
         }
@@ -321,6 +323,7 @@ namespace DTcms.Web.tools
         }
         #endregion
 
+        #region user
         private void get_openid(HttpContext context)
         {
             string appid = DTRequest.GetString("appid");
@@ -337,7 +340,93 @@ namespace DTcms.Web.tools
                 context.Response.Write(reader.ReadToEnd());
             }
         }
+        private void update_user(HttpContext context)
+        {
+            string openid = DTRequest.GetString("openid");
+            string name = DTRequest.GetString("name");
+            int sex = DTRequest.GetInt("sex", 0);
+            string phone = DTRequest.GetString("phone");
+            string email = DTRequest.GetString("email");
+            Model.user model = new BLL.user().GetModel(openid);
+            model.nickname = name;
+            model.sex = sex;
+            model.phone = phone;
+            model.email = email;
+            if (new BLL.user().Update(model))
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
+            }
+            else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"修改失败！\"}");
+            }
+        }
+        
+        //收藏列表,点赞列表
+        private void get_user_view_list(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            int isPN = DTRequest.GetInt("isPN", 0);
+            int type = DTRequest.GetInt("type", 0);
+            DataTable dt = new BLL.news_view().GetList(0, "type=" + type + " and isPN=" + isPN + " and user_id=" + uid, "time desc").Tables[0];
+            dt.Columns.Add("title", typeof(string));
+            dt.Columns.Add("cont", typeof(string));
+            dt.Columns.Add("day", typeof(string));
+            
+            foreach(DataRow dr in dt.Rows)
+            {
+                string title, cont;
+                if (isPN == 1)
+                {
+                    Model.product model = new BLL.product().GetModel(Convert.ToInt32(dr["news_id"]));
+                    title = model.title;
+                    if (model.cont.Length > 60){
+                        cont = model.cont.Substring(0, 60) + "...";
+                    }else{
+                        cont = model.cont;
+                    }
+                    
+                }else
+                {
+                    Model.news model = new BLL.news().GetModel(Convert.ToInt32(dr["news_id"]));
+                    title = model.title;
+                    if (model.zhaiyao.Length > 60){
+                        cont = model.zhaiyao.Substring(0, 60) + "...";
+                    }else{
+                        cont = model.zhaiyao;
+                    }
+                }
+                dr["title"] = title;
+                dr["cont"] = cont;
+                //时间隔计算
+                DateTime t1 = DateTime.Now;
+                DateTime t2 = Convert.ToDateTime(dr["time"]);
+                TimeSpan ts = t1.Subtract(t2);
+                if (ts.Days > 3)
+                {
+                    dr["day"] = Convert.ToDateTime(dr["time"]).ToString("yyyy-MM-dd");
+                }else if (ts.Days > 0)
+                {
+                    dr["day"] = ts.Days + "天前";
+                }else if (ts.Hours > 0)
+                {
+                    dr["day"] = ts.Hours + "小时前";
+                }else if (ts.Minutes > 0)
+                {
+                    dr["day"] = ts.Minutes + "分钟前";
+                }else if (ts.Seconds > 0)
+                {
+                    dr["day"] = ts.Seconds + "秒前";
+                }
+                else
+                {
+                    dr["day"] = "未知";
+                }
 
+            }
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+        #endregion
 
         #region register
         private void register(HttpContext context)
@@ -386,10 +475,10 @@ namespace DTcms.Web.tools
             model.news_id = newsId;
             model.time = DateTime.Now;
 
-            if(uid==0 || new BLL.news_view().GetCount("user_id="+uid+" and isPN="+isPN+" and type="+type)==0)
+            if(uid==0 || new BLL.news_view().GetCount("user_id="+uid+" and isPN="+isPN+" and type="+type+" and news_id="+newsId)==0)
             {
                 new BLL.news_view().Add(model);
-                if (model.ispn == 2 && model.type==2)
+                if (model.type==2)
                 {
                     context.Response.Write("{\"status\":1,\"msg\":\"收藏成功！\"}");
                 }
@@ -487,7 +576,7 @@ namespace DTcms.Web.tools
             model.time = DateTime.Now;
             model.cont = cont;
 
-            if (isPN == 1 && new BLL.user().GetCount("uid="+uid+" and phone!=''")==0)
+            if (isPN == 1 && new BLL.user().GetCount("id="+uid+" and phone!=''")==0)
             {//判断为产品，需要填写手机号
                 context.Response.Write("{\"status\":0,\"msg\":\"请先在个人信息中补充联系电话！\"}");
                 return;
@@ -505,27 +594,7 @@ namespace DTcms.Web.tools
 
         #endregion
 
-        private void update_user(HttpContext context)
-        {
-            string openid = DTRequest.GetString("openid");
-            string name = DTRequest.GetString("name");
-            int sex = DTRequest.GetInt("sex", 0);
-            string phone = DTRequest.GetString("phone");
-            string email = DTRequest.GetString("email");
-            Model.user model = new BLL.user().GetModel(openid);
-            model.nickname = name;
-            model.sex = sex;
-            model.phone = phone;
-            model.email = email;
-            if(new BLL.user().Update(model))
-            {
-                context.Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
-            }else
-            {
-                context.Response.Write("{\"status\":0,\"msg\":\"修改失败！\"}");
-            }
-
-        }
+        
         public bool IsReusable
         {
             get

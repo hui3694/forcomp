@@ -64,7 +64,8 @@ create table fg_news_view(
 	news_id int,	--ËùÊôid
 	time datetime default getdate()
 )
-select * from fg_news_view where type=2
+select * from fg_news_view
+--delete  from fg_news_view where id=53 user_id=0 or news_id=0
 
 --ÆÀÂÛ±í
 --drop table fg_news_commend
