@@ -96,13 +96,14 @@ create table fg_product(
 	lon nvarchar(30),			--经度
 	city nvarchar(50),		--城市
 	addr nvarchar(200),		--详细地址
-
+	sort int,
 	user_id int,		--客户经理
 	status int,			--产品状态 1待审核，2审核通过，3审核失败
 	pass_time datetime,
 	add_time datetime default getdate()
 )
 select * from fg_product
+--alter table fg_product add sort int
 
 /*
 select * from fg_news where title like '%news%'
@@ -114,3 +115,5 @@ select distinct(city) from fg_product
 
 
 select * from fg_news_commend where news_id in(select id from fg_product where user_id=1) and isPN=1 order by time desc
+
+SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY ) as row_number, * from [fg_product]) AS T WHERE row_number between 1 and 13

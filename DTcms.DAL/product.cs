@@ -18,7 +18,7 @@ namespace DTcms.DAL
         public product(string _databaseprefix)
         {
             this.databaseprefix = _databaseprefix;
-            this.column = "id,category,title,img,cont,lat,lon,city,addr,user_id,status,pass_time,add_time";
+            this.column = "id,category,title,img,cont,lat,lon,city,addr,user_id,status,pass_time,add_time,sort";
         }
 
         #region 基本方法
@@ -95,9 +95,9 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into [" + databaseprefix + "product](");
-            strSql.Append("category,title,img,cont,lat,lon,city,addr,user_id,status,pass_time,add_time");
+            strSql.Append("category,title,img,cont,lat,lon,city,addr,user_id,status,pass_time,add_time,sort");
             strSql.Append(") values(");
-            strSql.Append("@category,@title,@img,@cont,@lat,@lon,@city,@addr,@user_id,@status,@pass_time,@add_time)");
+            strSql.Append("@category,@title,@img,@cont,@lat,@lon,@city,@addr,@user_id,@status,@pass_time,@add_time,@sort)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                 new SqlParameter("@category", SqlDbType.Int,4),
@@ -111,7 +111,8 @@ namespace DTcms.DAL
                 new SqlParameter("@user_id", SqlDbType.Int,4),
                 new SqlParameter("@status", SqlDbType.Int,4),
                 new SqlParameter("@pass_time", SqlDbType.DateTime),
-				new SqlParameter("@add_time", SqlDbType.DateTime)
+				new SqlParameter("@add_time", SqlDbType.DateTime),
+				new SqlParameter("@sort", SqlDbType.Int,4)
             };
             parameters[0].Value = model.category;
             parameters[1].Value = model.title;
@@ -125,6 +126,7 @@ namespace DTcms.DAL
             parameters[9].Value = model.status;
             parameters[10].Value = model.pass_time;
             parameters[11].Value = model.add_time;
+            parameters[12].Value = model.sort;
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (null != obj)
             {
@@ -170,7 +172,8 @@ namespace DTcms.DAL
             strSql.Append("user_id=@user_id,");
             strSql.Append("status=@status,");
             strSql.Append("pass_time=@pass_time,");
-            strSql.Append("add_time=@add_time");
+            strSql.Append("add_time=@add_time,");
+            strSql.Append("sort=@sort");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
                 new SqlParameter("@category", SqlDbType.Int,4),
@@ -185,6 +188,7 @@ namespace DTcms.DAL
                 new SqlParameter("@status", SqlDbType.Int,4),
                 new SqlParameter("@pass_time", SqlDbType.DateTime),
 				new SqlParameter("@add_time", SqlDbType.DateTime),
+				new SqlParameter("@sort", SqlDbType.Int),
                 new SqlParameter("@id", SqlDbType.Int,4)
             };
             parameters[0].Value = model.category;
@@ -199,7 +203,8 @@ namespace DTcms.DAL
             parameters[9].Value = model.status;
             parameters[10].Value = model.pass_time;
             parameters[11].Value = model.add_time;
-            parameters[12].Value = model.id;
+            parameters[12].Value = model.sort;
+            parameters[13].Value = model.id;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -386,6 +391,10 @@ namespace DTcms.DAL
             	{
             		model.add_time = DateTime.Parse(row["add_time"].ToString());
             	}
+                if (null != row["sort"] && "" != row["sort"].ToString())
+                {
+                    model.sort = int.Parse(row["sort"].ToString());
+                }
             }
             return model;
         }

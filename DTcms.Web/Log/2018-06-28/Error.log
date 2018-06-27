@@ -1,0 +1,56 @@
+[2018-06-28 00:23:24.0098] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-28 00:23:24.0870] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-28 00:28:23.3026] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-28 00:43:19.0590] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/news_list.aspx?page=2
+异常信息:文件“/admin/pro/news_list.aspx”不存在。 
+[2018-06-28 00:43:53.6857] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/news_list.aspx?page=2
+异常信息:文件“/admin/pro/news_list.aspx”不存在。 
+[2018-06-28 00:47:32.4663] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx?page=1
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(81): error CS1026: 应输入 ) 
+[2018-06-28 00:52:28.1501] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx?page=1
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-28 01:12:21.5410] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_edit.aspx?action=Edit&id=31
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-28 01:15:29.9175] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-28 01:15:29.9175] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1530119729800
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-28 01:15:30.0465] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-28 01:15:30.0964] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-28 01:15:30.0964] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-06-28 01:15:30.1104] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 

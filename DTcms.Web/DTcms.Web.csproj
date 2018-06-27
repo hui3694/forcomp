@@ -154,6 +154,8 @@
     <Content Include="admin\order\payment_list.aspx" />
     <Content Include="admin\pro\category_edit.aspx" />
     <Content Include="admin\pro\category_list.aspx" />
+    <Content Include="admin\pro\pro_edit.aspx" />
+    <Content Include="admin\pro\pro_list.aspx" />
     <Content Include="admin\settings\blank.html" />
     <Content Include="admin\settings\builder_html.aspx" />
     <Content Include="admin\settings\nav_edit.aspx" />
@@ -1255,6 +1257,20 @@
     </Compile>
     <Compile Include="admin\pro\category_list.aspx.designer.cs">
       <DependentUpon>category_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\pro\pro_edit.aspx.cs">
+      <DependentUpon>pro_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\pro\pro_edit.aspx.designer.cs">
+      <DependentUpon>pro_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\pro\pro_list.aspx.cs">
+      <DependentUpon>pro_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\pro\pro_list.aspx.designer.cs">
+      <DependentUpon>pro_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\settings\builder_html.aspx.cs">
       <DependentUpon>builder_html.aspx</DependentUpon>

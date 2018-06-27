@@ -12,3 +12,103 @@
 客户机IP:::1
 错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_user_view_list&uid=1&isPN=1&type=1
 异常信息:未将对象引用设置到对象的实例。 
+[2018-06-27 21:55:53.5878] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_category.aspx
+异常信息:文件“/admin/pro/pro_category.aspx”不存在。 
+[2018-06-27 21:55:55.6698] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_category.aspx
+异常信息:文件“/admin/pro/pro_category.aspx”不存在。 
+[2018-06-27 23:22:52.4701] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_category.aspx
+异常信息:文件“/admin/pro/pro_category.aspx”不存在。 
+[2018-06-27 23:22:56.1166] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_category.aspx
+异常信息:文件“/admin/pro/pro_category.aspx”不存在。 
+[2018-06-27 23:26:23.4420] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/category.aspx
+异常信息:文件“/admin/pro/category.aspx”不存在。 
+[2018-06-27 23:26:24.0978] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_category.aspx
+异常信息:文件“/admin/pro/pro_category.aspx”不存在。 
+[2018-06-27 23:26:24.9263] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/category.aspx
+异常信息:文件“/admin/pro/category.aspx”不存在。 
+[2018-06-27 23:26:25.9585] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_category.aspx
+异常信息:文件“/admin/pro/pro_category.aspx”不存在。 
+[2018-06-27 23:26:42.6792] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/category.aspx
+异常信息:文件“/admin/pro/category.aspx”不存在。 
+[2018-06-27 23:26:43.2678] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/category.aspx
+异常信息:文件“/admin/pro/category.aspx”不存在。 
+[2018-06-27 23:26:44.1528] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(37): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“btnSave_Click”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“btnSave_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:26:45.1383] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/category.aspx
+异常信息:文件“/admin/pro/category.aspx”不存在。 
+[2018-06-27 23:26:45.7103] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(37): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“btnSave_Click”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“btnSave_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:26:46.1010] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/category.aspx
+异常信息:文件“/admin/pro/category.aspx”不存在。 
+[2018-06-27 23:27:10.3722] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(37): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“btnSave_Click”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“btnSave_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:27:12.6765] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(37): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“btnSave_Click”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“btnSave_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:34:32.1521] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(39): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“btnDelete_Click”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“btnDelete_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:35:04.2146] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(49): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“rptList_ItemDataBound”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“rptList_ItemDataBound”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:39:27.5085] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(91): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“txtPageNum_TextChanged”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“txtPageNum_TextChanged”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:40:02.7781] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\pro\pro_list.aspx(44): error CS1061: “ASP.admin_pro_pro_list_aspx”不包含“btnSearch_Click”的定义，并且找不到可接受类型为“ASP.admin_pro_pro_list_aspx”的第一个参数的扩展方法“btnSearch_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-06-27 23:43:47.8855] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-27 23:44:36.7256] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-27 23:45:34.8055] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-27 23:49:28.6650] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-06-27 23:49:28.6650] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/pro/pro_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 

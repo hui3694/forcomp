@@ -23,6 +23,7 @@ namespace DTcms.Model
         private int _status = 0;
         private DateTime _pass_time = DateTime.Now;
         private DateTime _add_time = DateTime.Now;
+        private int _sort = 99;
 
         #region Model
 
@@ -108,6 +109,19 @@ namespace DTcms.Model
         {
            set { _add_time = value; }
            get { return _add_time; }
+        }
+
+        public int sort
+        {
+            get
+            {
+                return _sort;
+            }
+
+            set
+            {
+                _sort = value;
+            }
         }
 
         #endregion
