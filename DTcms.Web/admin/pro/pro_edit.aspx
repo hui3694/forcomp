@@ -98,8 +98,8 @@
       <dl>
         <dt>内容</dt>
         <dd>
-            <asp:TextBox ID="txtCont" runat="server" CssClass="input normal" TextMode="MultiLine" datatype="*" sucmsg=" "></asp:TextBox> 
-            <span class="Validform_checktip">*类别中文名称，100字符内</span>
+            <asp:TextBox ID="txtCont" runat="server" CssClass="input normal" TextMode="MultiLine" datatype="*1-255" sucmsg=" "></asp:TextBox> 
+            <span class="Validform_checktip">*1-255字符</span>
         </dd>
       </dl>
       <dl>

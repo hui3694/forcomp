@@ -80,16 +80,23 @@ namespace DTcms.Web.admin.pro
         {
             try
             {
-                BLL.pro_category bll = new BLL.pro_category();
-                Model.pro_category model = bll.GetModel(_id);
+                BLL.product bll = new BLL.product();
+                Model.product model = bll.GetModel(_id);
 
                 model.title = txtTitle.Text;
-               
-
+                model.category = Convert.ToInt32(ddlCategoryId.SelectedValue);
+                model.sort = Convert.ToInt32(txtSort.Text);
+                model.city = txtCity.Text;
+                model.lat = txtLat.Text;
+                model.lon = txtLon.Text;
+                model.addr = txtAddr.Text;
+                model.cont = txtCont.Text;
+                model.add_time = Convert.ToDateTime(txtAddTime.Text);
+                model.pass_time = Convert.ToDateTime(txtPassTime.Text);
 
                 if (bll.Update(model))
                 {
-                    AddAdminLog(DTEnums.ActionEnum.Edit.ToString(), "修改产品栏目分类:" + model.title); //记录日志
+                    AddAdminLog(DTEnums.ActionEnum.Edit.ToString(), "修改产品信息:" + model.title); //记录日志
                     return true;
                 }
             }
@@ -112,7 +119,7 @@ namespace DTcms.Web.admin.pro
                 JscriptMsg("保存过程中发生错误！", "");
                 return;
             }
-            JscriptMsg("修改类别成功！", "pro_list.aspx");
+            JscriptMsg("修改产品成功！", "pro_list.aspx");
 
         }
 
