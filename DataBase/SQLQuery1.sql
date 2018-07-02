@@ -117,3 +117,7 @@ select distinct(city) from fg_product
 select * from fg_news_commend where news_id in(select id from fg_product where user_id=1) and isPN=1 order by time desc
 
 SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY ) as row_number, * from [fg_product]) AS T WHERE row_number between 1 and 13
+
+select * from fg_product
+select * from fg_news
+select * from fg_news_view where type=1 and isPN=2 and user_id=1

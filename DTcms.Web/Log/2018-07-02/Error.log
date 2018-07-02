@@ -1,0 +1,40 @@
+[2018-07-02 11:52:50.9123] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:50.9123] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1530503570834
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:50.9532] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:50.9642] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:50.9642] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:50.9642] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:56.1233] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 11:52:56.1233] 
+客户机IP:::1
+错误地址:http://localhost:40620/plugins/lable/admin/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1530503576119
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-02 12:10:47.9313] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_user_view_list&uid=1&isPN=1&type=1
+异常信息:未将对象引用设置到对象的实例。 
+[2018-07-02 18:37:19.3553] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/settings/nav_edit.aspx?action=Edit&id=61
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
