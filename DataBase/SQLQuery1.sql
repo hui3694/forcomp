@@ -121,3 +121,29 @@ SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY ) as row_number, * from [fg_pro
 select * from fg_product
 select * from fg_news
 select * from fg_news_view where type=1 and isPN=2 and user_id=1
+
+--积分
+--drop table fg_point
+create table fg_point(
+	id int primary key identity,
+	user_id int,
+
+)
+
+--drop table fg_user_pm
+create table fg_user_pm(
+	id int primary key identity,
+	user_id int,
+	name varchar(100),
+	sex int,
+	origin nvarchar(100),		--籍贯
+	phone nvarchar(100),
+	comName nvarchar(100),		--公司名
+	job nvarchar(100),			--岗位
+	year nvarchar(100),			--入职年份
+	jobImg nvarchar(max),		--工牌照片
+	img nvarchar(max),			--生活照
+	add_time datetime,
+	pass_time datetime
+)
+select * from fg_user_pm

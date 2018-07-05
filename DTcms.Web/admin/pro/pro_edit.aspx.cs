@@ -94,6 +94,7 @@ namespace DTcms.Web.admin.pro
                 model.add_time = Convert.ToDateTime(txtAddTime.Text);
                 model.pass_time = Convert.ToDateTime(txtPassTime.Text);
 
+
                 if (bll.Update(model))
                 {
                     AddAdminLog(DTEnums.ActionEnum.Edit.ToString(), "修改产品信息:" + model.title); //记录日志
@@ -111,7 +112,6 @@ namespace DTcms.Web.admin.pro
         //保存类别
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
             ChkAdminLevel("pro_list", DTEnums.ActionEnum.Edit.ToString()); //检查权限
             if (!DoEdit(this.id))
             {
@@ -120,7 +120,6 @@ namespace DTcms.Web.admin.pro
                 return;
             }
             JscriptMsg("修改产品成功！", "pro_list.aspx");
-
         }
 
 
