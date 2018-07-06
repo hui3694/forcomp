@@ -19,7 +19,7 @@ namespace DTcms.Web.admin.pro
         
                 if (!new BLL.product().Exists(this.id))
                 {
-                    JscriptMsg("类别不存在或已被删除！", "back");
+                    JscriptMsg("产品不存在或已被删除！", "back");
                     return;
                 }
             if (!Page.IsPostBack)

@@ -2,3 +2,59 @@
 客户机IP:::1
 错误地址:http://localhost:40620/tools/app_ajax.ashx?action=register_pm&name=钟辉&birthday=1990-06-08&sex=1&origin=深圳&phone=18312341234&comName=深圳一尘&job=程序员&year=2017&uid=1&jobImg=/upload/201807/06/201807061740145092.jpg&img=/upload/201807/06/201807061740164361.png
 异常信息:SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。 
+[2018-07-06 22:30:09.0403] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pm_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\user\pm_list.aspx(83): error CS0103: 当前上下文中不存在名称“GetStatus” 
+[2018-07-06 23:01:10.7308] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pm_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\user\pm_list.aspx(83): error CS0103: 当前上下文中不存在名称“GetStatus” 
+[2018-07-06 23:04:35.8354] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pm_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-06 23:05:00.1988] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pm_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-06 23:22:04.7877] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pm_list.aspx
+异常信息:e:\web\forcomp\DTcms.Web\admin\user\pm_list.aspx(84): error CS1026: 应输入 ) 
+[2018-07-06 23:23:18.1447] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pro_edit.aspx?action=Edit&id=1
+异常信息:文件“/admin/user/pro_edit.aspx”不存在。 
+[2018-07-06 23:23:34.2685] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pm_list.aspx?keywords=1
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-06 23:27:04.6022] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/pro_edit.aspx?action=Edit&id=1
+异常信息:文件“/admin/user/pro_edit.aspx”不存在。 
+[2018-07-06 23:38:34.2608] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-06 23:38:34.2608] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1530891514118
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-06 23:38:34.3919] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-06 23:38:34.4698] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-06 23:38:34.4698] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-06 23:38:34.4828] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 

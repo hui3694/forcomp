@@ -1,0 +1,24 @@
+[2018-07-07 00:37:23.1369] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/default/css/ueditor.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-07 00:37:23.1369] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/tools/upload_ajax.ashx?action=config&&noCache=1530895043058
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-07 00:37:23.2808] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/themes/iframe.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-07 00:37:23.3608] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/zeroclipboard/ZeroClipboard.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-07 00:37:23.3658] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.css
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-07 00:37:23.3658] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
+异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
