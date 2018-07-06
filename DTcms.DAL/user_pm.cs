@@ -18,7 +18,7 @@ namespace DTcms.DAL
         public user_pm(string _databaseprefix)
         {
             this.databaseprefix = _databaseprefix;
-            this.column = "id,user_id,name,sex,origin,phone,comname,job,year,jobimg,img,add_time,pass_time";
+            this.column = "id,user_id,name,sex,origin,phone,comname,job,year,jobimg,img,status,add_time,pass_time";
         }
 
         #region 基本方法
@@ -113,9 +113,9 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into [" + databaseprefix + "user_pm](");
-            strSql.Append("user_id,name,sex,origin,phone,comname,job,year,jobimg,img,add_time,pass_time");
+            strSql.Append("user_id,name,sex,origin,phone,comname,job,year,jobimg,img,status,add_time");
             strSql.Append(") values(");
-            strSql.Append("@user_id,@name,@sex,@origin,@phone,@comname,@job,@year,@jobimg,@img,@add_time,@pass_time)");
+            strSql.Append("@user_id,@name,@sex,@origin,@phone,@comname,@job,@year,@jobimg,@img,@status,@add_time)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                 new SqlParameter("@user_id", SqlDbType.Int,4),
@@ -125,11 +125,11 @@ namespace DTcms.DAL
                 new SqlParameter("@phone", SqlDbType.NVarChar,100),
                 new SqlParameter("@comname", SqlDbType.NVarChar,100),
                 new SqlParameter("@job", SqlDbType.NVarChar,100),
-                new SqlParameter("@year", SqlDbType.NVarChar,100),
+                new SqlParameter("@year", SqlDbType.Int,4),
                 new SqlParameter("@jobimg", SqlDbType.NText),
                 new SqlParameter("@img", SqlDbType.NText),
-                new SqlParameter("@add_time", SqlDbType.DateTime),
-				new SqlParameter("@pass_time", SqlDbType.DateTime)
+                new SqlParameter("@status", SqlDbType.Int,4),
+                new SqlParameter("@add_time", SqlDbType.DateTime)
             };
             parameters[0].Value = model.user_id;
             parameters[1].Value = model.name;
@@ -141,8 +141,8 @@ namespace DTcms.DAL
             parameters[7].Value = model.year;
             parameters[8].Value = model.jobimg;
             parameters[9].Value = model.img;
-            parameters[10].Value = model.add_time;
-            parameters[11].Value = model.pass_time;
+            parameters[10].Value = model.status;
+            parameters[11].Value = model.add_time;
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (null != obj)
             {
@@ -187,6 +187,7 @@ namespace DTcms.DAL
             strSql.Append("year=@year,");
             strSql.Append("jobimg=@jobimg,");
             strSql.Append("img=@img,");
+            strSql.Append("status=@status,");
             strSql.Append("add_time=@add_time,");
             strSql.Append("pass_time=@pass_time");
             strSql.Append(" where id=@id");
@@ -198,9 +199,10 @@ namespace DTcms.DAL
                 new SqlParameter("@phone", SqlDbType.NVarChar,100),
                 new SqlParameter("@comname", SqlDbType.NVarChar,100),
                 new SqlParameter("@job", SqlDbType.NVarChar,100),
-                new SqlParameter("@year", SqlDbType.NVarChar,100),
+                new SqlParameter("@year", SqlDbType.Int,4),
                 new SqlParameter("@jobimg", SqlDbType.NText),
                 new SqlParameter("@img", SqlDbType.NText),
+                new SqlParameter("@status", SqlDbType.Int,4),
                 new SqlParameter("@add_time", SqlDbType.DateTime),
 				new SqlParameter("@pass_time", SqlDbType.DateTime),
                 new SqlParameter("@id", SqlDbType.Int,4)
@@ -215,9 +217,10 @@ namespace DTcms.DAL
             parameters[7].Value = model.year;
             parameters[8].Value = model.jobimg;
             parameters[9].Value = model.img;
-            parameters[10].Value = model.add_time;
-            parameters[11].Value = model.pass_time;
-            parameters[12].Value = model.id;
+            parameters[10].Value = model.status;
+            parameters[11].Value = model.add_time;
+            parameters[12].Value = model.pass_time;
+            parameters[13].Value = model.id;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -388,9 +391,9 @@ namespace DTcms.DAL
             	{
             		model.job = row["job"].ToString();
             	}
-            	if (null != row["year"])
+            	if (null != row["year"] && "" != row["year"].ToString())
             	{
-            		model.year = row["year"].ToString();
+            		model.year = int.Parse(row["year"].ToString());
             	}
             	if (null != row["jobimg"])
             	{
@@ -399,6 +402,10 @@ namespace DTcms.DAL
             	if (null != row["img"])
             	{
             		model.img = row["img"].ToString();
+            	}
+            	if (null != row["status"] && "" != row["status"].ToString())
+            	{
+            		model.status = int.Parse(row["status"].ToString());
             	}
             	if (null != row["add_time"] && "" != row["add_time"].ToString())
             	{

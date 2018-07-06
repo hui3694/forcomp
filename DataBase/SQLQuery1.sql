@@ -140,10 +140,13 @@ create table fg_user_pm(
 	phone nvarchar(100),
 	comName nvarchar(100),		--公司名
 	job nvarchar(100),			--岗位
-	year nvarchar(100),			--入职年份
+	year int,					--入职年份
 	jobImg nvarchar(max),		--工牌照片
 	img nvarchar(max),			--生活照
+	status int,					--1待审核 2审核通过 3审核不通过
 	add_time datetime,
 	pass_time datetime
 )
 select * from fg_user_pm
+
+select getdate()

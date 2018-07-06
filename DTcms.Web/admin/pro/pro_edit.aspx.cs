@@ -61,6 +61,11 @@ namespace DTcms.Web.admin.pro
         private void ShowInfo(int id)
         {
             Model.product model = new BLL.product().GetModel(id);
+            if (model.status != 1)
+            {
+                btnPass.Visible = false;
+                btnPass2.Visible = false;
+            }
             ddlCategoryId.SelectedValue = model.category.ToString();
             txtSort.Text = model.sort.ToString();
             txtTitle.Text = model.title;
@@ -122,6 +127,16 @@ namespace DTcms.Web.admin.pro
             JscriptMsg("修改产品成功！", "pro_list.aspx");
         }
 
+        protected void btnPass_Click(object sender, EventArgs e)
+        {
+            new BLL.product().UpdateField(id, "status=2,pass_time=getdate()");
+            JscriptMsg("审核产品完成！", "pro_list.aspx");
+        }
 
+        protected void btnPass2_Click(object sender, EventArgs e)
+        {
+            new BLL.product().UpdateField(id, "status=3,pass_time=getdate()");
+            JscriptMsg("审核产品完成！", "pro_list.aspx");
+        }
     }
 }

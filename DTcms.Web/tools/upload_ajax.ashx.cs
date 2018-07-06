@@ -23,11 +23,11 @@ namespace DTcms.Web.tools
         public void ProcessRequest(HttpContext context)
         {
             //检查管理员是否登录
-            if (!new ManagePage().IsAdminLogin())
-            {
-                context.Response.Write("{\"status\": 0, \"msg\": \"尚未登录或已超时，请登录后操作！\"}");
-                return;
-            }
+            //if (!new ManagePage().IsAdminLogin())
+            //{
+            //    context.Response.Write("{\"status\": 0, \"msg\": \"尚未登录或已超时，请登录后操作！\"}");
+            //    return;
+            //}
             //取得处事类型
             string action = DTRequest.GetQueryString("action");
             switch (action)

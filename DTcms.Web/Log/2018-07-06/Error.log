@@ -1,0 +1,4 @@
+[2018-07-06 18:01:13.9885] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=register_pm&name=钟辉&birthday=1990-06-08&sex=1&origin=深圳&phone=18312341234&comName=深圳一尘&job=程序员&year=2017&uid=1&jobImg=/upload/201807/06/201807061740145092.jpg&img=/upload/201807/06/201807061740164361.png
+异常信息:SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。 

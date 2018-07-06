@@ -68,6 +68,12 @@ namespace DTcms.Web.tools
                 case "get_user_view_list":
                     get_user_view_list(context);
                     break;
+                case "register_pm":
+                    register_pm(context);
+                    break;
+                case "pm_exis":
+                    pm_exis(context);
+                    break;
             }
 
         }
@@ -164,7 +170,7 @@ namespace DTcms.Web.tools
                 DataSet ds2 = new BLL.pro_category().GetList(0, "parent_id=" + dr["id"], "");
                 foreach(DataRow dr2 in ds2.Tables[0].Rows)
                 {
-                    int num = new BLL.product().GetCount("city='" + city + "' and category=" + dr2["id"].ToString());
+                    int num = new BLL.product().GetCount("status=2 and city='" + city + "' and category=" + dr2["id"].ToString());
                     strJson += "{";
                     strJson += "\"id\":\"" + dr2["id"].ToString() + "\",";
                     strJson += "\"title\":\"" + dr2["title"].ToString() + "\",";
@@ -191,7 +197,7 @@ namespace DTcms.Web.tools
 
             int count = 0;
             int pageSize = 8;
-            int sum = new BLL.product().GetCount("city='" + city + "' and category=" + (category==0? "category":category.ToString()));
+            int sum = new BLL.product().GetCount("status=2 and city='" + city + "' and category=" + (category==0? "category":category.ToString()));
 
             if ((page - 1) * pageSize >= sum)
             {
@@ -362,6 +368,107 @@ namespace DTcms.Web.tools
             }
         }
         
+        private void register_pm(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            string name = DTRequest.GetString("name");
+            string birthday = DTRequest.GetString("birthday");
+            int sex = DTRequest.GetInt("sex", 0);
+            string origin = DTRequest.GetString("origin");
+            string phone = DTRequest.GetString("phone");
+            string comName = DTRequest.GetString("comName");
+            string job = DTRequest.GetString("job");
+            int year = DTRequest.GetInt("year",0);
+            string jobImg = DTRequest.GetString("jobImg");
+            string img = DTRequest.GetString("img");
+
+            if (uid == 0)
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"未登录，请登录后重新提交！\"}");
+                return;
+            }
+            if (name == "")
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请输入姓名！\"}");
+                return;
+            }
+            if (sex == 0)
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请选择性别！\"}");
+                return;
+            }
+            if (origin == "")
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请输入籍贯！\"}");
+                return;
+            }
+            if (phone == "")
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请输入电话号码！\"}");
+                return;
+            }
+            if (comName == "")
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请输入公司名称！\"}");
+                return;
+            }
+            if (job == "")
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请输入所在岗位！\"}");
+                return;
+            }
+            if (jobImg == "" || jobImg == "undefined" || img == "" || img == "undefined")
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"请上传工牌照片和生活照！\"}");
+                return;
+            }
+
+            Model.user_pm model = new Model.user_pm();
+            model.user_id = uid;
+            model.name = name;
+            model.sex = sex;
+            model.origin = origin;
+            model.phone = phone;
+            model.comname = comName;
+            model.job = job;
+            model.year = year;
+            model.jobimg = jobImg;
+            model.img = img;
+            model.status = 1;
+            model.add_time = DateTime.Now;
+
+            if (new BLL.user_pm().Add(model) > 0)
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"提交失败，请重新提交！\"}");
+            }
+        }
+
+        private void pm_exis(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            if (uid == 0)
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"未登录，请先登录！\"}");
+            }
+            if(new BLL.user_pm().GetCount("user_id=" + uid) > 0)
+            {
+                int val = Convert.ToInt32(new BLL.user_pm().GetList(0, "user_id=" + uid, "").Tables[0].Rows[0]["status"]);
+                if (val == 1)
+                {
+                    context.Response.Write("{\"status\":1,\"msg\":\"审核中，请耐心等待！\",\"val\":" + val + "}");
+                }else if (val == 2)
+                {
+                    context.Response.Write("{\"status\":2,\"msg\":\"审核已通过！\",\"val\":" + val + "}");
+                }else
+                {
+                    context.Response.Write("{\"status\":1,\"msg\":\"审核未通过！\",\"val\":" + val + "}");
+                }
+            }
+        }
+
         //收藏列表,点赞列表
         private void get_user_view_list(HttpContext context)
         {

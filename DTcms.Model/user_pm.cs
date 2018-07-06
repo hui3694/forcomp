@@ -18,9 +18,10 @@ namespace DTcms.Model
         private string _phone = string.Empty;
         private string _comname = string.Empty;
         private string _job = string.Empty;
-        private string _year = string.Empty;
+        private int _year = 0;
         private string _jobimg = string.Empty;
         private string _img = string.Empty;
+        private int _status = 0;
         private DateTime _add_time = DateTime.Now;
         private DateTime _pass_time = DateTime.Now;
 
@@ -75,7 +76,7 @@ namespace DTcms.Model
            set { _job = value; }
            get { return _job; }
         }
-        public string year
+        public int year
         {
            set { _year = value; }
            get { return _year; }
@@ -89,6 +90,14 @@ namespace DTcms.Model
         {
            set { _img = value; }
            get { return _img; }
+        }
+        /// <summary>
+        /// 状态
+        /// </summary>
+        public int status
+        {
+           set { _status = value; }
+           get { return _status; }
         }
         /// <summary>
         /// 添加时间

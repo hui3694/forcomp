@@ -967,7 +967,8 @@ namespace DTcms.DBUtility
                     }
                     catch (System.Data.SqlClient.SqlException e)
                     {
-                        throw e;
+                        //throw e;
+                        return null;
                     }
                     finally  //2016-07-11
                     {
