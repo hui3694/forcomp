@@ -118,11 +118,6 @@ H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Link.pdb
 H:\YWCMS\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.dll
 H:\YWCMS\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.pdb
-F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Link.dll
-F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Link.pdb
-F:\demo\forcomp\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.csprojResolveAssemblyReference.cache
-F:\demo\forcomp\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.dll
-F:\demo\forcomp\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.pdb
 E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Link.dll
 E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Link.pdb
 E:\web\forcomp\DTcms.Web\plugins\link\obj\Debug\DTcms.Web.Plugin.Link.csprojResolveAssemblyReference.cache

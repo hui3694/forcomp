@@ -22,3 +22,7 @@
 客户机IP:::1
 错误地址:http://localhost:40620/admin/news/chrome-extension:/geojgbiepfpcddgilmjphomafbedackp/third-party/codemirror/codemirror.js
 异常信息:从客户端(:)中检测到有潜在危险的 Request.Path 值。 
+[2018-07-07 12:00:37.2744] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/article/article_edit.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 

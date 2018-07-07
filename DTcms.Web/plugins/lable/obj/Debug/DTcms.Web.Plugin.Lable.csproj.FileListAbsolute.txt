@@ -54,11 +54,6 @@ H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Lable.pdb
 H:\YWCMS\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.dll
 H:\YWCMS\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.pdb
-F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.dll
-F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.pdb
-F:\demo\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.csprojResolveAssemblyReference.cache
-F:\demo\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.dll
-F:\demo\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.pdb
 E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.dll
 E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Lable.pdb
 E:\web\forcomp\DTcms.Web\plugins\lable\obj\Debug\DTcms.Web.Plugin.Lable.csprojResolveAssemblyReference.cache

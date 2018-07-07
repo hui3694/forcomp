@@ -38,11 +38,6 @@ H:\YWCMS\DTcms.Web\bin\DTcms.Web.Plugin.Images.pdb
 H:\YWCMS\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.dll
 H:\YWCMS\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.pdb
-F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Images.dll
-F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Images.pdb
-F:\demo\forcomp\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.csprojResolveAssemblyReference.cache
-F:\demo\forcomp\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.dll
-F:\demo\forcomp\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.pdb
 E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Images.dll
 E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Images.pdb
 E:\web\forcomp\DTcms.Web\plugins\images\obj\Debug\DTcms.Web.Plugin.Images.csprojResolveAssemblyReference.cache

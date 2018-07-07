@@ -701,7 +701,27 @@ namespace DTcms.Web.tools
 
         #endregion
 
-        
+        #region 其他
+        /// <summary>
+        /// 积分记录
+        /// </summary>
+        /// <param name="context"></param>
+        private void point_log(HttpContext context)
+        {
+            //type:1签到，2发表评论，3每天分享3个50人以上群或分享资讯到朋友圈，4联系产品经理
+            int type = DTRequest.GetInt("type", 0);
+            int uid = DTRequest.GetInt("uid", 0);
+            int val = DTRequest.GetInt("val", 0);
+
+            string remark = DTRequest.GetString("remark");
+            Model.point model = new Model.point();
+            model.user_id = uid;
+            model.value = val;
+            model.remark = remark;
+            model.add_time = DateTime.Now;
+            new BLL.point().Add(model);
+        }
+        #endregion
         public bool IsReusable
         {
             get

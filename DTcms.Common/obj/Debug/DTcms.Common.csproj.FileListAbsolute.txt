@@ -99,17 +99,6 @@ H:\YWCMS\DTcms.Common\bin\Debug\NVelocity.xml
 H:\YWCMS\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache
 H:\YWCMS\DTcms.Common\obj\Debug\DTcms.Common.dll
 H:\YWCMS\DTcms.Common\obj\Debug\DTcms.Common.pdb
-F:\demo\forcomp\DTcms.Common\bin\Debug\DTcms.Common.dll
-F:\demo\forcomp\DTcms.Common\bin\Debug\DTcms.Common.pdb
-F:\demo\forcomp\DTcms.Common\bin\Debug\Newtonsoft.Json.dll
-F:\demo\forcomp\DTcms.Common\bin\Debug\NLog.dll
-F:\demo\forcomp\DTcms.Common\bin\Debug\NVelocity.dll
-F:\demo\forcomp\DTcms.Common\bin\Debug\Newtonsoft.Json.xml
-F:\demo\forcomp\DTcms.Common\bin\Debug\NLog.xml
-F:\demo\forcomp\DTcms.Common\bin\Debug\NVelocity.xml
-F:\demo\forcomp\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache
-F:\demo\forcomp\DTcms.Common\obj\Debug\DTcms.Common.dll
-F:\demo\forcomp\DTcms.Common\obj\Debug\DTcms.Common.pdb
 E:\web\forcomp\DTcms.Common\bin\Debug\DTcms.Common.dll
 E:\web\forcomp\DTcms.Common\bin\Debug\DTcms.Common.pdb
 E:\web\forcomp\DTcms.Common\bin\Debug\Newtonsoft.Json.dll
