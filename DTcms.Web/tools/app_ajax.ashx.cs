@@ -720,6 +720,7 @@ namespace DTcms.Web.tools
             model.remark = remark;
             model.add_time = DateTime.Now;
             new BLL.point().Add(model);
+
         }
         #endregion
         public bool IsReusable

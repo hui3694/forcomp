@@ -142,3 +142,16 @@ E:\web\forcomp\DTcms.DBUtility\bin\Debug\NVelocity.xml
 E:\web\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
 E:\web\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
 E:\web\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\Newtonsoft.Json.dll
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\NLog.dll
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\NVelocity.dll
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\Newtonsoft.Json.xml
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\NLog.xml
+F:\demo\forcomp\DTcms.DBUtility\bin\Debug\NVelocity.xml
+F:\demo\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+F:\demo\forcomp\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb

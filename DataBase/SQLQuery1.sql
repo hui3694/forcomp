@@ -127,8 +127,11 @@ select * from fg_news_view where type=1 and isPN=2 and user_id=1
 create table fg_point(
 	id int primary key identity,
 	user_id int,
-
+	value int,
+	remark nvarchar(100),
+	add_time datetime
 )
+select * from fg_point
 
 --drop table fg_user_pm
 create table fg_user_pm(

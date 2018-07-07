@@ -143,3 +143,16 @@ E:\web\forcomp\DTcms.Model\bin\Debug\NVelocity.xml
 E:\web\forcomp\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
 E:\web\forcomp\DTcms.Model\obj\Debug\DTcms.Model.dll
 E:\web\forcomp\DTcms.Model\obj\Debug\DTcms.Model.pdb
+F:\demo\forcomp\DTcms.Model\bin\Debug\DTcms.Model.dll
+F:\demo\forcomp\DTcms.Model\bin\Debug\DTcms.Model.pdb
+F:\demo\forcomp\DTcms.Model\bin\Debug\DTcms.Common.dll
+F:\demo\forcomp\DTcms.Model\bin\Debug\Newtonsoft.Json.dll
+F:\demo\forcomp\DTcms.Model\bin\Debug\NLog.dll
+F:\demo\forcomp\DTcms.Model\bin\Debug\NVelocity.dll
+F:\demo\forcomp\DTcms.Model\bin\Debug\DTcms.Common.pdb
+F:\demo\forcomp\DTcms.Model\bin\Debug\Newtonsoft.Json.xml
+F:\demo\forcomp\DTcms.Model\bin\Debug\NLog.xml
+F:\demo\forcomp\DTcms.Model\bin\Debug\NVelocity.xml
+F:\demo\forcomp\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.Model\obj\Debug\DTcms.Model.dll
+F:\demo\forcomp\DTcms.Model\obj\Debug\DTcms.Model.pdb

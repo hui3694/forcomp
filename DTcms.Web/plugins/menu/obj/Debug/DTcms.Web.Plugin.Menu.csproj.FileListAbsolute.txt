@@ -48,3 +48,8 @@ E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.pdb
 E:\web\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.csprojResolveAssemblyReference.cache
 E:\web\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.dll
 E:\web\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.pdb
+F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.dll
+F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Menu.pdb
+F:\demo\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.dll
+F:\demo\forcomp\DTcms.Web\plugins\menu\obj\Debug\DTcms.Web.Plugin.Menu.pdb

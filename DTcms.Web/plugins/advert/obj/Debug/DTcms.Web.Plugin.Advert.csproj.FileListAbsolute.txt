@@ -108,3 +108,8 @@ E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Advert.pdb
 E:\web\forcomp\DTcms.Web\plugins\advert\obj\Debug\DTcms.Web.Plugin.Advert.csprojResolveAssemblyReference.cache
 E:\web\forcomp\DTcms.Web\plugins\advert\obj\Debug\DTcms.Web.Plugin.Advert.dll
 E:\web\forcomp\DTcms.Web\plugins\advert\obj\Debug\DTcms.Web.Plugin.Advert.pdb
+F:\demo\forcomp\DTcms.Web\plugins\advert\obj\Debug\DTcms.Web.Plugin.Advert.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Advert.dll
+F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Advert.pdb
+F:\demo\forcomp\DTcms.Web\plugins\advert\obj\Debug\DTcms.Web.Plugin.Advert.dll
+F:\demo\forcomp\DTcms.Web\plugins\advert\obj\Debug\DTcms.Web.Plugin.Advert.pdb

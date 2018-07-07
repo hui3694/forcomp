@@ -133,3 +133,8 @@ E:\web\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.pdb
 E:\web\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.csprojResolveAssemblyReference.cache
 E:\web\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.dll
 E:\web\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.pdb
+F:\demo\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.csprojResolveAssemblyReference.cache
+F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.dll
+F:\demo\forcomp\DTcms.Web\bin\DTcms.Web.Plugin.Feedback.pdb
+F:\demo\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.dll
+F:\demo\forcomp\DTcms.Web\plugins\feedback\obj\Debug\DTcms.Web.Plugin.Feedback.pdb
