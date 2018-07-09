@@ -74,6 +74,12 @@ namespace DTcms.Web.tools
                 case "pm_exis":
                     pm_exis(context);
                     break;
+                case "point_log":
+                    point_log(context);
+                    break;
+                case "get_point_list":
+                    get_point_list(context);
+                    break;
             }
 
         }
@@ -712,16 +718,77 @@ namespace DTcms.Web.tools
             int type = DTRequest.GetInt("type", 0);
             int uid = DTRequest.GetInt("uid", 0);
             int val = DTRequest.GetInt("val", 0);
-
             string remark = DTRequest.GetString("remark");
+
             Model.point model = new Model.point();
             model.user_id = uid;
-            model.value = val;
-            model.remark = remark;
+            //model.value = val;
+            //model.remark = remark;
             model.add_time = DateTime.Now;
-            new BLL.point().Add(model);
 
+            switch (type)
+            {
+                case 1://签到
+                    if(new BLL.user_sign().GetCount("user_id="+uid+ " and DateDiff(dd,time,getdate())=0") == 0)
+                    {
+                        model.value = 5;//每日签到5点积分
+                        DataTable dt = new BLL.user_sign().GetList(0, "user_id=" + uid + " and DateDiff(dd,time,getdate())=0", "").Tables[0];
+                        Model.user_sign sign = new Model.user_sign();
+                        sign.user_id = uid;
+                        sign.time = DateTime.Now;
+                        if (dt.Rows.Count > 0)
+                        {
+                            int day = Convert.ToInt32(dt.Rows[0]["day"]) + 1;
+                            sign.day = day;
+                            model.remark = "连续签到第" + day + "天";
+                            if (day == 10 || day == 30)
+                            {
+                                //-----------------------------
+                                //连续签到10天或30天送红包
+                                //-----------------------------
+                            }
+                        }
+                        else
+                        {
+                            sign.day = 1;
+                            model.remark = "连续签到第1天";
+                        }
+                        new BLL.user_sign().Add(sign);
+                        new BLL.point().Add(model);
+                        new BLL.user().UpdateField(uid, "point=point+" + model.value);
+                        context.Response.Write("{\"status\":1,\"msg\":\""+model.remark+",签到成功！\"}");
+                    }
+                    else
+                    {
+                        context.Response.Write("{\"status\":1,\"msg\":\"今天已经签到过了！\"}");
+                    }
+                    break;
+                case 2://发表评论
+
+                    break;
+                case 3://分享
+
+                    break;
+                case 4://联系产品经理
+
+                    break;
+            }
         }
+
+        private void get_point_list(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            DataTable dt = new BLL.point().GetList(0, "user_id=" + uid, "add_time").Tables[0];
+            dt.Columns.Add("time", typeof(string));
+            foreach(DataRow dr in dt.Rows)
+            {
+                dr["time"] = Convert.ToDateTime(dr["add_time"]).ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+
+
+
         #endregion
         public bool IsReusable
         {

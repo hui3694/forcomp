@@ -108,6 +108,7 @@
     <Compile Include="user_pm.cs" />
     <Compile Include="user_point_log.cs" />
     <Compile Include="user_recharge.cs" />
+    <Compile Include="user_sign.cs" />
     <Compile Include="weixin_access_token.cs" />
     <Compile Include="weixin_account.cs" />
     <Compile Include="weixin_request_rule.cs" />

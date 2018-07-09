@@ -153,3 +153,15 @@ create table fg_user_pm(
 select * from fg_user_pm
 
 select getdate()
+
+--drop table fg_user_sign
+create table fg_user_sign(
+	id int primary key identity,
+	user_id int,
+	time datetime,
+	day int
+)
+insert into fg_user_sign values(1,GETDATE(),1)
+select * from fg_user_sign
+select * from fg_point
+select * from fg_user_sign where DateDiff(dd,time,getdate())=1

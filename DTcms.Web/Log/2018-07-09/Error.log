@@ -1,0 +1,12 @@
+[2018-07-09 17:09:44.0982] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=point_log&type=1&uid=1
+异常信息:对象名 'dt_user_sign' 无效。 
+[2018-07-09 17:30:24.0504] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_point_list&uid=1
+异常信息:列名 'time' 无效。 
+[2018-07-09 17:30:41.8254] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_point_list&uid=1
+异常信息:列名 'time' 无效。 

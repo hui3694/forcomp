@@ -5,16 +5,16 @@ using System.Data;
 namespace DTcms.BLL
 {
     /// <summary>
-    /// 积分
+    /// 业务逻辑层
     /// </summary>
-    public class point
+    public class user_sign
     {
         private readonly Model.siteconfig siteConfig = new BLL.siteconfig().loadConfig();
-        private readonly DAL.point dal;
+        private readonly DAL.user_sign dal;
 
-        public point()  
+        public user_sign()  
         {
-              dal = new DAL.point("fg_");
+              dal = new DAL.user_sign("fg_");
         }
 
         #region 基本方法
@@ -43,9 +43,9 @@ namespace DTcms.BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        /// <param name="model">Model.point</param>
+        /// <param name="model">Model.user_sign</param>
         /// <returns>ID</returns>
-        public int Add(Model.point model)
+        public int Add(Model.user_sign model)
         {
               return dal.Add(model);
         }
@@ -67,9 +67,9 @@ namespace DTcms.BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        /// <param name="model">Model.point</param>
+        /// <param name="model">Model.user_sign</param>
         /// <returns>True Or False</returns>
-        public bool Update(Model.point model)
+        public bool Update(Model.user_sign model)
         {
               return dal.Update(model);
         }
@@ -92,8 +92,8 @@ namespace DTcms.BLL
         /// 返回一个实体
         /// </summary>
         /// <param name="id">ID号</param>
-        /// <returns>Model.point</returns>
-        public Model.point GetModel(int id)
+        /// <returns>Model.user_sign</returns>
+        public Model.user_sign GetModel(int id)
         {
               return dal.GetModel(id);
         }
