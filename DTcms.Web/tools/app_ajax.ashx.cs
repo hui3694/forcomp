@@ -6,6 +6,8 @@ using System.Web.SessionState;
 using DTcms.Web.UI;
 using DTcms.Common;
 using System.Data;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace DTcms.Web.tools
 {
@@ -79,6 +81,9 @@ namespace DTcms.Web.tools
                     break;
                 case "get_point_list":
                     get_point_list(context);
+                    break;
+                case "get_qunID":
+                    get_qunID(context);
                     break;
             }
 
@@ -336,6 +341,51 @@ namespace DTcms.Web.tools
         #endregion
 
         #region user
+        //解密
+        public string AES_decrypt(string encryptedDataStr, string key, string iv)
+        {
+            RijndaelManaged rijalg = new RijndaelManaged();
+            //-----------------    
+            //设置 cipher 格式 AES-128-CBC    
+
+            rijalg.KeySize = 128;
+
+            rijalg.Padding = PaddingMode.PKCS7;
+            rijalg.Mode = CipherMode.CBC;
+
+            rijalg.Key = Convert.FromBase64String(key);
+            rijalg.IV = Convert.FromBase64String(iv);
+
+
+            byte[] encryptedData = Convert.FromBase64String(encryptedDataStr);
+            //解密    
+            ICryptoTransform decryptor = rijalg.CreateDecryptor(rijalg.Key, rijalg.IV);
+
+            string result;
+
+            using (MemoryStream msDecrypt = new MemoryStream(encryptedData))
+            {
+                using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                {
+                    using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                    {
+
+                        result= srDecrypt.ReadToEnd();
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private void get_qunID(HttpContext context)
+        {
+            string iv = DTRequest.GetString("iv");
+            string encryptedData = DTRequest.GetString("encryptedData");
+            string key = DTRequest.GetString("key");
+            context.Response.Write(AES_decrypt(encryptedData, "", iv));
+        }
+
         private void get_openid(HttpContext context)
         {
             string appid = DTRequest.GetString("appid");
@@ -707,7 +757,7 @@ namespace DTcms.Web.tools
 
         #endregion
 
-        #region 其他
+        #region 积分
         /// <summary>
         /// 积分记录
         /// </summary>
@@ -729,6 +779,7 @@ namespace DTcms.Web.tools
             switch (type)
             {
                 case 1://签到
+                    #region 签到
                     if(new BLL.user_sign().GetCount("user_id="+uid+ " and DateDiff(dd,time,getdate())=0") == 0)
                     {
                         model.value = 5;//每日签到5点积分
@@ -755,16 +806,31 @@ namespace DTcms.Web.tools
                         }
                         new BLL.user_sign().Add(sign);
                         new BLL.point().Add(model);
-                        new BLL.user().UpdateField(uid, "point=point+" + model.value);
                         context.Response.Write("{\"status\":1,\"msg\":\""+model.remark+",签到成功！\"}");
                     }
                     else
                     {
                         context.Response.Write("{\"status\":1,\"msg\":\"今天已经签到过了！\"}");
+                        return;
                     }
+                    #endregion
                     break;
                 case 2://发表评论
-
+                    #region 评论
+                    int isPN = DTRequest.GetInt("isPN", 0);
+                    int nid = DTRequest.GetInt("nid", 0);
+                    if (new BLL.news_commend().GetCount("user_id=" + uid + " and isPN=" + isPN + " and news_id=" + nid) > 1)
+                    {
+                        context.Response.Write("{\"status\":1,\"msg\":\"已经评论过，无法重复获得积分！\"}");
+                        return;
+                    }else
+                    {
+                        model.value = 5;
+                        model.remark = "发表评论";
+                        new BLL.point().Add(model);
+                        context.Response.Write("{\"status\":1,\"msg\":\"评论成功获得积分！\"}");
+                    }
+                    #endregion
                     break;
                 case 3://分享
 
@@ -773,6 +839,7 @@ namespace DTcms.Web.tools
 
                     break;
             }
+            new BLL.user().UpdateField(uid, "point=point+" + model.value);
         }
 
         private void get_point_list(HttpContext context)
@@ -786,6 +853,7 @@ namespace DTcms.Web.tools
             }
             context.Response.Write(JsonHelper.DataTableToJSON(dt));
         }
+
 
 
 

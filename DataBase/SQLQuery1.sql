@@ -133,6 +133,7 @@ create table fg_point(
 )
 select * from fg_point
 
+--产品经理申请表
 --drop table fg_user_pm
 create table fg_user_pm(
 	id int primary key identity,
@@ -154,6 +155,7 @@ select * from fg_user_pm
 
 select getdate()
 
+--签到表
 --drop table fg_user_sign
 create table fg_user_sign(
 	id int primary key identity,
