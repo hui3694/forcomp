@@ -166,4 +166,23 @@ create table fg_user_sign(
 insert into fg_user_sign values(1,GETDATE(),1)
 select * from fg_user_sign
 select * from fg_point
-select * from fg_user_sign where DateDiff(dd,time,getdate())=1
+select * from fg_user_sign where DateDiff(dd,time,getdate())=2
+
+
+--∑÷œÌ±Ì(»∫)
+--drop table fg_share_log
+create table fg_share_log(
+	id int primary key identity,
+	user_id int,
+	time datetime
+)
+select * from fg_share_log
+
+--drop table fg_call_pm
+create table fg_call_pm(
+	id int primary key identity,
+	user_id int,
+	call_id int,
+	time datetime
+)
+select * from fg_call_pm

@@ -85,6 +85,12 @@ namespace DTcms.Web.tools
                 case "get_qunID":
                     get_qunID(context);
                     break;
+                case "go_share":
+                    go_share(context);
+                    break;
+                case "call_pm":
+                    call_pm(context);
+                    break;
             }
 
         }
@@ -845,7 +851,7 @@ namespace DTcms.Web.tools
         private void get_point_list(HttpContext context)
         {
             int uid = DTRequest.GetInt("uid", 0);
-            DataTable dt = new BLL.point().GetList(0, "user_id=" + uid, "add_time").Tables[0];
+            DataTable dt = new BLL.point().GetList(0, "user_id=" + uid, "add_time desc").Tables[0];
             dt.Columns.Add("time", typeof(string));
             foreach(DataRow dr in dt.Rows)
             {
@@ -854,7 +860,53 @@ namespace DTcms.Web.tools
             context.Response.Write(JsonHelper.DataTableToJSON(dt));
         }
 
+        private void go_share(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            Model.share_log share = new Model.share_log();
+            share.user_id = uid;
+            share.time = DateTime.Now;
+            new BLL.share_log().Add(share);
+            if(new BLL.share_log().GetCount("DateDiff(dd,time,getdate())=0 and user_id=" + uid) == 3)
+            {//当日第三次分享，获得积分
+                Model.point model = new Model.point();
+                model.user_id = uid;
+                model.value = 10;
+                model.remark = "每日分享三次到微信群";
+                model.add_time = DateTime.Now;
+                new BLL.point().Add(model);
+                new BLL.user().UpdateField(uid, "point=point+" + model.value);
+                context.Response.Write("{\"status\":1,\"msg\":\"分享成功并获得积分！\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"分享成功！\"}");
+            }
+        }
 
+        private void call_pm(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            int cid = DTRequest.GetInt("cid", 0);
+            if(new BLL.call_pm().GetCount("user_id="+uid+" and call_id=" + cid) == 0)
+            {
+                Model.call_pm call = new Model.call_pm();
+                call.user_id = uid;
+                call.call_id = cid;
+                call.time = DateTime.Now;
+                new BLL.call_pm().Add(call);
+
+                Model.point model = new Model.point();
+                model.user_id = uid;
+                model.value = -30;
+                model.remark = "联系产品经理";
+                model.add_time = DateTime.Now;
+                new BLL.point().Add(model);
+                context.Response.Write("{\"status\":1,\"msg\":\"成功联系产品经理！\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"非首次联系产品经理，不重复扣除积分！\"}");
+            }
+        }
 
 
         #endregion
