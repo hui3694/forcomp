@@ -91,6 +91,12 @@ namespace DTcms.Web.tools
                 case "call_pm":
                     call_pm(context);
                     break;
+                case "get_pm_proList":
+                    get_pm_proList(context);
+                    break;
+                case "pm_del_pro":
+                    pm_del_pro(context);
+                    break;
             }
 
         }
@@ -245,6 +251,7 @@ namespace DTcms.Web.tools
 
         private void product_add(HttpContext context)
         {
+            int id = DTRequest.GetInt("id", 0);
             int cateogry = DTRequest.GetInt("category", 0);
             string title = DTRequest.GetString("title");
             string cont = DTRequest.GetString("cont");
@@ -252,18 +259,15 @@ namespace DTcms.Web.tools
             string lon = DTRequest.GetString("lon");
             string city = DTRequest.GetString("city");
             string addr = DTRequest.GetString("addr");
-            string openid = DTRequest.GetString("openid");
+            int uid = DTRequest.GetInt("uid",0);
 
             Model.product model = new Model.product();
-            Model.user user = new BLL.user().GetModel(openid);
-            if (user!=null)
+            if (id != 0)
             {
-                model.user_id = user.id;
-            }else
-            {
-                context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
-                return;
+                model = new BLL.product().GetModel(id);
             }
+
+            model.user_id = uid;
             model.category = cateogry;
             model.title = title;
             model.cont = cont;
@@ -274,14 +278,28 @@ namespace DTcms.Web.tools
             model.status = 1;
 
 
-
-            if (new BLL.product().Add(model) > 0)
+            if (id == 0)
             {
-                context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
+                if (new BLL.product().Add(model) > 0)
+                {
+                    context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
+                }
+                else
+                {
+                    context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+                }
             }else
             {
-                context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+                if (new BLL.product().Update(model))
+                {
+                    context.Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
+                }
+                else
+                {
+                    context.Response.Write("{\"status\":0,\"msg\":\"提交失败！\"}");
+                }
             }
+            
 
         }
 
@@ -302,6 +320,8 @@ namespace DTcms.Web.tools
                 dt.Columns.Add("isCollect", typeof(int));
                 dt.Rows[0]["pass_time"] = pass_time;
                 dt.Rows[0]["add_time"] = add_time;
+                dt.Columns.Add("category2", typeof(int));
+                dt.Rows[0]["category2"] = new BLL.pro_category().GetModel(Convert.ToInt32(dt.Rows[0]["category"])).parent_id;
                 if (uid != 0)
                 {
                     dt.Rows[0]["isCollect"] = new BLL.news_view().GetCount("user_id=" + uid + " and isPN=2 and type=2 and news_id=" + dt.Rows[0]["id"].ToString()) > 0 ? 1 : 0;
@@ -350,6 +370,32 @@ namespace DTcms.Web.tools
             }
             context.Response.Write(JsonHelper.DataTableToJSON(dt));
         }
+
+        #region pm
+        private void get_pm_proList(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            DataTable dt = new BLL.product().GetList(0, "user_id=" + uid, "add_time desc").Tables[0];
+            foreach(DataRow dr in dt.Rows)
+            {
+                dr["cont"] = dr["cont"].ToString().Length > 50 ? dr["cont"].ToString().Substring(0, 50) + "..." : dr["cont"].ToString();
+            }
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+        private void pm_del_pro(HttpContext context)
+        {
+            int id = DTRequest.GetInt("id", 0);
+            if(new BLL.product().Delete(id))
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"删除成功！\"}");
+            }
+            else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"删除失败！\"}");
+            }
+        }
+        #endregion
+
         #endregion
 
         #region user
