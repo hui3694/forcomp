@@ -290,6 +290,7 @@ namespace DTcms.Web.tools
             int id = DTRequest.GetInt("id", 0);
             int uid = DTRequest.GetInt("uid", 0);
             DataTable dt = new BLL.product().GetList(1, "id=" + id, "").Tables[0];
+            DataRow dr = new BLL.user_pm().GetList(1, "user_id=" + Convert.ToInt32(dt.Rows[0]["user_id"]), "").Tables[0].Rows[0];
             if (dt.Rows.Count > 0)
             {
                 string pass_time = Convert.ToDateTime(dt.Rows[0]["pass_time"]).ToString("yyyy-MM-dd HH:mm");
@@ -309,7 +310,12 @@ namespace DTcms.Web.tools
                 {
                     dt.Rows[0]["isCollect"] = 0;
                 }
-
+                dt.Columns.Add("pm_id", typeof(int));
+                dt.Rows[0]["pm_id"] = dr["user_id"];
+                dt.Columns.Add("pm_name", typeof(string));
+                dt.Rows[0]["pm_name"] = dr["name"];
+                dt.Columns.Add("pm_tel", typeof(string));
+                dt.Rows[0]["pm_tel"] = dr["phone"];
                 context.Response.Write(JsonHelper.DataTableToJSON(dt).TrimEnd(']').TrimStart('['));
             }
 
@@ -501,6 +507,7 @@ namespace DTcms.Web.tools
 
             if (new BLL.user_pm().Add(model) > 0)
             {
+                new BLL.user().UpdateField(uid, "level=1");
                 context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
             }else
             {
@@ -674,7 +681,6 @@ namespace DTcms.Web.tools
         //更新浏览记录处理
         private string news_view_update(Model.news_view model)
         {
-
             int id = Convert.ToInt32(new BLL.news_view().GetList(0, "user_id=" + model.user_id + " and isPN=" + model.ispn + " and type=" + model.type, "").Tables[0].Rows[0]["id"]);
             model.id = id;
             if(new BLL.news_view().Update(model))
@@ -684,8 +690,6 @@ namespace DTcms.Web.tools
             {
                 return "{\"status\":0}";
             }
-            
-
         }
 
         //取消收藏处理
@@ -889,6 +893,11 @@ namespace DTcms.Web.tools
             int cid = DTRequest.GetInt("cid", 0);
             if(new BLL.call_pm().GetCount("user_id="+uid+" and call_id=" + cid) == 0)
             {
+                if(new BLL.user().GetModel(uid).point < 30)
+                {
+                    context.Response.Write("{\"status\":0,\"msg\":\"积分不足30！\"}");
+                    return;
+                }
                 Model.call_pm call = new Model.call_pm();
                 call.user_id = uid;
                 call.call_id = cid;
@@ -901,13 +910,13 @@ namespace DTcms.Web.tools
                 model.remark = "联系产品经理";
                 model.add_time = DateTime.Now;
                 new BLL.point().Add(model);
+                new BLL.user().UpdateField(uid, "point=point+" + model.value);
                 context.Response.Write("{\"status\":1,\"msg\":\"成功联系产品经理！\"}");
             }else
             {
                 context.Response.Write("{\"status\":1,\"msg\":\"非首次联系产品经理，不重复扣除积分！\"}");
             }
         }
-
 
         #endregion
         public bool IsReusable
