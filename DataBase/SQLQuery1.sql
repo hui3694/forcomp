@@ -197,6 +197,6 @@ create table fg_assess(
 	remark nvarchar(max),
 	time datetime
 )
-select * from fg_assess
+select * from fg_assess where user_id=1 and pm_id=1
 
-select avg(value) from fg_assess
+select avg(value) as val,count(1) as call from fg_assess where pm_id=2
