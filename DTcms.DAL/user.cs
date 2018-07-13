@@ -387,5 +387,10 @@ namespace DTcms.DAL
             return model;
         }
         #endregion
+
+        public DataTable DoSql(string str)
+        {
+            return DbHelperSQL.Query(str).Tables[0];
+        }
     }
 }

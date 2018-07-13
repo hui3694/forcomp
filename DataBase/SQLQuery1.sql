@@ -103,7 +103,8 @@ create table fg_product(
 	add_time datetime default getdate()
 )
 select * from fg_product
---alter table fg_product add sort int
+select distinct(city) from  fg_product 
+--alter table fg_product add sort int 
 
 /*
 select * from fg_news where title like '%news%'
@@ -186,3 +187,16 @@ create table fg_call_pm(
 	time datetime
 )
 select * from fg_call_pm
+
+--drop table fg_assess
+create table fg_assess(
+	id int primary key identity,
+	user_id int,
+	pm_id int,
+	value int,
+	remark nvarchar(max),
+	time datetime
+)
+select * from fg_assess
+
+select avg(value) from fg_assess

@@ -6,3 +6,7 @@
 客户机IP:::1
 错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_pro_model&id=undefined&uid=1
 异常信息:在位置 0 处没有任何行。 
+[2018-07-13 10:39:00.3509] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_pro_city
+异常信息:关键字 'where' 附近有语法错误。 

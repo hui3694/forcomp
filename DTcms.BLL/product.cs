@@ -149,9 +149,9 @@ namespace DTcms.BLL
         }
         #endregion
 
-        public DataSet GetCityList()
+        public DataSet GetCityList(string where)
         {
-            return dal.GetCityList();
+            return dal.GetCityList(where);
         }
 
         public DataSet GetUserComment(int user_id)

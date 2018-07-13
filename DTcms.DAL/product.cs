@@ -314,10 +314,14 @@ namespace DTcms.DAL
         }
         #endregion
 
-        public DataSet GetCityList()
+        public DataSet GetCityList(string where)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select distinct(city) from [" + databaseprefix + "product]");
+            if (where != "")
+            {
+                strSql.Append(" where " + where);
+            }
             return DbHelperSQL.Query(strSql.ToString());
         }
 

@@ -7,14 +7,14 @@ namespace DTcms.BLL
     /// <summary>
     /// 业务逻辑层
     /// </summary>
-    public class user
+    public class assess
     {
         private readonly Model.siteconfig siteConfig = new BLL.siteconfig().loadConfig();
-        private readonly DAL.user dal;
+        private readonly DAL.assess dal;
 
-        public user()  
+        public assess()  
         {
-              dal = new DAL.user("fg_");
+              dal = new DAL.assess("fg_");
         }
 
         #region 基本方法
@@ -43,9 +43,9 @@ namespace DTcms.BLL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        /// <param name="model">Model.user</param>
+        /// <param name="model">Model.assess</param>
         /// <returns>ID</returns>
-        public int Add(Model.user model)
+        public int Add(Model.assess model)
         {
               return dal.Add(model);
         }
@@ -67,9 +67,9 @@ namespace DTcms.BLL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        /// <param name="model">Model.user</param>
+        /// <param name="model">Model.assess</param>
         /// <returns>True Or False</returns>
-        public bool Update(Model.user model)
+        public bool Update(Model.assess model)
         {
               return dal.Update(model);
         }
@@ -92,15 +92,10 @@ namespace DTcms.BLL
         /// 返回一个实体
         /// </summary>
         /// <param name="id">ID号</param>
-        /// <returns>Model.user</returns>
-        public Model.user GetModel(int id)
+        /// <returns>Model.assess</returns>
+        public Model.assess GetModel(int id)
         {
               return dal.GetModel(id);
-        }
-
-        public Model.user GetModel(string openid)
-        {
-            return dal.GetModel(openid);
         }
         #endregion
 
@@ -133,10 +128,5 @@ namespace DTcms.BLL
               return dal.GetList(pageSize, pageIndex, strWhere, filedOrder, out recordCount);
         }
         #endregion
-
-        public DataTable DoSql(string str)
-        {
-            return dal.DoSql(str);
-        }
     }
 }

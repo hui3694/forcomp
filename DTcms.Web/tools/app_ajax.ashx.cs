@@ -97,6 +97,15 @@ namespace DTcms.Web.tools
                 case "pm_del_pro":
                     pm_del_pro(context);
                     break;
+                case "get_pm_model":
+                    get_pm_model(context);
+                    break;
+                case "pm_assess":
+                    pm_assess(context);
+                    break;
+                case "is_assess":
+                    is_assess(context);
+                    break;
             }
 
         }
@@ -193,7 +202,7 @@ namespace DTcms.Web.tools
                 DataSet ds2 = new BLL.pro_category().GetList(0, "parent_id=" + dr["id"], "");
                 foreach(DataRow dr2 in ds2.Tables[0].Rows)
                 {
-                    int num = new BLL.product().GetCount("status=2 and city='" + city + "' and category=" + dr2["id"].ToString());
+                    int num = new BLL.product().GetCount("status=2 and city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + dr2["id"].ToString());
                     strJson += "{";
                     strJson += "\"id\":\"" + dr2["id"].ToString() + "\",";
                     strJson += "\"title\":\"" + dr2["title"].ToString() + "\",";
@@ -220,7 +229,7 @@ namespace DTcms.Web.tools
 
             int count = 0;
             int pageSize = 8;
-            int sum = new BLL.product().GetCount("status=2 and city='" + city + "' and category=" + (category==0? "category":category.ToString()));
+            int sum = new BLL.product().GetCount("status=2 and city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + (category==0? "category":category.ToString()));
 
             if ((page - 1) * pageSize >= sum)
             {
@@ -229,7 +238,7 @@ namespace DTcms.Web.tools
                 return;
             }
 
-            DataSet ds = new BLL.product().GetList(pageSize, page, "city='" + city + "' and category=" + (category == 0 ? "category" : category.ToString()) + " and title like '%" + keywords + "%'", "pass_time desc", out count);
+            DataSet ds = new BLL.product().GetList(pageSize, page, "city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + (category == 0 ? "category" : category.ToString()) + " and title like '%" + keywords + "%'", "pass_time desc", out count);
             DataTable dt = ds.Tables[0];
             dt.Columns.Add("zan", typeof(int));
             dt.Columns.Add("collect", typeof(int));
@@ -343,7 +352,7 @@ namespace DTcms.Web.tools
 
         private void get_pro_city(HttpContext context)
         {
-            DataSet cityList = new BLL.product().GetCityList();
+            DataSet cityList = new BLL.product().GetCityList("status=2");
             DataTable dt = cityList.Tables[0];
             context.Response.Write(JsonHelper.DataTableToJSON(dt));
         }
@@ -392,6 +401,51 @@ namespace DTcms.Web.tools
             else
             {
                 context.Response.Write("{\"status\":0,\"msg\":\"删除失败！\"}");
+            }
+        }
+
+        private void get_pm_model(HttpContext context)
+        {
+            int id = DTRequest.GetInt("id", 0);
+            DataTable dt= new BLL.user_pm().GetList(0, "user_id=" + id, "").Tables[0];
+            dt.Columns.Add("start", typeof(float));
+            dt.Columns.Add("call", typeof(int));
+            DataTable t = new BLL.user().DoSql("select avg(value) as start,count(1) as call from fg_assess");
+            dt.Rows[0]["start"] = t.Rows[0]["start"] == DBNull.Value ? 0 : t.Rows[0]["start"];
+            dt.Rows[0]["call"] = t.Rows[0]["call"];
+            context.Response.Write(JsonHelper.DataTableToJSON(dt).TrimStart('[').TrimEnd(']'));
+        }
+        private void pm_assess(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            int pm_id = DTRequest.GetInt("pm_id", 0);
+            int val = DTRequest.GetInt("val", 0);
+            Model.assess model = new Model.assess();
+            model.user_id = uid;
+            model.pm_id = pm_id;
+            model.value = val;
+            model.time = DateTime.Now;
+
+            if(new BLL.assess().Add(model) > 0)
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"评论成功！\"}");
+            }
+            else
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"评论失败！\"}");
+            }
+        }
+        private void is_assess(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            int pm_id = DTRequest.GetInt("pm_id", 0);
+            DataTable dt = new BLL.assess().GetList(0, "user_id=" + uid + " and pm_id=" + pm_id, "").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                context.Response.Write("{\"status\":0,\"msg\":\"已经评价过当前客户经理\",\"val\":\"" + dt.Rows[0]["value"] + "\"}");
+            }else
+            {
+                context.Response.Write("{\"status\":1,\"msg\":\"尚未评价过当前客户经理\"}");
             }
         }
         #endregion

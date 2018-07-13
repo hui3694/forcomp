@@ -60,6 +60,7 @@
     <Compile Include="article_goods_spec.cs" />
     <Compile Include="article_spec.cs" />
     <Compile Include="article_tags.cs" />
+    <Compile Include="assess.cs" />
     <Compile Include="call_pm.cs" />
     <Compile Include="channel.cs" />
     <Compile Include="channel_site.cs" />
