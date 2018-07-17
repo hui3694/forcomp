@@ -106,6 +106,9 @@ namespace DTcms.Web.tools
                 case "is_assess":
                     is_assess(context);
                     break;
+                case "get_amount_list":
+                    get_amount_list(context);
+                    break;
             }
 
         }
@@ -291,6 +294,19 @@ namespace DTcms.Web.tools
             {
                 if (new BLL.product().Add(model) > 0)
                 {
+                    if(new BLL.amount().GetCount("type=4 and user_id=" + uid) < 3)
+                    {
+                        Model.amount amount = new Model.amount()
+                        {
+                            user_id = uid,
+                            type = 4,
+                            Amount = 1.88M,
+                            remark = "发布产品获得红包",
+                            time = DateTime.Now
+                        };
+                        new BLL.amount().Add(amount);
+                        new BLL.user().UpdateField(uid, "amount=amount+" + amount.Amount);
+                    }
                     context.Response.Write("{\"status\":1,\"msg\":\"提交成功！\"}");
                 }
                 else
@@ -528,6 +544,19 @@ namespace DTcms.Web.tools
             model.email = email;
             if (new BLL.user().Update(model))
             {
+                if ((model.nickname != "" && model.sex != 0 && model.phone != "" && model.email != "") && new BLL.amount().GetCount("type=3 and user_id=" + model.id) == 0)
+                {
+                    Model.amount amount = new Model.amount()
+                    {
+                        user_id = model.id,
+                        type = 3,
+                        Amount = 1.88M,
+                        remark = "填写完整个人信息",
+                        time = DateTime.Now
+                    };
+                    new BLL.amount().Add(amount);
+                    new BLL.user().UpdateField(model.id, "amount=amount+" + amount.Amount);
+                }
                 context.Response.Write("{\"status\":1,\"msg\":\"修改成功！\"}");
             }
             else
@@ -723,7 +752,22 @@ namespace DTcms.Web.tools
             model.parent_id = parent_id;
             model.sex = gender;
 
-            if (new BLL.user().GetCount("openid='" + openid + "'") ==0 && new BLL.user().Add(model) > 0) {
+            if (new BLL.user().GetCount("openid='" + openid + "'") ==0 && new BLL.user().Add(model) > 0) {//注册
+                //成功邀请
+                if (new BLL.amount().GetCount("type=2 and user_id=" + parent_id) < 10)
+                {
+                    Model.amount amount = new Model.amount()
+                    {
+                        user_id = parent_id,
+                        type = 2,
+                        Amount = 0.88M,
+                        remark = "成功邀请用户",
+                        time = DateTime.Now
+                    };
+                    new BLL.amount().Add(amount);
+                    new BLL.user().UpdateField(parent_id, "amount=amount+" + amount.Amount);
+                }
+
                 string ret = JsonHelper.DataTableToJSON(new BLL.user().GetList(1, "openid='" + openid + "'", "").Tables[0]);
                 ret = ret.TrimEnd(']').TrimStart('[');
                 context.Response.Write(ret);
@@ -893,20 +937,32 @@ namespace DTcms.Web.tools
                     if(new BLL.user_sign().GetCount("user_id="+uid+ " and DateDiff(dd,time,getdate())=0") == 0)
                     {
                         model.value = 5;//每日签到5点积分
-                        DataTable dt = new BLL.user_sign().GetList(0, "user_id=" + uid + " and DateDiff(dd,time,getdate())=0", "").Tables[0];
+                        DataTable dt = new BLL.user_sign().GetList(0, "user_id=" + uid + " and DateDiff(dd,time,getdate())=1", "").Tables[0];
                         Model.user_sign sign = new Model.user_sign();
                         sign.user_id = uid;
                         sign.time = DateTime.Now;
-                        if (dt.Rows.Count > 0)
+                        if (new BLL.user_sign().GetCount("user_id=" + uid + " and DateDiff(dd,time,getdate())=1") > 0)
                         {
                             int day = Convert.ToInt32(dt.Rows[0]["day"]) + 1;
                             sign.day = day;
                             model.remark = "连续签到第" + day + "天";
                             if (day == 10 || day == 30)
-                            {
-                                //-----------------------------
-                                //连续签到10天或30天送红包
-                                //-----------------------------
+                            {//连续签到10天或30天送红包
+                                Model.amount amount = new Model.amount();
+                                amount.user_id = uid;
+                                amount.type = 1;
+                                amount.remark = "连续签到";
+                                amount.time = DateTime.Now;
+                                if (day == 10 && new BLL.amount().GetCount("user_id=" + uid + " and type=1 and amount=0.88") == 0)
+                                {
+                                    amount.Amount = 0.88M;
+                                }
+                                if (day == 10 && new BLL.amount().GetCount("user_id=" + uid + " and type=1 and amount=1.88") == 0)
+                                {
+                                    amount.Amount = 1.88M;
+                                }
+                                new BLL.amount().Add(amount);
+                                new BLL.user().UpdateField(uid, "amount=amount+" + amount.Amount);
                             }
                         }
                         else
@@ -943,7 +999,7 @@ namespace DTcms.Web.tools
                     #endregion
                     break;
                 case 3://分享
-
+                    
                     break;
                 case 4://联系产品经理
 
@@ -1019,6 +1075,24 @@ namespace DTcms.Web.tools
         }
 
         #endregion
+
+        #region 金额
+        private void get_amount_list(HttpContext context)
+        {
+            int uid = DTRequest.GetInt("uid", 0);
+            DataTable dt= new BLL.amount().GetList(0, "user_id=" + uid, "time desc").Tables[0];
+            dt.Columns.Add("add_time", typeof(string));
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["add_time"] = Convert.ToDateTime(dr["time"]).ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+
+
+        #endregion
+
+
         public bool IsReusable
         {
             get

@@ -18,7 +18,7 @@ namespace DTcms.DAL
         public user(string _databaseprefix)
         {
             this.databaseprefix = _databaseprefix;
-            this.column = "id,avatar,nickname,openid,unionid,point,img,level,parent_id,phone,email,sex,area,status,reg_time,login_time";
+            this.column = "id,avatar,nickname,openid,unionid,point,img,level,parent_id,phone,email,sex,area,status,reg_time,login_time,amount";
         }
 
         #region 基本方法
@@ -62,9 +62,9 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into [" + databaseprefix + "user](");
-            strSql.Append("avatar,nickname,openid,unionid,point,img,level,parent_id,phone,email,sex,area,status,reg_time,login_time");
+            strSql.Append("avatar,nickname,openid,unionid,point,img,level,parent_id,phone,email,sex,area,status,reg_time,login_time,amount");
             strSql.Append(") values(");
-            strSql.Append("@avatar,@nickname,@openid,@unionid,@point,@img,@level,@parent_id,@phone,@email,@sex,@area,@status,@reg_time,@login_time)");
+            strSql.Append("@avatar,@nickname,@openid,@unionid,@point,@img,@level,@parent_id,@phone,@email,@sex,@area,@status,@reg_time,@login_time,@amount)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                 new SqlParameter("@avatar", SqlDbType.VarChar,200),
@@ -81,7 +81,8 @@ namespace DTcms.DAL
                 new SqlParameter("@area", SqlDbType.VarChar,100),
                 new SqlParameter("@status", SqlDbType.Int,4),
                 new SqlParameter("@reg_time", SqlDbType.DateTime),
-				new SqlParameter("@login_time", SqlDbType.DateTime)
+				new SqlParameter("@login_time", SqlDbType.DateTime),
+				new SqlParameter("@amount", SqlDbType.Decimal,5)
             };
             parameters[0].Value = model.avatar;
             parameters[1].Value = model.nickname;
@@ -146,7 +147,8 @@ namespace DTcms.DAL
             strSql.Append("area=@area,");
             strSql.Append("status=@status,");
             strSql.Append("reg_time=@reg_time,");
-            strSql.Append("login_time=@login_time");
+            strSql.Append("login_time=@login_time,");
+            strSql.Append("amount=@amount");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
                 new SqlParameter("@avatar", SqlDbType.VarChar,200),
@@ -164,6 +166,7 @@ namespace DTcms.DAL
                 new SqlParameter("@status", SqlDbType.Int,4),
                 new SqlParameter("@reg_time", SqlDbType.DateTime),
 				new SqlParameter("@login_time", SqlDbType.DateTime),
+				new SqlParameter("@amount", SqlDbType.Decimal,5),
                 new SqlParameter("@id", SqlDbType.Int,4)
             };
             parameters[0].Value = model.avatar;
@@ -181,7 +184,8 @@ namespace DTcms.DAL
             parameters[12].Value = model.status;
             parameters[13].Value = model.reg_time;
             parameters[14].Value = model.login_time;
-            parameters[15].Value = model.id;
+            parameters[15].Value = model.amount;
+            parameters[16].Value = model.id;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -383,6 +387,10 @@ namespace DTcms.DAL
             	{
             		model.login_time = DateTime.Parse(row["login_time"].ToString());
             	}
+                if (null != row["amount"] && "" != row["amount"].ToString())
+                {
+                    model.amount = Decimal.Parse(row["amount"].ToString());
+                }
             }
             return model;
         }

@@ -52,6 +52,7 @@ create table fg_user(
 	reg_time datetime,
 	login_time datetime
 )
+--alter table fg_user add amount decimal(10,3)
 select * from fg_user
 
 --浏览,点赞
@@ -167,7 +168,7 @@ create table fg_user_sign(
 insert into fg_user_sign values(1,GETDATE(),1)
 select * from fg_user_sign
 select * from fg_point
-select * from fg_user_sign where DateDiff(dd,time,getdate())=2
+select * from fg_user_sign where DateDiff(dd,time,getdate())=1
 
 
 --分享表(群)
@@ -188,6 +189,7 @@ create table fg_call_pm(
 )
 select * from fg_call_pm
 
+--评价表
 --drop table fg_assess
 create table fg_assess(
 	id int primary key identity,
@@ -200,3 +202,15 @@ create table fg_assess(
 select * from fg_assess where user_id=1 and pm_id=1
 
 select avg(value) as val,count(1) as call from fg_assess where pm_id=2
+
+--金额变化表
+--drop table fg_amount
+create table fg_amount(
+	id int primary key identity,
+	user_id int,
+	type int,
+	amount decimal(10,3),
+	remark nvarchar(max),
+	time datetime
+)
+select * from fg_amount

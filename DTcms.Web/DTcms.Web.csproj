@@ -186,6 +186,7 @@
     <Content Include="admin\skin\default\style.css" />
     <Content Include="admin\skin\default\valid_icons.png" />
     <Content Include="admin\skin\layout.css" />
+    <Content Include="admin\skin\logo.png" />
     <Content Include="admin\users\amount_log.aspx" />
     <Content Include="admin\users\group_edit.aspx" />
     <Content Include="admin\users\group_list.aspx" />
@@ -209,6 +210,8 @@
     <Content Include="admin\users\user_sms.aspx" />
     <Content Include="admin\user\pm_edit.aspx" />
     <Content Include="admin\user\pm_list.aspx" />
+    <Content Include="admin\user\user_edit.aspx" />
+    <Content Include="admin\user\user_list.aspx" />
     <Content Include="admin\weixin\account_edit.aspx" />
     <Content Include="admin\weixin\menu_edit.aspx" />
     <Content Include="admin\weixin\picture_edit.aspx" />
@@ -1511,6 +1514,20 @@
     </Compile>
     <Compile Include="admin\user\pm_list.aspx.designer.cs">
       <DependentUpon>pm_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\user\user_edit.aspx.cs">
+      <DependentUpon>user_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\user\user_edit.aspx.designer.cs">
+      <DependentUpon>user_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\user\user_list.aspx.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\user\user_list.aspx.designer.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\weixin\account_edit.aspx.cs">
       <DependentUpon>account_edit.aspx</DependentUpon>

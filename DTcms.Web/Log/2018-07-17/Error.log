@@ -1,0 +1,72 @@
+[2018-07-17 15:42:52.5063] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_amount_list&uid=1
+异常信息:对象名 'dt_amount' 无效。 
+[2018-07-17 15:43:19.0063] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_amount_list&uid=1
+异常信息:名为“time”的列已属于此 DataTable。 
+[2018-07-17 15:43:33.9536] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_amount_list&uid=1
+异常信息:名为“time”的列已属于此 DataTable。 
+[2018-07-17 16:57:32.9661] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=update_user&name=晓辉丶&sex=2&phone=18312341234&email=1054541133&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:'&' 附近有语法错误。 
+[2018-07-17 16:59:35.6367] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=update_user&name=晓辉丶&sex=2&phone=18312341234&email=1054541133&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-07-17 16:59:37.7980] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=update_user&name=晓辉丶&sex=2&phone=18312341234&email=1054541133&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-07-17 16:59:39.0539] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=update_user&name=晓辉丶&sex=2&phone=18312341234&email=1054541133&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-07-17 17:32:53.5279] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_pro_city
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-07-17 17:32:54.4582] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=register&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-07-17 17:32:54.7235] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=get_amount_list&uid=undefined
+异常信息:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) 
+[2018-07-17 17:37:13.8282] 
+客户机IP:::1
+错误地址:http://localhost:40620/tools/app_ajax.ashx?action=register&openid=ozh065Dj-IBg63DV-XKplF14Ljbw
+异常信息:执行超时已过期。完成操作之前已超时或服务器未响应。  
+[2018-07-17 17:44:13.8531] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_list.aspx
+异常信息:f:\demo\forcomp\DTcms.Web\admin\user\user_list.aspx(40): error CS1061: “ASP.admin_user_user_list_aspx”不包含“btnDelete_Click”的定义，并且找不到可接受类型为“ASP.admin_user_user_list_aspx”的第一个参数的扩展方法“btnDelete_Click”(是否缺少 using 指令或程序集引用?) 
+[2018-07-17 17:55:42.0696] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-17 17:56:12.7106] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_list.aspx
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-17 18:11:37.4295] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_list.aspx?keywords=互联
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-17 18:34:40.9618] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_edit.aspx?id=0
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-17 18:34:44.1703] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_edit.aspx?id=0
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 
+[2018-07-17 18:34:54.8420] 
+客户机IP:::1
+错误地址:http://localhost:40620/admin/user/user_edit.aspx?id=0
+异常信息:引发类型为“System.Web.HttpUnhandledException”的异常。 

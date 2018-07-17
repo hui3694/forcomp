@@ -26,6 +26,7 @@ namespace DTcms.Model
         private int _status = 0;
         private DateTime _reg_time = DateTime.Now;
         private DateTime _login_time = DateTime.Now;
+        private decimal _amount = 0;
 
         #region Model
 
@@ -126,6 +127,19 @@ namespace DTcms.Model
         {
            set { _login_time = value; }
            get { return _login_time; }
+        }
+
+        public decimal amount
+        {
+            get
+            {
+                return _amount;
+            }
+
+            set
+            {
+                _amount = value;
+            }
         }
 
         #endregion

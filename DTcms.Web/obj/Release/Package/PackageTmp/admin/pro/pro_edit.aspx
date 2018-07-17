@@ -123,6 +123,8 @@
     <div class="page-footer">
       <div class="btn-wrap">
         <asp:Button ID="btnSubmit" runat="server" Text="提交保存" CssClass="btn" onclick="btnSubmit_Click" />
+        <asp:Button ID="btnPass" runat="server" Text="审核通过" CssClass="btn green" onclick="btnPass_Click" />
+        <asp:Button ID="btnPass2" runat="server" Text="不通过" CssClass="btn violet" onclick="btnPass2_Click" />
         <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onclick="javascript:history.back(-1);" />
       </div>
     </div>

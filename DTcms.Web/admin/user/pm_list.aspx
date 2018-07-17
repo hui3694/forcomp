@@ -77,7 +77,7 @@
                 <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
               </td>
               <td><%#Eval("id")%></td>
-              <td><a href="#id=<%#Eval("user_id") %>"><%#Eval("username") %></a></td>
+              <td><a href="pm_edit.aspx?id=<%#Eval("user_id") %>"><%#Eval("username") %></a></td>
               <td><%#Eval("name") %></td>
               <td><%#Eval("phone") %></td>
               <td><%#Eval("comName") %>(<%#Eval("job") %>)</td>
