@@ -650,6 +650,7 @@ namespace DTcms.Web.tools
             if (uid == 0)
             {
                 context.Response.Write("{\"status\":0,\"msg\":\"未登录，请先登录！\"}");
+                return;
             }
             if(new BLL.user_pm().GetCount("user_id=" + uid) > 0)
             {
@@ -664,6 +665,9 @@ namespace DTcms.Web.tools
                 {
                     context.Response.Write("{\"status\":1,\"msg\":\"审核未通过！\",\"val\":" + val + "}");
                 }
+            }else
+            {
+                context.Response.Write("{\"status\":3,\"msg\":\"正常！\"}");
             }
         }
 

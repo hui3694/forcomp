@@ -83,8 +83,10 @@
               </td>
               <td><%#Eval("id")%></td>
               <td>
-                  <image src="<%#Eval("avatar") %>" width="64" height="64" />
-                  <font><%#Eval("nickname") %></font>
+                  <a href="user_edit.aspx?id=<%#Eval("id") %>">
+                      <image src="<%#Eval("avatar") %>" width="64" height="64" />
+                      <font><%#Eval("nickname") %></font>
+                    </a>
               </td>
               <td><%#Eval("phone") %></td>
               <td><%#Eval("email") %></td>
@@ -93,7 +95,7 @@
               <td><%#Eval("login_time")==DBNull.Value?"":Convert.ToDateTime(Eval("login_time")).ToString("yyyy-MM-dd HH:mm:ss") %></td>
                 <td><%#Eval("reg_time")==DBNull.Value?"":Convert.ToDateTime(Eval("reg_time")).ToString("yyyy-MM-dd HH:mm:ss") %></td>
               <td align="center">
-                <a href="pm_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a>
+                <a href="user_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a>
               </td>
             </tr>
           </ItemTemplate>
