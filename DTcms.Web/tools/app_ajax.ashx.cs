@@ -109,6 +109,12 @@ namespace DTcms.Web.tools
                 case "get_amount_list":
                     get_amount_list(context);
                     break;
+                case "get_banner":
+                    get_banner(context);
+                    break;
+                case "get_banner_pm":
+                    get_banner_pm(context);
+                    break;
             }
 
         }
@@ -232,7 +238,17 @@ namespace DTcms.Web.tools
 
             int count = 0;
             int pageSize = 8;
-            int sum = new BLL.product().GetCount("status=2 and city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + (category==0? "category":category.ToString()));
+
+            int sum = 0;
+            if (uid == 0)
+            {
+                sum = new BLL.product().GetCount("status=2 and city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + (category == 0 ? "category" : category.ToString()));
+            }
+            else
+            {
+                sum = new BLL.product().GetCount("status=2 and user_id=" + uid);
+            }
+            
 
             if ((page - 1) * pageSize >= sum)
             {
@@ -240,8 +256,15 @@ namespace DTcms.Web.tools
                 context.Response.Write("{\"status\":0,\"msg\":\"没有更多数据\"}");
                 return;
             }
-
-            DataSet ds = new BLL.product().GetList(pageSize, page, "city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + (category == 0 ? "category" : category.ToString()) + " and title like '%" + keywords + "%'", "pass_time desc", out count);
+            DataSet ds = new DataSet();
+            if (uid == 0)
+            {
+                ds = new BLL.product().GetList(pageSize, page, "status=2 and city=" + (city == "未知" ? "city" : "'" + city + "'") + " and category=" + (category == 0 ? "category" : category.ToString()) + " and title like '%" + keywords + "%'", "pass_time desc", out count);
+            }else
+            {
+                ds = new BLL.product().GetList(pageSize, page, "status=2 and user_id=" + uid, "pass_time desc", out count);
+            }
+            
             DataTable dt = ds.Tables[0];
             dt.Columns.Add("zan", typeof(int));
             dt.Columns.Add("collect", typeof(int));
@@ -755,6 +778,7 @@ namespace DTcms.Web.tools
             model.openid = openid;
             model.parent_id = parent_id;
             model.sex = gender;
+            model.amount = 0M;
 
             if (new BLL.user().GetCount("openid='" + openid + "'") ==0 && new BLL.user().Add(model) > 0) {//注册
                 //成功邀请
@@ -1096,6 +1120,19 @@ namespace DTcms.Web.tools
 
         #endregion
 
+
+        #region 其他
+        private void get_banner(HttpContext context)
+        {
+            DataTable dt = new BLL.user().DoSql("select * from [dt_plugin_images] where class_id=1");
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+        private void get_banner_pm(HttpContext context)
+        {
+            DataTable dt = new BLL.user().DoSql("select * from [dt_plugin_images] where class_id=2");
+            context.Response.Write(JsonHelper.DataTableToJSON(dt));
+        }
+        #endregion
 
         public bool IsReusable
         {

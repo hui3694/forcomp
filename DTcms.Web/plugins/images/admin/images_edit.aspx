@@ -84,8 +84,8 @@
     <dd><asp:TextBox ID="txtName" runat="server" CssClass="input normal" datatype="*2-20" sucmsg=" " /><span class="Validform_checktip">*</span></dd>
   </dl>
   <dl>
-    <dt>链接地址</dt>
-    <dd><asp:TextBox ID="txtUrl" runat="server" CssClass="input normal" /></dd>
+    <dt>链接ID</dt>
+    <dd><asp:TextBox ID="txtUrl" runat="server" CssClass="input normal" /><span><%=class_id==1?"输入产品编号":"输入产品经理的用户编号" %></span></dd>
   </dl>
   <dl>
     <dt>打开方式</dt>

@@ -45,7 +45,7 @@ a:active,a:hover{color:#0065D9;text-decoration:underline;}
 .drop-wrap .item li a:hover{color:#fff;text-decoration:none;background:#16a0d3;}
 /*左边样式*/
 .main-left{background:#267cb7;}
-.logo{display:block;height:42px;background:url(logo.png) no-repeat center #fafafa;border:1px solid #ddd;border-top:0;border-left:0;text-indent:-9999px;overflow:hidden;}
+.logo{display:block;height:42px;background:url() no-repeat center #fafafa;border:1px solid #ddd;border-top:0;border-left:0;text-indent:-9999px;overflow:hidden;}
 .sidebar-nav{}
 .sidebar-nav .list-group{display:none;}
 .sidebar-nav .list-group .list-wrap{position:absolute;top:43px;right:0;bottom:0;left:0;padding:0 10px;width:160px;overflow:auto;}

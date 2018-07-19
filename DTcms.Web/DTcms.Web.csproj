@@ -134,6 +134,8 @@
     <Content Include="admin\js\layindex.js" />
     <Content Include="admin\js\laymain.js" />
     <Content Include="admin\login.aspx" />
+    <Content Include="admin\log\point_log.aspx" />
+    <Content Include="admin\log\amount_log.aspx" />
     <Content Include="admin\lucene\builder_index.aspx" />
     <Content Include="admin\lucene\pangu.aspx" />
     <Content Include="admin\manager\manager_edit.aspx" />
@@ -1122,6 +1124,20 @@
     </Compile>
     <Compile Include="admin\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\log\point_log.aspx.cs">
+      <DependentUpon>point_log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\log\point_log.aspx.designer.cs">
+      <DependentUpon>point_log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\log\amount_log.aspx.cs">
+      <DependentUpon>amount_log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\log\amount_log.aspx.designer.cs">
+      <DependentUpon>amount_log.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\lucene\builder_index.aspx.cs">
       <DependentUpon>builder_index.aspx</DependentUpon>

@@ -59,11 +59,9 @@
 
 <div class="nlist-3">
   <ul>
-    <li><a onclick="parent.linkMenuTree(true, 'sys_config');" class="icon-setting" href="javascript:;"></a><span>系统设置</span></li>
-    <li><a onclick="parent.linkMenuTree(true, 'sys_site_manage');" class="icon-channel" href="javascript:;"></a><span>站点管理</span></li>
-    <li><a onclick="parent.linkMenuTree(true, 'sys_site_templet');" class="icon-templet" href="javascript:;"></a><span>模板管理</span></li>
-    <li><a onclick="parent.linkMenuTree(true, 'sys_builder_html');" class="icon-mark" href="javascript:;"></a><span>生成静态</span></li>
-    <li><a onclick="parent.linkMenuTree(true, ' sys_plugin_config ');" class="icon-plugin" href="javascript:;"></a><span>插件配置</span></li>
+    <li><a onclick="parent.linkMenuTree(true, 'news_list');" class="icon-channel" href="javascript:;"></a><span>资讯管理</span></li>
+    <li><a onclick="parent.linkMenuTree(true, 'pro_list');" class="icon-templet" href="javascript:;"></a><span>产品管理</span></li>
+    <li><a onclick="parent.linkMenuTree(true, 'plugin_images_list');" class="icon-plugin" href="javascript:;"></a><span>广告管理</span></li>
     <li><a onclick="parent.linkMenuTree(true, 'user_list');" class="icon-user" href="javascript:;"></a><span>会员管理</span></li>
     <li><a onclick="parent.linkMenuTree(true, 'manager_list');" class="icon-manaer" href="javascript:;"></a><span>管理员</span></li>
     <li><a onclick="parent.linkMenuTree(true, 'manager_log');" class="icon-log" href="javascript:;"></a><span>系统日志</span></li>

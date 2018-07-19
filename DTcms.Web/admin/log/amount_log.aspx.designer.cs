@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace DTcms.Web.admin {
+namespace DTcms.Web.admin.log {
     
     
-    public partial class center {
+    public partial class amount_log {
         
         /// <summary>
         /// form1 控件。
@@ -22,39 +22,48 @@ namespace DTcms.Web.admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// litIP 控件。
+        /// txtKeywords 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litIP;
+        protected global::System.Web.UI.WebControls.TextBox txtKeywords;
         
         /// <summary>
-        /// litBackIP 控件。
+        /// lbtnSearch 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBackIP;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnSearch;
         
         /// <summary>
-        /// litBackTime 控件。
+        /// rptList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBackTime;
+        protected global::System.Web.UI.WebControls.Repeater rptList;
         
         /// <summary>
-        /// LitUpgrade 控件。
+        /// txtPageNum 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LitUpgrade;
+        protected global::System.Web.UI.WebControls.TextBox txtPageNum;
+        
+        /// <summary>
+        /// PageContent 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PageContent;
     }
 }

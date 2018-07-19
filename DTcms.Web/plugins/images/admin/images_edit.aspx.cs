@@ -12,7 +12,7 @@ namespace DTcms.Web.Plugin.Images.admin
     public partial class images_edit : Web.UI.ManagePage
     {
         private int id = 0;
-        private int class_id = 0;
+        protected int class_id = 0;
         private string backUrl = string.Empty;
         private string action = DTEnums.ActionEnum.Add.ToString();
 

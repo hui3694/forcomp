@@ -300,7 +300,7 @@
       <span class="Validform_checktip">*数字，越小越向前</span>
     </dd>
   </dl>
-  <dl>
+  <dl style="display:none;">
     <dt>浏览次数</dt>
     <dd>
       <asp:TextBox ID="txtClick" runat="server" CssClass="input mark" datatype="n" sucmsg=" ">0</asp:TextBox>
@@ -317,8 +317,8 @@
   <dl>
     <dt>内容摘要</dt>
     <dd>
-      <asp:TextBox ID="txtZhaiyao" runat="server" CssClass="input" TextMode="MultiLine" datatype="*0-255" sucmsg=" "></asp:TextBox>
-      <span class="Validform_checktip">不填写则自动截取内容前255字符</span>
+      <asp:TextBox ID="txtZhaiyao" runat="server" CssClass="input" TextMode="MultiLine" datatype="*0-100" sucmsg=" "></asp:TextBox>
+      <span class="Validform_checktip">不填写则自动截取内容前100字符</span>
     </dd>
   </dl>
   <dl>

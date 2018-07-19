@@ -59,14 +59,15 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
             <tr>
               <th width="6%">选择</th>
-              <th align="left" width="6%">编号</th>
+              <th align="left" width="4%">编号</th>
+              <th align="left" width="6%">用户编号</th>
               <th align="left" width="8%">用户</th>
               <th align="left" width="6">姓名</th>
               <th align="left" width="10%">手机号</th>
               <th align="left" width="16%">公司</th>
               <th align="left" width="8%">状态</th>
-              <th align="left" width="15%">审核时间</th>
-              <th align="left" width="15%">提交时间</th>
+              <th align="left" width="12%">审核时间</th>
+              <th align="left" width="12%">提交时间</th>
               <th width="8%">操作</th>
             </tr>
           </HeaderTemplate>
@@ -77,6 +78,7 @@
                 <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
               </td>
               <td><%#Eval("id")%></td>
+              <td><%#Eval("user_id")%></td>
               <td><a href="pm_edit.aspx?id=<%#Eval("user_id") %>"><%#Eval("username") %></a></td>
               <td><%#Eval("name") %></td>
               <td><%#Eval("phone") %></td>

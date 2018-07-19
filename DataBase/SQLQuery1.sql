@@ -213,4 +213,5 @@ create table fg_amount(
 	remark nvarchar(max),
 	time datetime
 )
+select * from fg_user
 select * from fg_amount
